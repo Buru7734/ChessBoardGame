@@ -9,10 +9,6 @@ body {
   box-sizing: border-box;
 }
 
-div {
-  color: black;
-}
-
 .board {
   display: flex;
   flex-wrap: wrap;
@@ -86,4 +82,11 @@ h1 {
   text-align: center;
   margin-left: 80px;
   justify-content: space-around;
+}
+
+.piece {
+  font-size: 30px;
+  background-color: initial;
+  /* border: 1px solid black; */
+  padding: 1px 10px;
 }
