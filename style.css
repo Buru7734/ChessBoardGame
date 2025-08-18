@@ -1,0 +1,89 @@
+body {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 7px;
+}
+
+* {
+  background-color: lightgrey;
+  box-sizing: border-box;
+}
+
+div {
+  color: black;
+}
+
+.board {
+  display: flex;
+  flex-wrap: wrap;
+  width: 700px;
+  justify-content: center;
+}
+
+.square {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  /* border: 1px solid black; */
+}
+
+.rowsOdd .square:nth-child(odd) {
+  background-color: white;
+}
+
+.rowsEven .square:nth-child(even) {
+  background-color: white;
+}
+
+#a1 {
+  font-size: large;
+}
+
+.welcome {
+  display: flex;
+  text-align: center;
+  justify-content: space-around;
+  margin-left: 138px;
+  margin-bottom: 37px;
+}
+
+h1 {
+  text-align: center;
+  margin-left: 30px;
+}
+
+.sideNumbers {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-right: 15px;
+  height: 341px;
+}
+.sideNumbers p {
+  margin: 0;
+  height: 40px;
+
+  padding: 0;
+}
+
+.letters {
+  display: flex;
+  justify-content: center;
+  margin: 304px 100px 304px -165px;
+  width: 0px;
+}
+
+.letters p {
+  display: flex;
+  padding: 15px;
+  height: 0;
+}
+
+h1 {
+  display: flex;
+  text-align: center;
+  margin-left: 80px;
+  justify-content: space-around;
+}
