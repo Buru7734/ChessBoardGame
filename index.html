@@ -4,8 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
+    <script src="./pieceMovements/knights.js" defer></script>
     <script defer src="app.js"></script>
-    <script src="" defer></script>
     <title>Chess</title>
   </head>
   <body>
@@ -44,7 +44,7 @@
       </div>
       <div class="rowsEven rowTwo">
         <div class="square" id="B8">
-          <div class="black piece knight">♞</div>
+          <div class="black piece bKnight">♞</div>
         </div>
         <div class="square" id="B7">
           <div class="black piece blackPawn">♟</div>
@@ -57,7 +57,7 @@
           <div class="white piece whitePawn">♙</div>
         </div>
         <div class="square" id="B1">
-          <div class="white piece knight">♘</div>
+          <div class="white piece wKnight">♘</div>
         </div>
       </div>
       <div class="rowsOdd rowThree">
@@ -93,7 +93,9 @@
         <div class="square" id="D1"><div class="white piece queen">♕</div></div>
       </div>
       <div class="rowsOdd rowFive">
-        <div class="square" id="E8"><div class="black piece king">♚</div></div>
+        <div class="square" id="E8">
+          <div class="black piece king" id="blackKing">♚</div>
+        </div>
         <div class="square" id="E7">
           <div class="black piece blackPawn">♟</div>
         </div>
@@ -104,7 +106,9 @@
         <div class="square" id="E2">
           <div class="white piece whitePawn">♙</div>
         </div>
-        <div class="square" id="E1"><div class="white piece king">♔</div></div>
+        <div class="square" id="E1">
+          <div class="white piece king" id="whiteKing">♔</div>
+        </div>
       </div>
       <div class="rowsEven rowSix">
         <div class="square" id="F8">
@@ -126,7 +130,7 @@
       </div>
       <div class="rowsOdd rowSeven">
         <div class="square" id="G8">
-          <div class="black piece knight">♞</div>
+          <div class="black piece bKnight">♞</div>
         </div>
         <div class="square" id="G7">
           <div class="black piece blackPawn">♟</div>
@@ -139,7 +143,7 @@
           <div class="white piece whitePawn">♙</div>
         </div>
         <div class="square" id="G1">
-          <div class="white piece knight">♘</div>
+          <div class="white piece wKnight">♘</div>
         </div>
       </div>
       <div class="rowsEven rowEigh">

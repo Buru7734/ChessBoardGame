@@ -112,3 +112,8 @@ h2 {
   cursor: pointer;
   border: 10px solid black;
 }
+
+/* Keep at bottom */
+.highlightBlue {
+  background-color: #9ccfce;
+}
