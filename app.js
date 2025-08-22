@@ -1,9 +1,14 @@
+// .rowsEven .square:nth-child(even)
+// .rowsOdd .square:nth-child(odd)
+
 const boardEl = document.querySelector(".board");
 const PiecesEl = document.querySelectorAll(".piece");
 const displayEl = document.querySelector(".display");
 const buttonEl = document.querySelector(".button");
 const knightEl = document.querySelectorAll(".knight");
+const wPawnEl = document.querySelectorAll(".whitePawn");
 const blackKing = document.getElementById("blackKing");
+const stabEL = new Audio("Stab for chess.mp3");
 const arrayBoard = [
   "",
   "",
@@ -130,6 +135,7 @@ const clickedHandler = (e) => {
     console.log("current Square", e.target.parentNode.id); //logs current square
     currentSquare = e.target.parentNode.id;
     knightMovement();
+    pawnMovement();
     e.target.style.border = "#9ccfce 1px solid"; // This will add a blue border to the clicked element.
   }
 
@@ -139,6 +145,8 @@ const clickedHandler = (e) => {
       const targetSquare = capturedPiece.parentNode; // Get the parent square
 
       targetSquare.removeChild(capturedPiece); // Remove the captured black piece from the square.
+      stabEL.currentTime = 0.3;
+      stabEL.play();
       targetSquare.appendChild(selectedPiece); // Add the capturing white piece to the same square.
       if (!document.getElementById("blackKing")) {
         console.log("White wins");
@@ -154,6 +162,8 @@ const clickedHandler = (e) => {
     ) {
       const capturedPiece = e.target;
       const targetSquare = capturedPiece.parentNode; // Get the parent square
+      stabEL.currentTime = 0.3;
+      stabEL.play();
 
       targetSquare.removeChild(capturedPiece); // Remove the captured white piece from the square.
       targetSquare.appendChild(selectedPiece); // Add the capturing black piece to the same square.
@@ -187,7 +197,11 @@ PiecesEl.forEach((piece) => {
 boardEl.addEventListener("click", (e) => {
   //Moves piece
   // Add event listener to the board
-  if (selectedPiece && e.target.classList.contains("square")) {
+  if (
+    selectedPiece &&
+    e.target.classList.contains("square") &&
+    e.target.classList.contains("highlightBlue")
+  ) {
     // Ensure a piece is selected and the clicked target is a square
     e.target.appendChild(selectedPiece); // Move the selected piece to the clicked square
     selectedPiece.style.border = "none"; // Remove border after moving
@@ -210,4 +224,84 @@ buttonEl.addEventListener("click", () => {
   window.location.reload(true);
 });
 
-// Each piece
+// Color sWitch
+const greenEl = document.querySelector(".green");
+const blueEl = document.querySelector(".blue");
+const purpleEl = document.querySelector(".purple");
+const lightsOutEl = document.querySelector(".lightsOut");
+const h1El = document.querySelector("h1");
+const h2El = document.querySelector("h2");
+const pEl = document.querySelector("p");
+const bodyEl = document.querySelector("body");
+const allElements = document.querySelectorAll("*");
+const oddSquares = document.querySelectorAll(".rowsOdd .square:nth-child(odd)");
+const squareEl = document.querySelectorAll(".square");
+const defaultEl = document.querySelector(".default");
+
+const colorSwitchDefault = () => {
+  bodyEl.style.color = "black";
+  greenEl.style.color = "black";
+  purpleEl.style.color = "black";
+  blueEl.style.color = "black";
+  lightsOutEl.style.color = "black";
+  buttonEl.style.color = "black";
+  defaultEl.style.color = "black";
+};
+
+defaultEl.addEventListener("click", colorSwitchDefault);
+
+const colorSwitchGreen = () => {
+  bodyEl.style.color = "green";
+  greenEl.style.color = "green";
+  purpleEl.style.color = "green";
+  blueEl.style.color = "green";
+  lightsOutEl.style.color = "green";
+  buttonEl.style.color = "green";
+  defaultEl.style.color = "green";
+};
+
+greenEl.addEventListener("click", colorSwitchGreen);
+
+const colorSwitchBlue = () => {
+  bodyEl.style.color = "blue";
+  greenEl.style.color = "blue";
+  purpleEl.style.color = "blue";
+  blueEl.style.color = "blue";
+  lightsOutEl.style.color = "blue";
+  buttonEl.style.color = "blue";
+  defaultEl.style.color = "blue";
+};
+
+blueEl.addEventListener("click", colorSwitchBlue);
+
+const colorSwitchPurple = () => {
+  bodyEl.style.color = "purple";
+  greenEl.style.color = "purple";
+  purpleEl.style.color = "purple";
+  blueEl.style.color = "purple";
+  lightsOutEl.style.color = "purple";
+  buttonEl.style.color = "purple";
+  defaultEl.style.color = "purple";
+};
+
+purpleEl.addEventListener("click", colorSwitchPurple);
+
+const colorSwitchLightsOut = () => {
+  bodyEl.style.color = "white";
+  greenEl.style.color = "white";
+  purpleEl.style.color = "white";
+  blueEl.style.color = "white";
+  lightsOutEl.style.color = "white";
+  buttonEl.style.color = "white";
+  defaultEl.style.color = "white";
+
+  const evenBtns = document.querySelectorAll(
+    ".rowsEven .square:nth-child(even)"
+  );
+  const oddBtns = document.querySelectorAll(".rowsOdd .square:nth-child(odd)");
+  [...evenBtns, ...oddBtns].forEach((btn) => {
+    btn.style.backgroundColor = "blue";
+  });
+};
+
+lightsOutEl.addEventListener("click", colorSwitchLightsOut);
