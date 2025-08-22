@@ -1,21 +1,33 @@
-const ARR = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-
 const pawnMovement = () => {
   if (selectedPiece.classList.contains("whitePawn")) {
     if (currentSquare === "A2") {
       if (
-        !A3.firstElementChild ||
-        !A3.firstElementChild.classList.contains("white")
+        (!A3.firstElementChild ||
+          !A3.firstElementChild.classList.contains("white")) &&
+        (!A3.firstElementChild ||
+          !A3.firstElementChild.classList.contains("black"))
       ) {
         A3.classList.toggle("highlightBlue");
         recentlyHighlightedElements.push(A3);
       }
+
       if (
-        !A4.firstElementChild ||
-        !A4.firstElementChild.classList.contains("white")
+        (!A4.firstElementChild ||
+          (!A4.firstElementChild.classList.contains("white") &&
+            !A4.firstElementChild.classList.contains("black"))) &&
+        (!A3.firstElementChild ||
+          (!A3.firstElementChild.classList.contains("white") &&
+            !A3.firstElementChild.classList.contains("black")))
       ) {
         A4.classList.toggle("highlightBlue");
         recentlyHighlightedElements.push(A4);
+      }
+      if (
+        B3.firstElementChild &&
+        B3.firstElementChild.classList.contains("black")
+      ) {
+        B3.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(B3);
       }
     }
   }
@@ -23,18 +35,39 @@ const pawnMovement = () => {
   if (selectedPiece.classList.contains("whitePawn")) {
     if (currentSquare === "B2") {
       if (
-        !B3.firstElementChild ||
-        !B3.firstElementChild.classList.contains("white")
+        (!B3.firstElementChild ||
+          !B3.firstElementChild.classList.contains("white")) &&
+        (!B3.firstElementChild ||
+          !B3.firstElementChild.classList.contains("black"))
       ) {
         B3.classList.toggle("highlightBlue");
         recentlyHighlightedElements.push(B3);
       }
+
       if (
-        !B4.firstElementChild ||
-        !B4.firstElementChild.classList.contains("white")
+        (!B4.firstElementChild ||
+          (!B4.firstElementChild.classList.contains("white") &&
+            !B4.firstElementChild.classList.contains("black"))) &&
+        (!B3.firstElementChild ||
+          (!B3.firstElementChild.classList.contains("white") &&
+            !B3.firstElementChild.classList.contains("black")))
       ) {
         B4.classList.toggle("highlightBlue");
         recentlyHighlightedElements.push(B4);
+      }
+      if (
+        C3.firstElementChild &&
+        C3.firstElementChild.classList.contains("black")
+      ) {
+        C3.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(C3);
+      }
+      if (
+        A3.firstElementChild &&
+        A3.firstElementChild.classList.contains("black")
+      ) {
+        A3.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(A3);
       }
     }
   }
@@ -42,18 +75,39 @@ const pawnMovement = () => {
   if (selectedPiece.classList.contains("whitePawn")) {
     if (currentSquare === "C2") {
       if (
-        !C3.firstElementChild ||
-        !C3.firstElementChild.classList.contains("white")
+        (!C3.firstElementChild ||
+          !C3.firstElementChild.classList.contains("white")) &&
+        (!C3.firstElementChild ||
+          !C3.firstElementChild.classList.contains("black"))
       ) {
         C3.classList.toggle("highlightBlue");
         recentlyHighlightedElements.push(C3);
       }
+
       if (
-        !C4.firstElementChild ||
-        !C4.firstElementChild.classList.contains("white")
+        (!C4.firstElementChild ||
+          (!C4.firstElementChild.classList.contains("white") &&
+            !C4.firstElementChild.classList.contains("black"))) &&
+        (!C3.firstElementChild ||
+          (!C3.firstElementChild.classList.contains("white") &&
+            !C3.firstElementChild.classList.contains("black")))
       ) {
         C4.classList.toggle("highlightBlue");
         recentlyHighlightedElements.push(C4);
+      }
+      if (
+        D3.firstElementChild &&
+        D3.firstElementChild.classList.contains("black")
+      ) {
+        D3.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(D3);
+      }
+      if (
+        B3.firstElementChild &&
+        B3.firstElementChild.classList.contains("black")
+      ) {
+        B3.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(B3);
       }
     }
   }
@@ -61,18 +115,39 @@ const pawnMovement = () => {
   if (selectedPiece.classList.contains("whitePawn")) {
     if (currentSquare === "D2") {
       if (
-        !D3.firstElementChild ||
-        !D3.firstElementChild.classList.contains("white")
+        (!D3.firstElementChild ||
+          !D3.firstElementChild.classList.contains("white")) &&
+        (!D3.firstElementChild ||
+          !D3.firstElementChild.classList.contains("black"))
       ) {
         D3.classList.toggle("highlightBlue");
         recentlyHighlightedElements.push(D3);
       }
+
       if (
-        !D4.firstElementChild ||
-        !D4.firstElementChild.classList.contains("white")
+        (!D4.firstElementChild ||
+          (!D4.firstElementChild.classList.contains("white") &&
+            !D4.firstElementChild.classList.contains("black"))) &&
+        (!D3.firstElementChild ||
+          (!D3.firstElementChild.classList.contains("white") &&
+            !D3.firstElementChild.classList.contains("black")))
       ) {
         D4.classList.toggle("highlightBlue");
         recentlyHighlightedElements.push(D4);
+      }
+      if (
+        E3.firstElementChild &&
+        E3.firstElementChild.classList.contains("black")
+      ) {
+        E3.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(E3);
+      }
+      if (
+        C3.firstElementChild &&
+        C3.firstElementChild.classList.contains("black")
+      ) {
+        C3.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(C3);
       }
     }
   }
@@ -80,18 +155,39 @@ const pawnMovement = () => {
   if (selectedPiece.classList.contains("whitePawn")) {
     if (currentSquare === "E2") {
       if (
-        !E3.firstElementChild ||
-        !E3.firstElementChild.classList.contains("white")
+        (!E3.firstElementChild ||
+          !E3.firstElementChild.classList.contains("white")) &&
+        (!E3.firstElementChild ||
+          !E3.firstElementChild.classList.contains("black"))
       ) {
         E3.classList.toggle("highlightBlue");
         recentlyHighlightedElements.push(E3);
       }
+
       if (
-        !E4.firstElementChild ||
-        !E4.firstElementChild.classList.contains("white")
+        (!E4.firstElementChild ||
+          (!E4.firstElementChild.classList.contains("white") &&
+            !E4.firstElementChild.classList.contains("black"))) &&
+        (!E3.firstElementChild ||
+          (!E3.firstElementChild.classList.contains("white") &&
+            !E3.firstElementChild.classList.contains("black")))
       ) {
         E4.classList.toggle("highlightBlue");
         recentlyHighlightedElements.push(E4);
+      }
+      if (
+        F3.firstElementChild &&
+        F3.firstElementChild.classList.contains("black")
+      ) {
+        F3.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(F3);
+      }
+      if (
+        D3.firstElementChild &&
+        D3.firstElementChild.classList.contains("black")
+      ) {
+        D3.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(D3);
       }
     }
   }
@@ -99,18 +195,39 @@ const pawnMovement = () => {
   if (selectedPiece.classList.contains("whitePawn")) {
     if (currentSquare === "F2") {
       if (
-        !F3.firstElementChild ||
-        !F3.firstElementChild.classList.contains("white")
+        (!F3.firstElementChild ||
+          !F3.firstElementChild.classList.contains("white")) &&
+        (!F3.firstElementChild ||
+          !F3.firstElementChild.classList.contains("black"))
       ) {
         F3.classList.toggle("highlightBlue");
         recentlyHighlightedElements.push(F3);
       }
+
       if (
-        !F4.firstElementChild ||
-        !F4.firstElementChild.classList.contains("white")
+        (!F4.firstElementChild ||
+          (!F4.firstElementChild.classList.contains("white") &&
+            !F4.firstElementChild.classList.contains("black"))) &&
+        (!F3.firstElementChild ||
+          (!F3.firstElementChild.classList.contains("white") &&
+            !F3.firstElementChild.classList.contains("black")))
       ) {
         F4.classList.toggle("highlightBlue");
         recentlyHighlightedElements.push(F4);
+      }
+      if (
+        G3.firstElementChild &&
+        G3.firstElementChild.classList.contains("black")
+      ) {
+        G3.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(G3);
+      }
+      if (
+        E3.firstElementChild &&
+        E3.firstElementChild.classList.contains("black")
+      ) {
+        E3.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(E3);
       }
     }
   }
@@ -118,18 +235,39 @@ const pawnMovement = () => {
   if (selectedPiece.classList.contains("whitePawn")) {
     if (currentSquare === "G2") {
       if (
-        !G3.firstElementChild ||
-        !G3.firstElementChild.classList.contains("white")
+        (!G3.firstElementChild ||
+          !G3.firstElementChild.classList.contains("white")) &&
+        (!G3.firstElementChild ||
+          !G3.firstElementChild.classList.contains("black"))
       ) {
         G3.classList.toggle("highlightBlue");
         recentlyHighlightedElements.push(G3);
       }
+
       if (
-        !G4.firstElementChild ||
-        !G4.firstElementChild.classList.contains("white")
+        (!G4.firstElementChild ||
+          (!G4.firstElementChild.classList.contains("white") &&
+            !G4.firstElementChild.classList.contains("black"))) &&
+        (!G3.firstElementChild ||
+          (!G3.firstElementChild.classList.contains("white") &&
+            !G3.firstElementChild.classList.contains("black")))
       ) {
         G4.classList.toggle("highlightBlue");
         recentlyHighlightedElements.push(G4);
+      }
+      if (
+        H3.firstElementChild &&
+        H3.firstElementChild.classList.contains("black")
+      ) {
+        H3.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(H3);
+      }
+      if (
+        F3.firstElementChild &&
+        F3.firstElementChild.classList.contains("black")
+      ) {
+        F3.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(F3);
       }
     }
   }
@@ -137,18 +275,32 @@ const pawnMovement = () => {
   if (selectedPiece.classList.contains("whitePawn")) {
     if (currentSquare === "H2") {
       if (
-        !H3.firstElementChild ||
-        !H3.firstElementChild.classList.contains("white")
+        (!H3.firstElementChild ||
+          !H3.firstElementChild.classList.contains("white")) &&
+        (!H3.firstElementChild ||
+          !H3.firstElementChild.classList.contains("black"))
       ) {
         H3.classList.toggle("highlightBlue");
         recentlyHighlightedElements.push(H3);
       }
+
       if (
-        !H4.firstElementChild ||
-        !H4.firstElementChild.classList.contains("white")
+        (!H4.firstElementChild ||
+          (!H4.firstElementChild.classList.contains("white") &&
+            !H4.firstElementChild.classList.contains("black"))) &&
+        (!H3.firstElementChild ||
+          (!H3.firstElementChild.classList.contains("white") &&
+            !H3.firstElementChild.classList.contains("black")))
       ) {
         H4.classList.toggle("highlightBlue");
         recentlyHighlightedElements.push(H4);
+      }
+      if (
+        G3.firstElementChild &&
+        G3.firstElementChild.classList.contains("black")
+      ) {
+        G3.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(G3);
       }
     }
   }
@@ -1172,18 +1324,32 @@ const pawnMovement = () => {
   if (selectedPiece.classList.contains("blackPawn")) {
     if (currentSquare === "A7") {
       if (
-        !A6.firstElementChild ||
-        !A6.firstElementChild.classList.contains("black")
+        (!A6.firstElementChild ||
+          !A6.firstElementChild.classList.contains("black")) &&
+        (!A6.firstElementChild ||
+          !A6.firstElementChild.classList.contains("white"))
       ) {
         A6.classList.toggle("highlightBlue");
         recentlyHighlightedElements.push(A6);
       }
+
       if (
-        !A5.firstElementChild ||
-        !A5.firstElementChild.classList.contains("black")
+        (!A5.firstElementChild ||
+          (!A5.firstElementChild.classList.contains("black") &&
+            !A5.firstElementChild.classList.contains("white"))) &&
+        (!A6.firstElementChild ||
+          (!A6.firstElementChild.classList.contains("black") &&
+            !A6.firstElementChild.classList.contains("white")))
       ) {
         A5.classList.toggle("highlightBlue");
         recentlyHighlightedElements.push(A5);
+      }
+      if (
+        B6.firstElementChild &&
+        B6.firstElementChild.classList.contains("white")
+      ) {
+        B6.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(B6);
       }
     }
   }
@@ -1191,18 +1357,39 @@ const pawnMovement = () => {
   if (selectedPiece.classList.contains("blackPawn")) {
     if (currentSquare === "B7") {
       if (
-        !B6.firstElementChild ||
-        !B6.firstElementChild.classList.contains("black")
+        (!B6.firstElementChild ||
+          !B6.firstElementChild.classList.contains("black")) &&
+        (!B6.firstElementChild ||
+          !B6.firstElementChild.classList.contains("white"))
       ) {
         B6.classList.toggle("highlightBlue");
         recentlyHighlightedElements.push(B6);
       }
+
       if (
-        !B5.firstElementChild ||
-        !B5.firstElementChild.classList.contains("black")
+        (!B5.firstElementChild ||
+          (!B5.firstElementChild.classList.contains("black") &&
+            !B5.firstElementChild.classList.contains("white"))) &&
+        (!B6.firstElementChild ||
+          (!B6.firstElementChild.classList.contains("black") &&
+            !B6.firstElementChild.classList.contains("white")))
       ) {
         B5.classList.toggle("highlightBlue");
         recentlyHighlightedElements.push(B5);
+      }
+      if (
+        A6.firstElementChild &&
+        A6.firstElementChild.classList.contains("white")
+      ) {
+        A6.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(A6);
+      }
+      if (
+        C6.firstElementChild &&
+        C6.firstElementChild.classList.contains("white")
+      ) {
+        C6.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(C6);
       }
     }
   }
@@ -1210,18 +1397,39 @@ const pawnMovement = () => {
   if (selectedPiece.classList.contains("blackPawn")) {
     if (currentSquare === "C7") {
       if (
-        !C6.firstElementChild ||
-        !C6.firstElementChild.classList.contains("black")
+        (!C6.firstElementChild ||
+          !C6.firstElementChild.classList.contains("black")) &&
+        (!C6.firstElementChild ||
+          !C6.firstElementChild.classList.contains("white"))
       ) {
         C6.classList.toggle("highlightBlue");
         recentlyHighlightedElements.push(C6);
       }
+
       if (
-        !C5.firstElementChild ||
-        !C5.firstElementChild.classList.contains("black")
+        (!C5.firstElementChild ||
+          (!C5.firstElementChild.classList.contains("black") &&
+            !C5.firstElementChild.classList.contains("white"))) &&
+        (!C6.firstElementChild ||
+          (!C6.firstElementChild.classList.contains("black") &&
+            !C6.firstElementChild.classList.contains("white")))
       ) {
         C5.classList.toggle("highlightBlue");
         recentlyHighlightedElements.push(C5);
+      }
+      if (
+        B6.firstElementChild &&
+        B6.firstElementChild.classList.contains("white")
+      ) {
+        B6.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(B6);
+      }
+      if (
+        D6.firstElementChild &&
+        D6.firstElementChild.classList.contains("white")
+      ) {
+        D6.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(D6);
       }
     }
   }
@@ -1229,18 +1437,39 @@ const pawnMovement = () => {
   if (selectedPiece.classList.contains("blackPawn")) {
     if (currentSquare === "D7") {
       if (
-        !D6.firstElementChild ||
-        !D6.firstElementChild.classList.contains("black")
+        (!D6.firstElementChild ||
+          !D6.firstElementChild.classList.contains("black")) &&
+        (!D6.firstElementChild ||
+          !D6.firstElementChild.classList.contains("white"))
       ) {
         D6.classList.toggle("highlightBlue");
         recentlyHighlightedElements.push(D6);
       }
+
       if (
-        !D5.firstElementChild ||
-        !D5.firstElementChild.classList.contains("black")
+        (!D5.firstElementChild ||
+          (!D5.firstElementChild.classList.contains("black") &&
+            !D5.firstElementChild.classList.contains("white"))) &&
+        (!D6.firstElementChild ||
+          (!D6.firstElementChild.classList.contains("black") &&
+            !D6.firstElementChild.classList.contains("white")))
       ) {
         D5.classList.toggle("highlightBlue");
         recentlyHighlightedElements.push(D5);
+      }
+      if (
+        C6.firstElementChild &&
+        C6.firstElementChild.classList.contains("white")
+      ) {
+        C6.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(C6);
+      }
+      if (
+        E6.firstElementChild &&
+        E6.firstElementChild.classList.contains("white")
+      ) {
+        E6.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(E6);
       }
     }
   }
@@ -1248,18 +1477,39 @@ const pawnMovement = () => {
   if (selectedPiece.classList.contains("blackPawn")) {
     if (currentSquare === "E7") {
       if (
-        !E6.firstElementChild ||
-        !E6.firstElementChild.classList.contains("black")
+        (!E6.firstElementChild ||
+          !E6.firstElementChild.classList.contains("black")) &&
+        (!E6.firstElementChild ||
+          !E6.firstElementChild.classList.contains("white"))
       ) {
         E6.classList.toggle("highlightBlue");
         recentlyHighlightedElements.push(E6);
       }
+
       if (
-        !E5.firstElementChild ||
-        !E5.firstElementChild.classList.contains("black")
+        (!E5.firstElementChild ||
+          (!E5.firstElementChild.classList.contains("black") &&
+            !E5.firstElementChild.classList.contains("white"))) &&
+        (!E6.firstElementChild ||
+          (!E6.firstElementChild.classList.contains("black") &&
+            !E6.firstElementChild.classList.contains("white")))
       ) {
         E5.classList.toggle("highlightBlue");
         recentlyHighlightedElements.push(E5);
+      }
+      if (
+        D6.firstElementChild &&
+        D6.firstElementChild.classList.contains("white")
+      ) {
+        D6.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(D6);
+      }
+      if (
+        F6.firstElementChild &&
+        F6.firstElementChild.classList.contains("white")
+      ) {
+        F6.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(F6);
       }
     }
   }
@@ -1267,18 +1517,39 @@ const pawnMovement = () => {
   if (selectedPiece.classList.contains("blackPawn")) {
     if (currentSquare === "F7") {
       if (
-        !F6.firstElementChild ||
-        !F6.firstElementChild.classList.contains("black")
+        (!F6.firstElementChild ||
+          !F6.firstElementChild.classList.contains("black")) &&
+        (!F6.firstElementChild ||
+          !F6.firstElementChild.classList.contains("white"))
       ) {
         F6.classList.toggle("highlightBlue");
         recentlyHighlightedElements.push(F6);
       }
+
       if (
-        !F5.firstElementChild ||
-        !F5.firstElementChild.classList.contains("black")
+        (!F5.firstElementChild ||
+          (!F5.firstElementChild.classList.contains("black") &&
+            !F5.firstElementChild.classList.contains("white"))) &&
+        (!F6.firstElementChild ||
+          (!F6.firstElementChild.classList.contains("black") &&
+            !F6.firstElementChild.classList.contains("white")))
       ) {
         F5.classList.toggle("highlightBlue");
         recentlyHighlightedElements.push(F5);
+      }
+      if (
+        E6.firstElementChild &&
+        E6.firstElementChild.classList.contains("white")
+      ) {
+        E6.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(E6);
+      }
+      if (
+        G6.firstElementChild &&
+        G6.firstElementChild.classList.contains("white")
+      ) {
+        G6.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(G6);
       }
     }
   }
@@ -1286,18 +1557,39 @@ const pawnMovement = () => {
   if (selectedPiece.classList.contains("blackPawn")) {
     if (currentSquare === "G7") {
       if (
-        !G6.firstElementChild ||
-        !G6.firstElementChild.classList.contains("black")
+        (!G6.firstElementChild ||
+          !G6.firstElementChild.classList.contains("black")) &&
+        (!G6.firstElementChild ||
+          !G6.firstElementChild.classList.contains("white"))
       ) {
         G6.classList.toggle("highlightBlue");
         recentlyHighlightedElements.push(G6);
       }
+
       if (
-        !G5.firstElementChild ||
-        !G5.firstElementChild.classList.contains("black")
+        (!G5.firstElementChild ||
+          (!G5.firstElementChild.classList.contains("black") &&
+            !G5.firstElementChild.classList.contains("white"))) &&
+        (!G6.firstElementChild ||
+          (!G6.firstElementChild.classList.contains("black") &&
+            !G6.firstElementChild.classList.contains("white")))
       ) {
         G5.classList.toggle("highlightBlue");
         recentlyHighlightedElements.push(G5);
+      }
+      if (
+        F6.firstElementChild &&
+        F6.firstElementChild.classList.contains("white")
+      ) {
+        F6.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(F6);
+      }
+      if (
+        H6.firstElementChild &&
+        H6.firstElementChild.classList.contains("white")
+      ) {
+        H6.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(H6);
       }
     }
   }
@@ -1305,18 +1597,32 @@ const pawnMovement = () => {
   if (selectedPiece.classList.contains("blackPawn")) {
     if (currentSquare === "H7") {
       if (
-        !H6.firstElementChild ||
-        !H6.firstElementChild.classList.contains("black")
+        (!H6.firstElementChild ||
+          !H6.firstElementChild.classList.contains("black")) &&
+        (!H6.firstElementChild ||
+          !H6.firstElementChild.classList.contains("white"))
       ) {
         H6.classList.toggle("highlightBlue");
         recentlyHighlightedElements.push(H6);
       }
+
       if (
-        !H5.firstElementChild ||
-        !H5.firstElementChild.classList.contains("black")
+        (!H5.firstElementChild ||
+          (!H5.firstElementChild.classList.contains("black") &&
+            !H5.firstElementChild.classList.contains("white"))) &&
+        (!H6.firstElementChild ||
+          (!H6.firstElementChild.classList.contains("black") &&
+            !H6.firstElementChild.classList.contains("white")))
       ) {
         H5.classList.toggle("highlightBlue");
         recentlyHighlightedElements.push(H5);
+      }
+      if (
+        G6.firstElementChild &&
+        G6.firstElementChild.classList.contains("white")
+      ) {
+        G6.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(G6);
       }
     }
   }

@@ -8,7 +8,7 @@ const buttonEl = document.querySelector(".button");
 const knightEl = document.querySelectorAll(".knight");
 const wPawnEl = document.querySelectorAll(".whitePawn");
 const blackKing = document.getElementById("blackKing");
-const stabEL = new Audio("Stab for chess.mp3");
+//const stabEL = new Audio("Stab for chess.mp3");
 const arrayBoard = [
   "",
   "",
@@ -136,17 +136,24 @@ const clickedHandler = (e) => {
     currentSquare = e.target.parentNode.id;
     knightMovement();
     pawnMovement();
+    kingMovement();
     e.target.style.border = "#9ccfce 1px solid"; // This will add a blue border to the clicked element.
   }
 
   if (selectedPiece) {
-    if (currentPlayer === "white" && e.target.classList.contains("black")) {
+    //Function for capture pieces.
+    if (
+      currentPlayer === "white" &&
+      e.target.classList.contains("black")
+      //&& e.target.parentElement.classList.contains("highlightBlue")//This only allows to capture pieces in blue squares
+    ) {
+      console.log("I'm eating black");
       const capturedPiece = e.target;
       const targetSquare = capturedPiece.parentNode; // Get the parent square
 
       targetSquare.removeChild(capturedPiece); // Remove the captured black piece from the square.
-      stabEL.currentTime = 0.3;
-      stabEL.play();
+      // stabEL.currentTime = 0.3;
+      //stabEL.play(); //AUDIO SAMPLE
       targetSquare.appendChild(selectedPiece); // Add the capturing white piece to the same square.
       if (!document.getElementById("blackKing")) {
         console.log("White wins");
@@ -154,12 +161,20 @@ const clickedHandler = (e) => {
           piece.removeEventListener("click", clickedHandler);
         });
       }
+
+      while (recentlyHighlightedElements.length) {
+        const removedElement = recentlyHighlightedElements.pop();
+        removedElement.classList.toggle("highlightBlue");
+      }
+
       handlePlayer();
       selectedPiece = null;
     } else if (
       currentPlayer === "black" &&
-      e.target.classList.contains("white")
+      e.target.classList.contains("white") &&
+      e.target.parentElement.classList.contains("highlightBlue")
     ) {
+      console.log("I'm eating white");
       const capturedPiece = e.target;
       const targetSquare = capturedPiece.parentNode; // Get the parent square
       stabEL.currentTime = 0.3;
@@ -174,6 +189,11 @@ const clickedHandler = (e) => {
         PiecesEl.forEach((piece) => {
           piece.removeEventListener("click", clickedHandler);
         });
+      }
+
+      while (recentlyHighlightedElements.length) {
+        const removedElement = recentlyHighlightedElements.pop();
+        removedElement.classList.toggle("highlightBlue");
       }
 
       handlePlayer();
@@ -199,8 +219,8 @@ boardEl.addEventListener("click", (e) => {
   // Add event listener to the board
   if (
     selectedPiece &&
-    e.target.classList.contains("square") &&
-    e.target.classList.contains("highlightBlue")
+    e.target.classList.contains("square")
+    //&& e.target.classList.contains("highlightBlue")//This will let move only to blue squares
   ) {
     // Ensure a piece is selected and the clicked target is a square
     e.target.appendChild(selectedPiece); // Move the selected piece to the clicked square
