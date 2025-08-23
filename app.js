@@ -137,6 +137,7 @@ const clickedHandler = (e) => {
     knightMovement();
     pawnMovement();
     kingMovement();
+    rookMovement();
     e.target.style.border = "#9ccfce 1px solid"; // This will add a blue border to the clicked element.
   }
 

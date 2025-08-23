@@ -72,13 +72,14 @@ const knightMovement = () => {
   const H8 = document.getElementById("H8");
 
   //A1 White
-
+ 
   if (selectedPiece.classList.contains("wKnight")) {
     if (currentSquare === "A1") {
       if (
         !B3.firstElementChild ||
         !B3.firstElementChild.classList.contains("white")
       ) {
+        console.log("Hello 2");
         console.log(B3);
         B3.classList.toggle("highlightBlue");
         recentlyHighlightedElements.push(B3);
