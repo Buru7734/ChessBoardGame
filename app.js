@@ -145,16 +145,16 @@ const clickedHandler = (e) => {
     //Function for capture pieces.
     if (
       currentPlayer === "white" &&
-      e.target.classList.contains("black")
-      //&& e.target.parentElement.classList.contains("highlightBlue")//This only allows to capture pieces in blue squares
+      e.target.classList.contains("black") &&
+      e.target.parentElement.classList.contains("highlightBlue") //This only allows to capture pieces in blue squares
     ) {
       console.log("I'm eating black");
       const capturedPiece = e.target;
       const targetSquare = capturedPiece.parentNode; // Get the parent square
 
       targetSquare.removeChild(capturedPiece); // Remove the captured black piece from the square.
-      // stabEL.currentTime = 0.3;
-      //stabEL.play(); //AUDIO SAMPLE
+      stabEL.currentTime = 0.3;
+      stabEL.play(); //AUDIO SAMPLE
       targetSquare.appendChild(selectedPiece); // Add the capturing white piece to the same square.
       if (!document.getElementById("blackKing")) {
         console.log("White wins");
@@ -220,8 +220,8 @@ boardEl.addEventListener("click", (e) => {
   // Add event listener to the board
   if (
     selectedPiece &&
-    e.target.classList.contains("square")
-    //&& e.target.classList.contains("highlightBlue")//This will let move only to blue squares
+    e.target.classList.contains("square") &&
+    e.target.classList.contains("highlightBlue") //This will let move only to blue squares
   ) {
     // Ensure a piece is selected and the clicked target is a square
     e.target.appendChild(selectedPiece); // Move the selected piece to the clicked square
