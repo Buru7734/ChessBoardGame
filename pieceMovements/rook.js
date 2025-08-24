@@ -20040,55 +20040,21 @@ const rookMovement = () => {
       }
     }
   }
-  //
-  //
-  //
-  //
-  //
-  //
-  //
-  //
-  //
-  //
-  //
-  //
-  //
-  //
-  //
-  //
-  //
-  //
-  //
-  //
-  //
-  //
-  //
-  //
-  //
-  //
-  //
-  //
-  // Rook on H1 (White or Black)
-  if (
-    selectedPiece.classList.contains("whiteRook") ||
-    selectedPiece.classList.contains("blackRook")
-  ) {
-    if (currentSquare === "H1") {
-      const color = selectedPiece.classList.contains("whiteRook")
-        ? "white"
-        : "black";
 
+  // White Rook on H1
+  if (selectedPiece.classList.contains("whiteRook")) {
+    if (currentSquare === "H1") {
       // Vertical UP (H2 → H8)
       if (
         !H2.firstElementChild ||
-        !H2.firstElementChild.classList.contains(color)
+        !H2.firstElementChild.classList.contains("white")
       ) {
         H2.classList.toggle("highlightBlue");
         recentlyHighlightedElements.push(H2);
       }
       if (
         (!H3.firstElementChild ||
-          !H3.firstElementChild.classList.contains(color)) &&
+          !H3.firstElementChild.classList.contains("white")) &&
         (!H2.firstElementChild ||
           (!H2.firstElementChild.classList.contains("white") &&
             !H2.firstElementChild.classList.contains("black")))
@@ -20098,7 +20064,7 @@ const rookMovement = () => {
       }
       if (
         (!H4.firstElementChild ||
-          !H4.firstElementChild.classList.contains(color)) &&
+          !H4.firstElementChild.classList.contains("white")) &&
         (!H3.firstElementChild ||
           (!H3.firstElementChild.classList.contains("white") &&
             !H3.firstElementChild.classList.contains("black"))) &&
@@ -20111,7 +20077,7 @@ const rookMovement = () => {
       }
       if (
         (!H5.firstElementChild ||
-          !H5.firstElementChild.classList.contains(color)) &&
+          !H5.firstElementChild.classList.contains("white")) &&
         (!H4.firstElementChild ||
           (!H4.firstElementChild.classList.contains("white") &&
             !H4.firstElementChild.classList.contains("black"))) &&
@@ -20127,7 +20093,7 @@ const rookMovement = () => {
       }
       if (
         (!H6.firstElementChild ||
-          !H6.firstElementChild.classList.contains(color)) &&
+          !H6.firstElementChild.classList.contains("white")) &&
         (!H5.firstElementChild ||
           (!H5.firstElementChild.classList.contains("white") &&
             !H5.firstElementChild.classList.contains("black"))) &&
@@ -20146,7 +20112,7 @@ const rookMovement = () => {
       }
       if (
         (!H7.firstElementChild ||
-          !H7.firstElementChild.classList.contains(color)) &&
+          !H7.firstElementChild.classList.contains("white")) &&
         (!H6.firstElementChild ||
           (!H6.firstElementChild.classList.contains("white") &&
             !H6.firstElementChild.classList.contains("black"))) &&
@@ -20168,7 +20134,7 @@ const rookMovement = () => {
       }
       if (
         (!H8.firstElementChild ||
-          !H8.firstElementChild.classList.contains(color)) &&
+          !H8.firstElementChild.classList.contains("white")) &&
         (!H7.firstElementChild ||
           (!H7.firstElementChild.classList.contains("white") &&
             !H7.firstElementChild.classList.contains("black"))) &&
@@ -20195,14 +20161,14 @@ const rookMovement = () => {
       // Horizontal LEFT (G1 → A1)
       if (
         !G1.firstElementChild ||
-        !G1.firstElementChild.classList.contains(color)
+        !G1.firstElementChild.classList.contains("white")
       ) {
         G1.classList.toggle("highlightBlue");
         recentlyHighlightedElements.push(G1);
       }
       if (
         (!F1.firstElementChild ||
-          !F1.firstElementChild.classList.contains(color)) &&
+          !F1.firstElementChild.classList.contains("white")) &&
         (!G1.firstElementChild ||
           (!G1.firstElementChild.classList.contains("white") &&
             !G1.firstElementChild.classList.contains("black")))
@@ -20212,7 +20178,7 @@ const rookMovement = () => {
       }
       if (
         (!E1.firstElementChild ||
-          !E1.firstElementChild.classList.contains(color)) &&
+          !E1.firstElementChild.classList.contains("white")) &&
         (!F1.firstElementChild ||
           (!F1.firstElementChild.classList.contains("white") &&
             !F1.firstElementChild.classList.contains("black"))) &&
@@ -20225,7 +20191,7 @@ const rookMovement = () => {
       }
       if (
         (!D1.firstElementChild ||
-          !D1.firstElementChild.classList.contains(color)) &&
+          !D1.firstElementChild.classList.contains("white")) &&
         (!E1.firstElementChild ||
           (!E1.firstElementChild.classList.contains("white") &&
             !E1.firstElementChild.classList.contains("black"))) &&
@@ -20241,7 +20207,7 @@ const rookMovement = () => {
       }
       if (
         (!C1.firstElementChild ||
-          !C1.firstElementChild.classList.contains(color)) &&
+          !C1.firstElementChild.classList.contains("white")) &&
         (!D1.firstElementChild ||
           (!D1.firstElementChild.classList.contains("white") &&
             !D1.firstElementChild.classList.contains("black"))) &&
@@ -20260,7 +20226,7 @@ const rookMovement = () => {
       }
       if (
         (!B1.firstElementChild ||
-          !B1.firstElementChild.classList.contains(color)) &&
+          !B1.firstElementChild.classList.contains("white")) &&
         (!C1.firstElementChild ||
           (!C1.firstElementChild.classList.contains("white") &&
             !C1.firstElementChild.classList.contains("black"))) &&
@@ -20282,7 +20248,7 @@ const rookMovement = () => {
       }
       if (
         (!A1.firstElementChild ||
-          !A1.firstElementChild.classList.contains(color)) &&
+          !A1.firstElementChild.classList.contains("white")) &&
         (!B1.firstElementChild ||
           (!B1.firstElementChild.classList.contains("white") &&
             !B1.firstElementChild.classList.contains("black"))) &&
@@ -20307,27 +20273,253 @@ const rookMovement = () => {
       }
     }
   }
-  // Rook on H2 (White or Black)
-  if (
-    selectedPiece.classList.contains("whiteRook") ||
-    selectedPiece.classList.contains("blackRook")
-  ) {
-    if (currentSquare === "H2") {
-      const color = selectedPiece.classList.contains("whiteRook")
-        ? "white"
-        : "black";
-
-      // Vertical UP (H3 → H8)
+  // Black Rook on H1
+  if (selectedPiece.classList.contains("blackRook")) {
+    if (currentSquare === "H1") {
+      // Vertical UP (H2 → H8)
       if (
-        !H3.firstElementChild ||
-        !H3.firstElementChild.classList.contains(color)
+        !H2.firstElementChild ||
+        !H2.firstElementChild.classList.contains("black")
+      ) {
+        H2.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(H2);
+      }
+      if (
+        (!H3.firstElementChild ||
+          !H3.firstElementChild.classList.contains("black")) &&
+        (!H2.firstElementChild ||
+          (!H2.firstElementChild.classList.contains("white") &&
+            !H2.firstElementChild.classList.contains("black")))
       ) {
         H3.classList.toggle("highlightBlue");
         recentlyHighlightedElements.push(H3);
       }
       if (
         (!H4.firstElementChild ||
-          !H4.firstElementChild.classList.contains(color)) &&
+          !H4.firstElementChild.classList.contains("black")) &&
+        (!H3.firstElementChild ||
+          (!H3.firstElementChild.classList.contains("white") &&
+            !H3.firstElementChild.classList.contains("black"))) &&
+        (!H2.firstElementChild ||
+          (!H2.firstElementChild.classList.contains("white") &&
+            !H2.firstElementChild.classList.contains("black")))
+      ) {
+        H4.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(H4);
+      }
+      if (
+        (!H5.firstElementChild ||
+          !H5.firstElementChild.classList.contains("black")) &&
+        (!H4.firstElementChild ||
+          (!H4.firstElementChild.classList.contains("white") &&
+            !H4.firstElementChild.classList.contains("black"))) &&
+        (!H3.firstElementChild ||
+          (!H3.firstElementChild.classList.contains("white") &&
+            !H3.firstElementChild.classList.contains("black"))) &&
+        (!H2.firstElementChild ||
+          (!H2.firstElementChild.classList.contains("white") &&
+            !H2.firstElementChild.classList.contains("black")))
+      ) {
+        H5.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(H5);
+      }
+      if (
+        (!H6.firstElementChild ||
+          !H6.firstElementChild.classList.contains("black")) &&
+        (!H5.firstElementChild ||
+          (!H5.firstElementChild.classList.contains("white") &&
+            !H5.firstElementChild.classList.contains("black"))) &&
+        (!H4.firstElementChild ||
+          (!H4.firstElementChild.classList.contains("white") &&
+            !H4.firstElementChild.classList.contains("black"))) &&
+        (!H3.firstElementChild ||
+          (!H3.firstElementChild.classList.contains("white") &&
+            !H3.firstElementChild.classList.contains("black"))) &&
+        (!H2.firstElementChild ||
+          (!H2.firstElementChild.classList.contains("white") &&
+            !H2.firstElementChild.classList.contains("black")))
+      ) {
+        H6.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(H6);
+      }
+      if (
+        (!H7.firstElementChild ||
+          !H7.firstElementChild.classList.contains("black")) &&
+        (!H6.firstElementChild ||
+          (!H6.firstElementChild.classList.contains("white") &&
+            !H6.firstElementChild.classList.contains("black"))) &&
+        (!H5.firstElementChild ||
+          (!H5.firstElementChild.classList.contains("white") &&
+            !H5.firstElementChild.classList.contains("black"))) &&
+        (!H4.firstElementChild ||
+          (!H4.firstElementChild.classList.contains("white") &&
+            !H4.firstElementChild.classList.contains("black"))) &&
+        (!H3.firstElementChild ||
+          (!H3.firstElementChild.classList.contains("white") &&
+            !H3.firstElementChild.classList.contains("black"))) &&
+        (!H2.firstElementChild ||
+          (!H2.firstElementChild.classList.contains("white") &&
+            !H2.firstElementChild.classList.contains("black")))
+      ) {
+        H7.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(H7);
+      }
+      if (
+        (!H8.firstElementChild ||
+          !H8.firstElementChild.classList.contains("black")) &&
+        (!H7.firstElementChild ||
+          (!H7.firstElementChild.classList.contains("white") &&
+            !H7.firstElementChild.classList.contains("black"))) &&
+        (!H6.firstElementChild ||
+          (!H6.firstElementChild.classList.contains("white") &&
+            !H6.firstElementChild.classList.contains("black"))) &&
+        (!H5.firstElementChild ||
+          (!H5.firstElementChild.classList.contains("white") &&
+            !H5.firstElementChild.classList.contains("black"))) &&
+        (!H4.firstElementChild ||
+          (!H4.firstElementChild.classList.contains("white") &&
+            !H4.firstElementChild.classList.contains("black"))) &&
+        (!H3.firstElementChild ||
+          (!H3.firstElementChild.classList.contains("white") &&
+            !H3.firstElementChild.classList.contains("black"))) &&
+        (!H2.firstElementChild ||
+          (!H2.firstElementChild.classList.contains("white") &&
+            !H2.firstElementChild.classList.contains("black")))
+      ) {
+        H8.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(H8);
+      }
+
+      // Horizontal LEFT (G1 → A1)
+      if (
+        !G1.firstElementChild ||
+        !G1.firstElementChild.classList.contains("black")
+      ) {
+        G1.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(G1);
+      }
+      if (
+        (!F1.firstElementChild ||
+          !F1.firstElementChild.classList.contains("black")) &&
+        (!G1.firstElementChild ||
+          (!G1.firstElementChild.classList.contains("white") &&
+            !G1.firstElementChild.classList.contains("black")))
+      ) {
+        F1.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(F1);
+      }
+      if (
+        (!E1.firstElementChild ||
+          !E1.firstElementChild.classList.contains("black")) &&
+        (!F1.firstElementChild ||
+          (!F1.firstElementChild.classList.contains("white") &&
+            !F1.firstElementChild.classList.contains("black"))) &&
+        (!G1.firstElementChild ||
+          (!G1.firstElementChild.classList.contains("white") &&
+            !G1.firstElementChild.classList.contains("black")))
+      ) {
+        E1.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(E1);
+      }
+      if (
+        (!D1.firstElementChild ||
+          !D1.firstElementChild.classList.contains("black")) &&
+        (!E1.firstElementChild ||
+          (!E1.firstElementChild.classList.contains("white") &&
+            !E1.firstElementChild.classList.contains("black"))) &&
+        (!F1.firstElementChild ||
+          (!F1.firstElementChild.classList.contains("white") &&
+            !F1.firstElementChild.classList.contains("black"))) &&
+        (!G1.firstElementChild ||
+          (!G1.firstElementChild.classList.contains("white") &&
+            !G1.firstElementChild.classList.contains("black")))
+      ) {
+        D1.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(D1);
+      }
+      if (
+        (!C1.firstElementChild ||
+          !C1.firstElementChild.classList.contains("black")) &&
+        (!D1.firstElementChild ||
+          (!D1.firstElementChild.classList.contains("white") &&
+            !D1.firstElementChild.classList.contains("black"))) &&
+        (!E1.firstElementChild ||
+          (!E1.firstElementChild.classList.contains("white") &&
+            !E1.firstElementChild.classList.contains("black"))) &&
+        (!F1.firstElementChild ||
+          (!F1.firstElementChild.classList.contains("white") &&
+            !F1.firstElementChild.classList.contains("black"))) &&
+        (!G1.firstElementChild ||
+          (!G1.firstElementChild.classList.contains("white") &&
+            !G1.firstElementChild.classList.contains("black")))
+      ) {
+        C1.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(C1);
+      }
+      if (
+        (!B1.firstElementChild ||
+          !B1.firstElementChild.classList.contains("black")) &&
+        (!C1.firstElementChild ||
+          (!C1.firstElementChild.classList.contains("white") &&
+            !C1.firstElementChild.classList.contains("black"))) &&
+        (!D1.firstElementChild ||
+          (!D1.firstElementChild.classList.contains("white") &&
+            !D1.firstElementChild.classList.contains("black"))) &&
+        (!E1.firstElementChild ||
+          (!E1.firstElementChild.classList.contains("white") &&
+            !E1.firstElementChild.classList.contains("black"))) &&
+        (!F1.firstElementChild ||
+          (!F1.firstElementChild.classList.contains("white") &&
+            !F1.firstElementChild.classList.contains("black"))) &&
+        (!G1.firstElementChild ||
+          (!G1.firstElementChild.classList.contains("white") &&
+            !G1.firstElementChild.classList.contains("black")))
+      ) {
+        B1.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(B1);
+      }
+      if (
+        (!A1.firstElementChild ||
+          !A1.firstElementChild.classList.contains("black")) &&
+        (!B1.firstElementChild ||
+          (!B1.firstElementChild.classList.contains("white") &&
+            !B1.firstElementChild.classList.contains("black"))) &&
+        (!C1.firstElementChild ||
+          (!C1.firstElementChild.classList.contains("white") &&
+            !C1.firstElementChild.classList.contains("black"))) &&
+        (!D1.firstElementChild ||
+          (!D1.firstElementChild.classList.contains("white") &&
+            !D1.firstElementChild.classList.contains("black"))) &&
+        (!E1.firstElementChild ||
+          (!E1.firstElementChild.classList.contains("white") &&
+            !E1.firstElementChild.classList.contains("black"))) &&
+        (!F1.firstElementChild ||
+          (!F1.firstElementChild.classList.contains("white") &&
+            !F1.firstElementChild.classList.contains("black"))) &&
+        (!G1.firstElementChild ||
+          (!G1.firstElementChild.classList.contains("white") &&
+            !G1.firstElementChild.classList.contains("black")))
+      ) {
+        A1.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(A1);
+      }
+    }
+  }
+
+  // White Rook on H2
+  if (selectedPiece.classList.contains("whiteRook")) {
+    if (currentSquare === "H2") {
+      // Vertical UP (H3 → H8)
+      if (
+        !H3.firstElementChild ||
+        !H3.firstElementChild.classList.contains("white")
+      ) {
+        H3.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(H3);
+      }
+      if (
+        (!H4.firstElementChild ||
+          !H4.firstElementChild.classList.contains("white")) &&
         (!H3.firstElementChild ||
           (!H3.firstElementChild.classList.contains("white") &&
             !H3.firstElementChild.classList.contains("black")))
@@ -20337,7 +20529,7 @@ const rookMovement = () => {
       }
       if (
         (!H5.firstElementChild ||
-          !H5.firstElementChild.classList.contains(color)) &&
+          !H5.firstElementChild.classList.contains("white")) &&
         (!H4.firstElementChild ||
           (!H4.firstElementChild.classList.contains("white") &&
             !H4.firstElementChild.classList.contains("black"))) &&
@@ -20350,7 +20542,7 @@ const rookMovement = () => {
       }
       if (
         (!H6.firstElementChild ||
-          !H6.firstElementChild.classList.contains(color)) &&
+          !H6.firstElementChild.classList.contains("white")) &&
         (!H5.firstElementChild ||
           (!H5.firstElementChild.classList.contains("white") &&
             !H5.firstElementChild.classList.contains("black"))) &&
@@ -20366,7 +20558,7 @@ const rookMovement = () => {
       }
       if (
         (!H7.firstElementChild ||
-          !H7.firstElementChild.classList.contains(color)) &&
+          !H7.firstElementChild.classList.contains("white")) &&
         (!H6.firstElementChild ||
           (!H6.firstElementChild.classList.contains("white") &&
             !H6.firstElementChild.classList.contains("black"))) &&
@@ -20385,7 +20577,7 @@ const rookMovement = () => {
       }
       if (
         (!H8.firstElementChild ||
-          !H8.firstElementChild.classList.contains(color)) &&
+          !H8.firstElementChild.classList.contains("white")) &&
         (!H7.firstElementChild ||
           (!H7.firstElementChild.classList.contains("white") &&
             !H7.firstElementChild.classList.contains("black"))) &&
@@ -20409,7 +20601,7 @@ const rookMovement = () => {
       // Vertical DOWN (H1)
       if (
         !H1.firstElementChild ||
-        !H1.firstElementChild.classList.contains(color)
+        !H1.firstElementChild.classList.contains("white")
       ) {
         H1.classList.toggle("highlightBlue");
         recentlyHighlightedElements.push(H1);
@@ -20418,14 +20610,14 @@ const rookMovement = () => {
       // Horizontal LEFT (G2 → A2)
       if (
         !G2.firstElementChild ||
-        !G2.firstElementChild.classList.contains(color)
+        !G2.firstElementChild.classList.contains("white")
       ) {
         G2.classList.toggle("highlightBlue");
         recentlyHighlightedElements.push(G2);
       }
       if (
         (!F2.firstElementChild ||
-          !F2.firstElementChild.classList.contains(color)) &&
+          !F2.firstElementChild.classList.contains("white")) &&
         (!G2.firstElementChild ||
           (!G2.firstElementChild.classList.contains("white") &&
             !G2.firstElementChild.classList.contains("black")))
@@ -20435,7 +20627,7 @@ const rookMovement = () => {
       }
       if (
         (!E2.firstElementChild ||
-          !E2.firstElementChild.classList.contains(color)) &&
+          !E2.firstElementChild.classList.contains("white")) &&
         (!F2.firstElementChild ||
           (!F2.firstElementChild.classList.contains("white") &&
             !F2.firstElementChild.classList.contains("black"))) &&
@@ -20448,7 +20640,7 @@ const rookMovement = () => {
       }
       if (
         (!D2.firstElementChild ||
-          !D2.firstElementChild.classList.contains(color)) &&
+          !D2.firstElementChild.classList.contains("white")) &&
         (!E2.firstElementChild ||
           (!E2.firstElementChild.classList.contains("white") &&
             !E2.firstElementChild.classList.contains("black"))) &&
@@ -20464,7 +20656,7 @@ const rookMovement = () => {
       }
       if (
         (!C2.firstElementChild ||
-          !C2.firstElementChild.classList.contains(color)) &&
+          !C2.firstElementChild.classList.contains("white")) &&
         (!D2.firstElementChild ||
           (!D2.firstElementChild.classList.contains("white") &&
             !D2.firstElementChild.classList.contains("black"))) &&
@@ -20483,7 +20675,7 @@ const rookMovement = () => {
       }
       if (
         (!B2.firstElementChild ||
-          !B2.firstElementChild.classList.contains(color)) &&
+          !B2.firstElementChild.classList.contains("white")) &&
         (!C2.firstElementChild ||
           (!C2.firstElementChild.classList.contains("white") &&
             !C2.firstElementChild.classList.contains("black"))) &&
@@ -20505,7 +20697,7 @@ const rookMovement = () => {
       }
       if (
         (!A2.firstElementChild ||
-          !A2.firstElementChild.classList.contains(color)) &&
+          !A2.firstElementChild.classList.contains("white")) &&
         (!B2.firstElementChild ||
           (!B2.firstElementChild.classList.contains("white") &&
             !B2.firstElementChild.classList.contains("black"))) &&
@@ -20531,1262 +20723,2757 @@ const rookMovement = () => {
     }
   }
 
-  if (currentSquare === "H3") {
-    const color = selectedPiece.classList.contains("whiteRook")
-      ? "white"
-      : "black";
+  // Black Rook on H2
+  if (selectedPiece.classList.contains("blackRook")) {
+    if (currentSquare === "H2") {
+      // Vertical UP (H3 → H8)
+      if (
+        !H3.firstElementChild ||
+        !H3.firstElementChild.classList.contains("black")
+      ) {
+        H3.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(H3);
+      }
+      if (
+        (!H4.firstElementChild ||
+          !H4.firstElementChild.classList.contains("black")) &&
+        (!H3.firstElementChild ||
+          (!H3.firstElementChild.classList.contains("white") &&
+            !H3.firstElementChild.classList.contains("black")))
+      ) {
+        H4.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(H4);
+      }
+      if (
+        (!H5.firstElementChild ||
+          !H5.firstElementChild.classList.contains("black")) &&
+        (!H4.firstElementChild ||
+          (!H4.firstElementChild.classList.contains("white") &&
+            !H4.firstElementChild.classList.contains("black"))) &&
+        (!H3.firstElementChild ||
+          (!H3.firstElementChild.classList.contains("white") &&
+            !H3.firstElementChild.classList.contains("black")))
+      ) {
+        H5.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(H5);
+      }
+      if (
+        (!H6.firstElementChild ||
+          !H6.firstElementChild.classList.contains("black")) &&
+        (!H5.firstElementChild ||
+          (!H5.firstElementChild.classList.contains("white") &&
+            !H5.firstElementChild.classList.contains("black"))) &&
+        (!H4.firstElementChild ||
+          (!H4.firstElementChild.classList.contains("white") &&
+            !H4.firstElementChild.classList.contains("black"))) &&
+        (!H3.firstElementChild ||
+          (!H3.firstElementChild.classList.contains("white") &&
+            !H3.firstElementChild.classList.contains("black")))
+      ) {
+        H6.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(H6);
+      }
+      if (
+        (!H7.firstElementChild ||
+          !H7.firstElementChild.classList.contains("black")) &&
+        (!H6.firstElementChild ||
+          (!H6.firstElementChild.classList.contains("white") &&
+            !H6.firstElementChild.classList.contains("black"))) &&
+        (!H5.firstElementChild ||
+          (!H5.firstElementChild.classList.contains("white") &&
+            !H5.firstElementChild.classList.contains("black"))) &&
+        (!H4.firstElementChild ||
+          (!H4.firstElementChild.classList.contains("white") &&
+            !H4.firstElementChild.classList.contains("black"))) &&
+        (!H3.firstElementChild ||
+          (!H3.firstElementChild.classList.contains("white") &&
+            !H3.firstElementChild.classList.contains("black")))
+      ) {
+        H7.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(H7);
+      }
+      if (
+        (!H8.firstElementChild ||
+          !H8.firstElementChild.classList.contains("black")) &&
+        (!H7.firstElementChild ||
+          (!H7.firstElementChild.classList.contains("white") &&
+            !H7.firstElementChild.classList.contains("black"))) &&
+        (!H6.firstElementChild ||
+          (!H6.firstElementChild.classList.contains("white") &&
+            !H6.firstElementChild.classList.contains("black"))) &&
+        (!H5.firstElementChild ||
+          (!H5.firstElementChild.classList.contains("white") &&
+            !H5.firstElementChild.classList.contains("black"))) &&
+        (!H4.firstElementChild ||
+          (!H4.firstElementChild.classList.contains("white") &&
+            !H4.firstElementChild.classList.contains("black"))) &&
+        (!H3.firstElementChild ||
+          (!H3.firstElementChild.classList.contains("white") &&
+            !H3.firstElementChild.classList.contains("black")))
+      ) {
+        H8.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(H8);
+      }
 
-    // Vertical UP (H4 → H8)
-    if (
-      !H4.firstElementChild ||
-      !H4.firstElementChild.classList.contains(color)
-    ) {
-      H4.classList.toggle("highlightBlue");
-      recentlyHighlightedElements.push(H4);
-    }
-    if (
-      (!H5.firstElementChild ||
-        !H5.firstElementChild.classList.contains(color)) &&
-      (!H4.firstElementChild ||
-        (!H4.firstElementChild.classList.contains("white") &&
-          !H4.firstElementChild.classList.contains("black")))
-    ) {
-      H5.classList.toggle("highlightBlue");
-      recentlyHighlightedElements.push(H5);
-    }
-    if (
-      (!H6.firstElementChild ||
-        !H6.firstElementChild.classList.contains(color)) &&
-      (!H5.firstElementChild ||
-        (!H5.firstElementChild.classList.contains("white") &&
-          !H5.firstElementChild.classList.contains("black"))) &&
-      (!H4.firstElementChild ||
-        (!H4.firstElementChild.classList.contains("white") &&
-          !H4.firstElementChild.classList.contains("black")))
-    ) {
-      H6.classList.toggle("highlightBlue");
-      recentlyHighlightedElements.push(H6);
-    }
-    if (
-      (!H7.firstElementChild ||
-        !H7.firstElementChild.classList.contains(color)) &&
-      (!H6.firstElementChild ||
-        (!H6.firstElementChild.classList.contains("white") &&
-          !H6.firstElementChild.classList.contains("black"))) &&
-      (!H5.firstElementChild ||
-        (!H5.firstElementChild.classList.contains("white") &&
-          !H5.firstElementChild.classList.contains("black"))) &&
-      (!H4.firstElementChild ||
-        (!H4.firstElementChild.classList.contains("white") &&
-          !H4.firstElementChild.classList.contains("black")))
-    ) {
-      H7.classList.toggle("highlightBlue");
-      recentlyHighlightedElements.push(H7);
-    }
-    if (
-      (!H8.firstElementChild ||
-        !H8.firstElementChild.classList.contains(color)) &&
-      (!H7.firstElementChild ||
-        (!H7.firstElementChild.classList.contains("white") &&
-          !H7.firstElementChild.classList.contains("black"))) &&
-      (!H6.firstElementChild ||
-        (!H6.firstElementChild.classList.contains("white") &&
-          !H6.firstElementChild.classList.contains("black"))) &&
-      (!H5.firstElementChild ||
-        (!H5.firstElementChild.classList.contains("white") &&
-          !H5.firstElementChild.classList.contains("black"))) &&
-      (!H4.firstElementChild ||
-        (!H4.firstElementChild.classList.contains("white") &&
-          !H4.firstElementChild.classList.contains("black")))
-    ) {
-      H8.classList.toggle("highlightBlue");
-      recentlyHighlightedElements.push(H8);
-    }
+      // Vertical DOWN (H1)
+      if (
+        !H1.firstElementChild ||
+        !H1.firstElementChild.classList.contains("black")
+      ) {
+        H1.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(H1);
+      }
 
-    // Vertical DOWN (H2 → H1)
-    if (
-      !H2.firstElementChild ||
-      !H2.firstElementChild.classList.contains(color)
-    ) {
-      H2.classList.toggle("highlightBlue");
-      recentlyHighlightedElements.push(H2);
-    }
-    if (
-      (!H1.firstElementChild ||
-        !H1.firstElementChild.classList.contains(color)) &&
-      (!H2.firstElementChild ||
-        (!H2.firstElementChild.classList.contains("white") &&
-          !H2.firstElementChild.classList.contains("black")))
-    ) {
-      H1.classList.toggle("highlightBlue");
-      recentlyHighlightedElements.push(H1);
-    }
-
-    // Horizontal LEFT (G3 → A3)
-    if (
-      !G3.firstElementChild ||
-      !G3.firstElementChild.classList.contains(color)
-    ) {
-      G3.classList.toggle("highlightBlue");
-      recentlyHighlightedElements.push(G3);
-    }
-    if (
-      (!F3.firstElementChild ||
-        !F3.firstElementChild.classList.contains(color)) &&
-      (!G3.firstElementChild ||
-        (!G3.firstElementChild.classList.contains("white") &&
-          !G3.firstElementChild.classList.contains("black")))
-    ) {
-      F3.classList.toggle("highlightBlue");
-      recentlyHighlightedElements.push(F3);
-    }
-    if (
-      (!E3.firstElementChild ||
-        !E3.firstElementChild.classList.contains(color)) &&
-      (!F3.firstElementChild ||
-        (!F3.firstElementChild.classList.contains("white") &&
-          !F3.firstElementChild.classList.contains("black"))) &&
-      (!G3.firstElementChild ||
-        (!G3.firstElementChild.classList.contains("white") &&
-          !G3.firstElementChild.classList.contains("black")))
-    ) {
-      E3.classList.toggle("highlightBlue");
-      recentlyHighlightedElements.push(E3);
-    }
-    if (
-      (!D3.firstElementChild ||
-        !D3.firstElementChild.classList.contains(color)) &&
-      (!E3.firstElementChild ||
-        (!E3.firstElementChild.classList.contains("white") &&
-          !E3.firstElementChild.classList.contains("black"))) &&
-      (!F3.firstElementChild ||
-        (!F3.firstElementChild.classList.contains("white") &&
-          !F3.firstElementChild.classList.contains("black"))) &&
-      (!G3.firstElementChild ||
-        (!G3.firstElementChild.classList.contains("white") &&
-          !G3.firstElementChild.classList.contains("black")))
-    ) {
-      D3.classList.toggle("highlightBlue");
-      recentlyHighlightedElements.push(D3);
-    }
-    if (
-      (!C3.firstElementChild ||
-        !C3.firstElementChild.classList.contains(color)) &&
-      (!D3.firstElementChild ||
-        (!D3.firstElementChild.classList.contains("white") &&
-          !D3.firstElementChild.classList.contains("black"))) &&
-      (!E3.firstElementChild ||
-        (!E3.firstElementChild.classList.contains("white") &&
-          !E3.firstElementChild.classList.contains("black"))) &&
-      (!F3.firstElementChild ||
-        (!F3.firstElementChild.classList.contains("white") &&
-          !F3.firstElementChild.classList.contains("black"))) &&
-      (!G3.firstElementChild ||
-        (!G3.firstElementChild.classList.contains("white") &&
-          !G3.firstElementChild.classList.contains("black")))
-    ) {
-      C3.classList.toggle("highlightBlue");
-      recentlyHighlightedElements.push(C3);
-    }
-    if (
-      (!B3.firstElementChild ||
-        !B3.firstElementChild.classList.contains(color)) &&
-      (!C3.firstElementChild ||
-        (!C3.firstElementChild.classList.contains("white") &&
-          !C3.firstElementChild.classList.contains("black"))) &&
-      (!D3.firstElementChild ||
-        (!D3.firstElementChild.classList.contains("white") &&
-          !D3.firstElementChild.classList.contains("black"))) &&
-      (!E3.firstElementChild ||
-        (!E3.firstElementChild.classList.contains("white") &&
-          !E3.firstElementChild.classList.contains("black"))) &&
-      (!F3.firstElementChild ||
-        (!F3.firstElementChild.classList.contains("white") &&
-          !F3.firstElementChild.classList.contains("black"))) &&
-      (!G3.firstElementChild ||
-        (!G3.firstElementChild.classList.contains("white") &&
-          !G3.firstElementChild.classList.contains("black")))
-    ) {
-      B3.classList.toggle("highlightBlue");
-      recentlyHighlightedElements.push(B3);
-    }
-    if (
-      (!A3.firstElementChild ||
-        !A3.firstElementChild.classList.contains(color)) &&
-      (!B3.firstElementChild ||
-        (!B3.firstElementChild.classList.contains("white") &&
-          !B3.firstElementChild.classList.contains("black"))) &&
-      (!C3.firstElementChild ||
-        (!C3.firstElementChild.classList.contains("white") &&
-          !C3.firstElementChild.classList.contains("black"))) &&
-      (!D3.firstElementChild ||
-        (!D3.firstElementChild.classList.contains("white") &&
-          !D3.firstElementChild.classList.contains("black"))) &&
-      (!E3.firstElementChild ||
-        (!E3.firstElementChild.classList.contains("white") &&
-          !E3.firstElementChild.classList.contains("black"))) &&
-      (!F3.firstElementChild ||
-        (!F3.firstElementChild.classList.contains("white") &&
-          !F3.firstElementChild.classList.contains("black"))) &&
-      (!G3.firstElementChild ||
-        (!G3.firstElementChild.classList.contains("white") &&
-          !G3.firstElementChild.classList.contains("black")))
-    ) {
-      A3.classList.toggle("highlightBlue");
-      recentlyHighlightedElements.push(A3);
+      // Horizontal LEFT (G2 → A2)
+      if (
+        !G2.firstElementChild ||
+        !G2.firstElementChild.classList.contains("black")
+      ) {
+        G2.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(G2);
+      }
+      if (
+        (!F2.firstElementChild ||
+          !F2.firstElementChild.classList.contains("black")) &&
+        (!G2.firstElementChild ||
+          (!G2.firstElementChild.classList.contains("white") &&
+            !G2.firstElementChild.classList.contains("black")))
+      ) {
+        F2.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(F2);
+      }
+      if (
+        (!E2.firstElementChild ||
+          !E2.firstElementChild.classList.contains("black")) &&
+        (!F2.firstElementChild ||
+          (!F2.firstElementChild.classList.contains("white") &&
+            !F2.firstElementChild.classList.contains("black"))) &&
+        (!G2.firstElementChild ||
+          (!G2.firstElementChild.classList.contains("white") &&
+            !G2.firstElementChild.classList.contains("black")))
+      ) {
+        E2.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(E2);
+      }
+      if (
+        (!D2.firstElementChild ||
+          !D2.firstElementChild.classList.contains("black")) &&
+        (!E2.firstElementChild ||
+          (!E2.firstElementChild.classList.contains("white") &&
+            !E2.firstElementChild.classList.contains("black"))) &&
+        (!F2.firstElementChild ||
+          (!F2.firstElementChild.classList.contains("white") &&
+            !F2.firstElementChild.classList.contains("black"))) &&
+        (!G2.firstElementChild ||
+          (!G2.firstElementChild.classList.contains("white") &&
+            !G2.firstElementChild.classList.contains("black")))
+      ) {
+        D2.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(D2);
+      }
+      if (
+        (!C2.firstElementChild ||
+          !C2.firstElementChild.classList.contains("black")) &&
+        (!D2.firstElementChild ||
+          (!D2.firstElementChild.classList.contains("white") &&
+            !D2.firstElementChild.classList.contains("black"))) &&
+        (!E2.firstElementChild ||
+          (!E2.firstElementChild.classList.contains("white") &&
+            !E2.firstElementChild.classList.contains("black"))) &&
+        (!F2.firstElementChild ||
+          (!F2.firstElementChild.classList.contains("white") &&
+            !F2.firstElementChild.classList.contains("black"))) &&
+        (!G2.firstElementChild ||
+          (!G2.firstElementChild.classList.contains("white") &&
+            !G2.firstElementChild.classList.contains("black")))
+      ) {
+        C2.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(C2);
+      }
+      if (
+        (!B2.firstElementChild ||
+          !B2.firstElementChild.classList.contains("black")) &&
+        (!C2.firstElementChild ||
+          (!C2.firstElementChild.classList.contains("white") &&
+            !C2.firstElementChild.classList.contains("black"))) &&
+        (!D2.firstElementChild ||
+          (!D2.firstElementChild.classList.contains("white") &&
+            !D2.firstElementChild.classList.contains("black"))) &&
+        (!E2.firstElementChild ||
+          (!E2.firstElementChild.classList.contains("white") &&
+            !E2.firstElementChild.classList.contains("black"))) &&
+        (!F2.firstElementChild ||
+          (!F2.firstElementChild.classList.contains("white") &&
+            !F2.firstElementChild.classList.contains("black"))) &&
+        (!G2.firstElementChild ||
+          (!G2.firstElementChild.classList.contains("white") &&
+            !G2.firstElementChild.classList.contains("black")))
+      ) {
+        B2.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(B2);
+      }
+      if (
+        (!A2.firstElementChild ||
+          !A2.firstElementChild.classList.contains("black")) &&
+        (!B2.firstElementChild ||
+          (!B2.firstElementChild.classList.contains("white") &&
+            !B2.firstElementChild.classList.contains("black"))) &&
+        (!C2.firstElementChild ||
+          (!C2.firstElementChild.classList.contains("white") &&
+            !C2.firstElementChild.classList.contains("black"))) &&
+        (!D2.firstElementChild ||
+          (!D2.firstElementChild.classList.contains("white") &&
+            !D2.firstElementChild.classList.contains("black"))) &&
+        (!E2.firstElementChild ||
+          (!E2.firstElementChild.classList.contains("white") &&
+            !E2.firstElementChild.classList.contains("black"))) &&
+        (!F2.firstElementChild ||
+          (!F2.firstElementChild.classList.contains("white") &&
+            !F2.firstElementChild.classList.contains("black"))) &&
+        (!G2.firstElementChild ||
+          (!G2.firstElementChild.classList.contains("white") &&
+            !G2.firstElementChild.classList.contains("black")))
+      ) {
+        A2.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(A2);
+      }
     }
   }
-  if (currentSquare === "H4") {
-    const color = selectedPiece.classList.contains("whiteRook")
-      ? "white"
-      : "black";
+  // White Rook on H3
+  if (selectedPiece.classList.contains("whiteRook")) {
+    if (currentSquare === "H3") {
+      // Vertical UP (H4 → H8)
+      if (
+        !H4.firstElementChild ||
+        !H4.firstElementChild.classList.contains("white")
+      ) {
+        H4.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(H4);
+      }
+      if (
+        (!H5.firstElementChild ||
+          !H5.firstElementChild.classList.contains("white")) &&
+        (!H4.firstElementChild ||
+          (!H4.firstElementChild.classList.contains("white") &&
+            !H4.firstElementChild.classList.contains("black")))
+      ) {
+        H5.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(H5);
+      }
+      if (
+        (!H6.firstElementChild ||
+          !H6.firstElementChild.classList.contains("white")) &&
+        (!H5.firstElementChild ||
+          (!H5.firstElementChild.classList.contains("white") &&
+            !H5.firstElementChild.classList.contains("black"))) &&
+        (!H4.firstElementChild ||
+          (!H4.firstElementChild.classList.contains("white") &&
+            !H4.firstElementChild.classList.contains("black")))
+      ) {
+        H6.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(H6);
+      }
+      if (
+        (!H7.firstElementChild ||
+          !H7.firstElementChild.classList.contains("white")) &&
+        (!H6.firstElementChild ||
+          (!H6.firstElementChild.classList.contains("white") &&
+            !H6.firstElementChild.classList.contains("black"))) &&
+        (!H5.firstElementChild ||
+          (!H5.firstElementChild.classList.contains("white") &&
+            !H5.firstElementChild.classList.contains("black"))) &&
+        (!H4.firstElementChild ||
+          (!H4.firstElementChild.classList.contains("white") &&
+            !H4.firstElementChild.classList.contains("black")))
+      ) {
+        H7.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(H7);
+      }
+      if (
+        (!H8.firstElementChild ||
+          !H8.firstElementChild.classList.contains("white")) &&
+        (!H7.firstElementChild ||
+          (!H7.firstElementChild.classList.contains("white") &&
+            !H7.firstElementChild.classList.contains("black"))) &&
+        (!H6.firstElementChild ||
+          (!H6.firstElementChild.classList.contains("white") &&
+            !H6.firstElementChild.classList.contains("black"))) &&
+        (!H5.firstElementChild ||
+          (!H5.firstElementChild.classList.contains("white") &&
+            !H5.firstElementChild.classList.contains("black"))) &&
+        (!H4.firstElementChild ||
+          (!H4.firstElementChild.classList.contains("white") &&
+            !H4.firstElementChild.classList.contains("black")))
+      ) {
+        H8.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(H8);
+      }
 
-    // Vertical UP (H5 → H8)
-    if (
-      !H5.firstElementChild ||
-      !H5.firstElementChild.classList.contains(color)
-    ) {
-      H5.classList.toggle("highlightBlue");
-      recentlyHighlightedElements.push(H5);
-    }
-    if (
-      (!H6.firstElementChild ||
-        !H6.firstElementChild.classList.contains(color)) &&
-      (!H5.firstElementChild ||
-        (!H5.firstElementChild.classList.contains("white") &&
-          !H5.firstElementChild.classList.contains("black")))
-    ) {
-      H6.classList.toggle("highlightBlue");
-      recentlyHighlightedElements.push(H6);
-    }
-    if (
-      (!H7.firstElementChild ||
-        !H7.firstElementChild.classList.contains(color)) &&
-      (!H6.firstElementChild ||
-        (!H6.firstElementChild.classList.contains("white") &&
-          !H6.firstElementChild.classList.contains("black"))) &&
-      (!H5.firstElementChild ||
-        (!H5.firstElementChild.classList.contains("white") &&
-          !H5.firstElementChild.classList.contains("black")))
-    ) {
-      H7.classList.toggle("highlightBlue");
-      recentlyHighlightedElements.push(H7);
-    }
-    if (
-      (!H8.firstElementChild ||
-        !H8.firstElementChild.classList.contains(color)) &&
-      (!H7.firstElementChild ||
-        (!H7.firstElementChild.classList.contains("white") &&
-          !H7.firstElementChild.classList.contains("black"))) &&
-      (!H6.firstElementChild ||
-        (!H6.firstElementChild.classList.contains("white") &&
-          !H6.firstElementChild.classList.contains("black"))) &&
-      (!H5.firstElementChild ||
-        (!H5.firstElementChild.classList.contains("white") &&
-          !H5.firstElementChild.classList.contains("black")))
-    ) {
-      H8.classList.toggle("highlightBlue");
-      recentlyHighlightedElements.push(H8);
-    }
+      // Vertical DOWN (H2 → H1)
+      if (
+        !H2.firstElementChild ||
+        !H2.firstElementChild.classList.contains("white")
+      ) {
+        H2.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(H2);
+      }
+      if (
+        (!H1.firstElementChild ||
+          !H1.firstElementChild.classList.contains("white")) &&
+        (!H2.firstElementChild ||
+          (!H2.firstElementChild.classList.contains("white") &&
+            !H2.firstElementChild.classList.contains("black")))
+      ) {
+        H1.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(H1);
+      }
 
-    // Vertical DOWN (H3 → H1)
-    if (
-      !H3.firstElementChild ||
-      !H3.firstElementChild.classList.contains(color)
-    ) {
-      H3.classList.toggle("highlightBlue");
-      recentlyHighlightedElements.push(H3);
-    }
-    if (
-      (!H2.firstElementChild ||
-        !H2.firstElementChild.classList.contains(color)) &&
-      (!H3.firstElementChild ||
-        (!H3.firstElementChild.classList.contains("white") &&
-          !H3.firstElementChild.classList.contains("black")))
-    ) {
-      H2.classList.toggle("highlightBlue");
-      recentlyHighlightedElements.push(H2);
-    }
-    if (
-      (!H1.firstElementChild ||
-        !H1.firstElementChild.classList.contains(color)) &&
-      (!H2.firstElementChild ||
-        (!H2.firstElementChild.classList.contains("white") &&
-          !H2.firstElementChild.classList.contains("black"))) &&
-      (!H3.firstElementChild ||
-        (!H3.firstElementChild.classList.contains("white") &&
-          !H3.firstElementChild.classList.contains("black")))
-    ) {
-      H1.classList.toggle("highlightBlue");
-      recentlyHighlightedElements.push(H1);
-    }
-
-    // Horizontal LEFT (G4 → A4)
-    if (
-      !G4.firstElementChild ||
-      !G4.firstElementChild.classList.contains(color)
-    ) {
-      G4.classList.toggle("highlightBlue");
-      recentlyHighlightedElements.push(G4);
-    }
-    if (
-      (!F4.firstElementChild ||
-        !F4.firstElementChild.classList.contains(color)) &&
-      (!G4.firstElementChild ||
-        (!G4.firstElementChild.classList.contains("white") &&
-          !G4.firstElementChild.classList.contains("black")))
-    ) {
-      F4.classList.toggle("highlightBlue");
-      recentlyHighlightedElements.push(F4);
-    }
-    if (
-      (!E4.firstElementChild ||
-        !E4.firstElementChild.classList.contains(color)) &&
-      (!F4.firstElementChild ||
-        (!F4.firstElementChild.classList.contains("white") &&
-          !F4.firstElementChild.classList.contains("black"))) &&
-      (!G4.firstElementChild ||
-        (!G4.firstElementChild.classList.contains("white") &&
-          !G4.firstElementChild.classList.contains("black")))
-    ) {
-      E4.classList.toggle("highlightBlue");
-      recentlyHighlightedElements.push(E4);
-    }
-    if (
-      (!D4.firstElementChild ||
-        !D4.firstElementChild.classList.contains(color)) &&
-      (!E4.firstElementChild ||
-        (!E4.firstElementChild.classList.contains("white") &&
-          !E4.firstElementChild.classList.contains("black"))) &&
-      (!F4.firstElementChild ||
-        (!F4.firstElementChild.classList.contains("white") &&
-          !F4.firstElementChild.classList.contains("black"))) &&
-      (!G4.firstElementChild ||
-        (!G4.firstElementChild.classList.contains("white") &&
-          !G4.firstElementChild.classList.contains("black")))
-    ) {
-      D4.classList.toggle("highlightBlue");
-      recentlyHighlightedElements.push(D4);
-    }
-    if (
-      (!C4.firstElementChild ||
-        !C4.firstElementChild.classList.contains(color)) &&
-      (!D4.firstElementChild ||
-        (!D4.firstElementChild.classList.contains("white") &&
-          !D4.firstElementChild.classList.contains("black"))) &&
-      (!E4.firstElementChild ||
-        (!E4.firstElementChild.classList.contains("white") &&
-          !E4.firstElementChild.classList.contains("black"))) &&
-      (!F4.firstElementChild ||
-        (!F4.firstElementChild.classList.contains("white") &&
-          !F4.firstElementChild.classList.contains("black"))) &&
-      (!G4.firstElementChild ||
-        (!G4.firstElementChild.classList.contains("white") &&
-          !G4.firstElementChild.classList.contains("black")))
-    ) {
-      C4.classList.toggle("highlightBlue");
-      recentlyHighlightedElements.push(C4);
-    }
-    if (
-      (!B4.firstElementChild ||
-        !B4.firstElementChild.classList.contains(color)) &&
-      (!C4.firstElementChild ||
-        (!C4.firstElementChild.classList.contains("white") &&
-          !C4.firstElementChild.classList.contains("black"))) &&
-      (!D4.firstElementChild ||
-        (!D4.firstElementChild.classList.contains("white") &&
-          !D4.firstElementChild.classList.contains("black"))) &&
-      (!E4.firstElementChild ||
-        (!E4.firstElementChild.classList.contains("white") &&
-          !E4.firstElementChild.classList.contains("black"))) &&
-      (!F4.firstElementChild ||
-        (!F4.firstElementChild.classList.contains("white") &&
-          !F4.firstElementChild.classList.contains("black"))) &&
-      (!G4.firstElementChild ||
-        (!G4.firstElementChild.classList.contains("white") &&
-          !G4.firstElementChild.classList.contains("black")))
-    ) {
-      B4.classList.toggle("highlightBlue");
-      recentlyHighlightedElements.push(B4);
-    }
-    if (
-      (!A4.firstElementChild ||
-        !A4.firstElementChild.classList.contains(color)) &&
-      (!B4.firstElementChild ||
-        (!B4.firstElementChild.classList.contains("white") &&
-          !B4.firstElementChild.classList.contains("black"))) &&
-      (!C4.firstElementChild ||
-        (!C4.firstElementChild.classList.contains("white") &&
-          !C4.firstElementChild.classList.contains("black"))) &&
-      (!D4.firstElementChild ||
-        (!D4.firstElementChild.classList.contains("white") &&
-          !D4.firstElementChild.classList.contains("black"))) &&
-      (!E4.firstElementChild ||
-        (!E4.firstElementChild.classList.contains("white") &&
-          !E4.firstElementChild.classList.contains("black"))) &&
-      (!F4.firstElementChild ||
-        (!F4.firstElementChild.classList.contains("white") &&
-          !F4.firstElementChild.classList.contains("black"))) &&
-      (!G4.firstElementChild ||
-        (!G4.firstElementChild.classList.contains("white") &&
-          !G4.firstElementChild.classList.contains("black")))
-    ) {
-      A4.classList.toggle("highlightBlue");
-      recentlyHighlightedElements.push(A4);
+      // Horizontal LEFT (G3 → A3)
+      if (
+        !G3.firstElementChild ||
+        !G3.firstElementChild.classList.contains("white")
+      ) {
+        G3.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(G3);
+      }
+      if (
+        (!F3.firstElementChild ||
+          !F3.firstElementChild.classList.contains("white")) &&
+        (!G3.firstElementChild ||
+          (!G3.firstElementChild.classList.contains("white") &&
+            !G3.firstElementChild.classList.contains("black")))
+      ) {
+        F3.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(F3);
+      }
+      if (
+        (!E3.firstElementChild ||
+          !E3.firstElementChild.classList.contains("white")) &&
+        (!F3.firstElementChild ||
+          (!F3.firstElementChild.classList.contains("white") &&
+            !F3.firstElementChild.classList.contains("black"))) &&
+        (!G3.firstElementChild ||
+          (!G3.firstElementChild.classList.contains("white") &&
+            !G3.firstElementChild.classList.contains("black")))
+      ) {
+        E3.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(E3);
+      }
+      if (
+        (!D3.firstElementChild ||
+          !D3.firstElementChild.classList.contains("white")) &&
+        (!E3.firstElementChild ||
+          (!E3.firstElementChild.classList.contains("white") &&
+            !E3.firstElementChild.classList.contains("black"))) &&
+        (!F3.firstElementChild ||
+          (!F3.firstElementChild.classList.contains("white") &&
+            !F3.firstElementChild.classList.contains("black"))) &&
+        (!G3.firstElementChild ||
+          (!G3.firstElementChild.classList.contains("white") &&
+            !G3.firstElementChild.classList.contains("black")))
+      ) {
+        D3.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(D3);
+      }
+      if (
+        (!C3.firstElementChild ||
+          !C3.firstElementChild.classList.contains("white")) &&
+        (!D3.firstElementChild ||
+          (!D3.firstElementChild.classList.contains("white") &&
+            !D3.firstElementChild.classList.contains("black"))) &&
+        (!E3.firstElementChild ||
+          (!E3.firstElementChild.classList.contains("white") &&
+            !E3.firstElementChild.classList.contains("black"))) &&
+        (!F3.firstElementChild ||
+          (!F3.firstElementChild.classList.contains("white") &&
+            !F3.firstElementChild.classList.contains("black"))) &&
+        (!G3.firstElementChild ||
+          (!G3.firstElementChild.classList.contains("white") &&
+            !G3.firstElementChild.classList.contains("black")))
+      ) {
+        C3.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(C3);
+      }
+      if (
+        (!B3.firstElementChild ||
+          !B3.firstElementChild.classList.contains("white")) &&
+        (!C3.firstElementChild ||
+          (!C3.firstElementChild.classList.contains("white") &&
+            !C3.firstElementChild.classList.contains("black"))) &&
+        (!D3.firstElementChild ||
+          (!D3.firstElementChild.classList.contains("white") &&
+            !D3.firstElementChild.classList.contains("black"))) &&
+        (!E3.firstElementChild ||
+          (!E3.firstElementChild.classList.contains("white") &&
+            !E3.firstElementChild.classList.contains("black"))) &&
+        (!F3.firstElementChild ||
+          (!F3.firstElementChild.classList.contains("white") &&
+            !F3.firstElementChild.classList.contains("black"))) &&
+        (!G3.firstElementChild ||
+          (!G3.firstElementChild.classList.contains("white") &&
+            !G3.firstElementChild.classList.contains("black")))
+      ) {
+        B3.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(B3);
+      }
+      if (
+        (!A3.firstElementChild ||
+          !A3.firstElementChild.classList.contains("white")) &&
+        (!B3.firstElementChild ||
+          (!B3.firstElementChild.classList.contains("white") &&
+            !B3.firstElementChild.classList.contains("black"))) &&
+        (!C3.firstElementChild ||
+          (!C3.firstElementChild.classList.contains("white") &&
+            !C3.firstElementChild.classList.contains("black"))) &&
+        (!D3.firstElementChild ||
+          (!D3.firstElementChild.classList.contains("white") &&
+            !D3.firstElementChild.classList.contains("black"))) &&
+        (!E3.firstElementChild ||
+          (!E3.firstElementChild.classList.contains("white") &&
+            !E3.firstElementChild.classList.contains("black"))) &&
+        (!F3.firstElementChild ||
+          (!F3.firstElementChild.classList.contains("white") &&
+            !F3.firstElementChild.classList.contains("black"))) &&
+        (!G3.firstElementChild ||
+          (!G3.firstElementChild.classList.contains("white") &&
+            !G3.firstElementChild.classList.contains("black")))
+      ) {
+        A3.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(A3);
+      }
     }
   }
-  if (currentSquare === "H5") {
-    const color = selectedPiece.classList.contains("whiteRook")
-      ? "white"
-      : "black";
 
-    // Vertical UP (H6 → H8)
-    if (
-      !H6.firstElementChild ||
-      !H6.firstElementChild.classList.contains(color)
-    ) {
-      H6.classList.toggle("highlightBlue");
-      recentlyHighlightedElements.push(H6);
-    }
-    if (
-      (!H7.firstElementChild ||
-        !H7.firstElementChild.classList.contains(color)) &&
-      (!H6.firstElementChild ||
-        (!H6.firstElementChild.classList.contains("white") &&
-          !H6.firstElementChild.classList.contains("black")))
-    ) {
-      H7.classList.toggle("highlightBlue");
-      recentlyHighlightedElements.push(H7);
-    }
-    if (
-      (!H8.firstElementChild ||
-        !H8.firstElementChild.classList.contains(color)) &&
-      (!H7.firstElementChild ||
-        (!H7.firstElementChild.classList.contains("white") &&
-          !H7.firstElementChild.classList.contains("black"))) &&
-      (!H6.firstElementChild ||
-        (!H6.firstElementChild.classList.contains("white") &&
-          !H6.firstElementChild.classList.contains("black")))
-    ) {
-      H8.classList.toggle("highlightBlue");
-      recentlyHighlightedElements.push(H8);
-    }
+  // Black Rook on H3
+  if (selectedPiece.classList.contains("blackRook")) {
+    if (currentSquare === "H3") {
+      // Vertical UP (H4 → H8)
+      if (
+        !H4.firstElementChild ||
+        !H4.firstElementChild.classList.contains("black")
+      ) {
+        H4.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(H4);
+      }
+      if (
+        (!H5.firstElementChild ||
+          !H5.firstElementChild.classList.contains("black")) &&
+        (!H4.firstElementChild ||
+          (!H4.firstElementChild.classList.contains("white") &&
+            !H4.firstElementChild.classList.contains("black")))
+      ) {
+        H5.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(H5);
+      }
+      if (
+        (!H6.firstElementChild ||
+          !H6.firstElementChild.classList.contains("black")) &&
+        (!H5.firstElementChild ||
+          (!H5.firstElementChild.classList.contains("white") &&
+            !H5.firstElementChild.classList.contains("black"))) &&
+        (!H4.firstElementChild ||
+          (!H4.firstElementChild.classList.contains("white") &&
+            !H4.firstElementChild.classList.contains("black")))
+      ) {
+        H6.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(H6);
+      }
+      if (
+        (!H7.firstElementChild ||
+          !H7.firstElementChild.classList.contains("black")) &&
+        (!H6.firstElementChild ||
+          (!H6.firstElementChild.classList.contains("white") &&
+            !H6.firstElementChild.classList.contains("black"))) &&
+        (!H5.firstElementChild ||
+          (!H5.firstElementChild.classList.contains("white") &&
+            !H5.firstElementChild.classList.contains("black"))) &&
+        (!H4.firstElementChild ||
+          (!H4.firstElementChild.classList.contains("white") &&
+            !H4.firstElementChild.classList.contains("black")))
+      ) {
+        H7.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(H7);
+      }
+      if (
+        (!H8.firstElementChild ||
+          !H8.firstElementChild.classList.contains("black")) &&
+        (!H7.firstElementChild ||
+          (!H7.firstElementChild.classList.contains("white") &&
+            !H7.firstElementChild.classList.contains("black"))) &&
+        (!H6.firstElementChild ||
+          (!H6.firstElementChild.classList.contains("white") &&
+            !H6.firstElementChild.classList.contains("black"))) &&
+        (!H5.firstElementChild ||
+          (!H5.firstElementChild.classList.contains("white") &&
+            !H5.firstElementChild.classList.contains("black"))) &&
+        (!H4.firstElementChild ||
+          (!H4.firstElementChild.classList.contains("white") &&
+            !H4.firstElementChild.classList.contains("black")))
+      ) {
+        H8.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(H8);
+      }
 
-    // Vertical DOWN (H4 → H1)
-    if (
-      !H4.firstElementChild ||
-      !H4.firstElementChild.classList.contains(color)
-    ) {
-      H4.classList.toggle("highlightBlue");
-      recentlyHighlightedElements.push(H4);
-    }
-    if (
-      (!H3.firstElementChild ||
-        !H3.firstElementChild.classList.contains(color)) &&
-      (!H4.firstElementChild ||
-        (!H4.firstElementChild.classList.contains("white") &&
-          !H4.firstElementChild.classList.contains("black")))
-    ) {
-      H3.classList.toggle("highlightBlue");
-      recentlyHighlightedElements.push(H3);
-    }
-    if (
-      (!H2.firstElementChild ||
-        !H2.firstElementChild.classList.contains(color)) &&
-      (!H3.firstElementChild ||
-        (!H3.firstElementChild.classList.contains("white") &&
-          !H3.firstElementChild.classList.contains("black"))) &&
-      (!H4.firstElementChild ||
-        (!H4.firstElementChild.classList.contains("white") &&
-          !H4.firstElementChild.classList.contains("black")))
-    ) {
-      H2.classList.toggle("highlightBlue");
-      recentlyHighlightedElements.push(H2);
-    }
-    if (
-      (!H1.firstElementChild ||
-        !H1.firstElementChild.classList.contains(color)) &&
-      (!H2.firstElementChild ||
-        (!H2.firstElementChild.classList.contains("white") &&
-          !H2.firstElementChild.classList.contains("black"))) &&
-      (!H3.firstElementChild ||
-        (!H3.firstElementChild.classList.contains("white") &&
-          !H3.firstElementChild.classList.contains("black"))) &&
-      (!H4.firstElementChild ||
-        (!H4.firstElementChild.classList.contains("white") &&
-          !H4.firstElementChild.classList.contains("black")))
-    ) {
-      H1.classList.toggle("highlightBlue");
-      recentlyHighlightedElements.push(H1);
-    }
+      // Vertical DOWN (H2 → H1)
+      if (
+        !H2.firstElementChild ||
+        !H2.firstElementChild.classList.contains("black")
+      ) {
+        H2.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(H2);
+      }
+      if (
+        (!H1.firstElementChild ||
+          !H1.firstElementChild.classList.contains("black")) &&
+        (!H2.firstElementChild ||
+          (!H2.firstElementChild.classList.contains("white") &&
+            !H2.firstElementChild.classList.contains("black")))
+      ) {
+        H1.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(H1);
+      }
 
-    // Horizontal LEFT (G5 → A5)
-    if (
-      !G5.firstElementChild ||
-      !G5.firstElementChild.classList.contains(color)
-    ) {
-      G5.classList.toggle("highlightBlue");
-      recentlyHighlightedElements.push(G5);
-    }
-    if (
-      (!F5.firstElementChild ||
-        !F5.firstElementChild.classList.contains(color)) &&
-      (!G5.firstElementChild ||
-        (!G5.firstElementChild.classList.contains("white") &&
-          !G5.firstElementChild.classList.contains("black")))
-    ) {
-      F5.classList.toggle("highlightBlue");
-      recentlyHighlightedElements.push(F5);
-    }
-    if (
-      (!E5.firstElementChild ||
-        !E5.firstElementChild.classList.contains(color)) &&
-      (!F5.firstElementChild ||
-        (!F5.firstElementChild.classList.contains("white") &&
-          !F5.firstElementChild.classList.contains("black"))) &&
-      (!G5.firstElementChild ||
-        (!G5.firstElementChild.classList.contains("white") &&
-          !G5.firstElementChild.classList.contains("black")))
-    ) {
-      E5.classList.toggle("highlightBlue");
-      recentlyHighlightedElements.push(E5);
-    }
-    if (
-      (!D5.firstElementChild ||
-        !D5.firstElementChild.classList.contains(color)) &&
-      (!E5.firstElementChild ||
-        (!E5.firstElementChild.classList.contains("white") &&
-          !E5.firstElementChild.classList.contains("black"))) &&
-      (!F5.firstElementChild ||
-        (!F5.firstElementChild.classList.contains("white") &&
-          !F5.firstElementChild.classList.contains("black"))) &&
-      (!G5.firstElementChild ||
-        (!G5.firstElementChild.classList.contains("white") &&
-          !G5.firstElementChild.classList.contains("black")))
-    ) {
-      D5.classList.toggle("highlightBlue");
-      recentlyHighlightedElements.push(D5);
-    }
-    if (
-      (!C5.firstElementChild ||
-        !C5.firstElementChild.classList.contains(color)) &&
-      (!D5.firstElementChild ||
-        (!D5.firstElementChild.classList.contains("white") &&
-          !D5.firstElementChild.classList.contains("black"))) &&
-      (!E5.firstElementChild ||
-        (!E5.firstElementChild.classList.contains("white") &&
-          !E5.firstElementChild.classList.contains("black"))) &&
-      (!F5.firstElementChild ||
-        (!F5.firstElementChild.classList.contains("white") &&
-          !F5.firstElementChild.classList.contains("black"))) &&
-      (!G5.firstElementChild ||
-        (!G5.firstElementChild.classList.contains("white") &&
-          !G5.firstElementChild.classList.contains("black")))
-    ) {
-      C5.classList.toggle("highlightBlue");
-      recentlyHighlightedElements.push(C5);
-    }
-    if (
-      (!B5.firstElementChild ||
-        !B5.firstElementChild.classList.contains(color)) &&
-      (!C5.firstElementChild ||
-        (!C5.firstElementChild.classList.contains("white") &&
-          !C5.firstElementChild.classList.contains("black"))) &&
-      (!D5.firstElementChild ||
-        (!D5.firstElementChild.classList.contains("white") &&
-          !D5.firstElementChild.classList.contains("black"))) &&
-      (!E5.firstElementChild ||
-        (!E5.firstElementChild.classList.contains("white") &&
-          !E5.firstElementChild.classList.contains("black"))) &&
-      (!F5.firstElementChild ||
-        (!F5.firstElementChild.classList.contains("white") &&
-          !F5.firstElementChild.classList.contains("black"))) &&
-      (!G5.firstElementChild ||
-        (!G5.firstElementChild.classList.contains("white") &&
-          !G5.firstElementChild.classList.contains("black")))
-    ) {
-      B5.classList.toggle("highlightBlue");
-      recentlyHighlightedElements.push(B5);
-    }
-    if (
-      (!A5.firstElementChild ||
-        !A5.firstElementChild.classList.contains(color)) &&
-      (!B5.firstElementChild ||
-        (!B5.firstElementChild.classList.contains("white") &&
-          !B5.firstElementChild.classList.contains("black"))) &&
-      (!C5.firstElementChild ||
-        (!C5.firstElementChild.classList.contains("white") &&
-          !C5.firstElementChild.classList.contains("black"))) &&
-      (!D5.firstElementChild ||
-        (!D5.firstElementChild.classList.contains("white") &&
-          !D5.firstElementChild.classList.contains("black"))) &&
-      (!E5.firstElementChild ||
-        (!E5.firstElementChild.classList.contains("white") &&
-          !E5.firstElementChild.classList.contains("black"))) &&
-      (!F5.firstElementChild ||
-        (!F5.firstElementChild.classList.contains("white") &&
-          !F5.firstElementChild.classList.contains("black"))) &&
-      (!G5.firstElementChild ||
-        (!G5.firstElementChild.classList.contains("white") &&
-          !G5.firstElementChild.classList.contains("black")))
-    ) {
-      A5.classList.toggle("highlightBlue");
-      recentlyHighlightedElements.push(A5);
+      // Horizontal LEFT (G3 → A3)
+      if (
+        !G3.firstElementChild ||
+        !G3.firstElementChild.classList.contains("black")
+      ) {
+        G3.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(G3);
+      }
+      if (
+        (!F3.firstElementChild ||
+          !F3.firstElementChild.classList.contains("black")) &&
+        (!G3.firstElementChild ||
+          (!G3.firstElementChild.classList.contains("white") &&
+            !G3.firstElementChild.classList.contains("black")))
+      ) {
+        F3.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(F3);
+      }
+      if (
+        (!E3.firstElementChild ||
+          !E3.firstElementChild.classList.contains("black")) &&
+        (!F3.firstElementChild ||
+          (!F3.firstElementChild.classList.contains("white") &&
+            !F3.firstElementChild.classList.contains("black"))) &&
+        (!G3.firstElementChild ||
+          (!G3.firstElementChild.classList.contains("white") &&
+            !G3.firstElementChild.classList.contains("black")))
+      ) {
+        E3.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(E3);
+      }
+      if (
+        (!D3.firstElementChild ||
+          !D3.firstElementChild.classList.contains("black")) &&
+        (!E3.firstElementChild ||
+          (!E3.firstElementChild.classList.contains("white") &&
+            !E3.firstElementChild.classList.contains("black"))) &&
+        (!F3.firstElementChild ||
+          (!F3.firstElementChild.classList.contains("white") &&
+            !F3.firstElementChild.classList.contains("black"))) &&
+        (!G3.firstElementChild ||
+          (!G3.firstElementChild.classList.contains("white") &&
+            !G3.firstElementChild.classList.contains("black")))
+      ) {
+        D3.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(D3);
+      }
+      if (
+        (!C3.firstElementChild ||
+          !C3.firstElementChild.classList.contains("black")) &&
+        (!D3.firstElementChild ||
+          (!D3.firstElementChild.classList.contains("white") &&
+            !D3.firstElementChild.classList.contains("black"))) &&
+        (!E3.firstElementChild ||
+          (!E3.firstElementChild.classList.contains("white") &&
+            !E3.firstElementChild.classList.contains("black"))) &&
+        (!F3.firstElementChild ||
+          (!F3.firstElementChild.classList.contains("white") &&
+            !F3.firstElementChild.classList.contains("black"))) &&
+        (!G3.firstElementChild ||
+          (!G3.firstElementChild.classList.contains("white") &&
+            !G3.firstElementChild.classList.contains("black")))
+      ) {
+        C3.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(C3);
+      }
+      if (
+        (!B3.firstElementChild ||
+          !B3.firstElementChild.classList.contains("black")) &&
+        (!C3.firstElementChild ||
+          (!C3.firstElementChild.classList.contains("white") &&
+            !C3.firstElementChild.classList.contains("black"))) &&
+        (!D3.firstElementChild ||
+          (!D3.firstElementChild.classList.contains("white") &&
+            !D3.firstElementChild.classList.contains("black"))) &&
+        (!E3.firstElementChild ||
+          (!E3.firstElementChild.classList.contains("white") &&
+            !E3.firstElementChild.classList.contains("black"))) &&
+        (!F3.firstElementChild ||
+          (!F3.firstElementChild.classList.contains("white") &&
+            !F3.firstElementChild.classList.contains("black"))) &&
+        (!G3.firstElementChild ||
+          (!G3.firstElementChild.classList.contains("white") &&
+            !G3.firstElementChild.classList.contains("black")))
+      ) {
+        B3.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(B3);
+      }
+      if (
+        (!A3.firstElementChild ||
+          !A3.firstElementChild.classList.contains("black")) &&
+        (!B3.firstElementChild ||
+          (!B3.firstElementChild.classList.contains("white") &&
+            !B3.firstElementChild.classList.contains("black"))) &&
+        (!C3.firstElementChild ||
+          (!C3.firstElementChild.classList.contains("white") &&
+            !C3.firstElementChild.classList.contains("black"))) &&
+        (!D3.firstElementChild ||
+          (!D3.firstElementChild.classList.contains("white") &&
+            !D3.firstElementChild.classList.contains("black"))) &&
+        (!E3.firstElementChild ||
+          (!E3.firstElementChild.classList.contains("white") &&
+            !E3.firstElementChild.classList.contains("black"))) &&
+        (!F3.firstElementChild ||
+          (!F3.firstElementChild.classList.contains("white") &&
+            !F3.firstElementChild.classList.contains("black"))) &&
+        (!G3.firstElementChild ||
+          (!G3.firstElementChild.classList.contains("white") &&
+            !G3.firstElementChild.classList.contains("black")))
+      ) {
+        A3.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(A3);
+      }
     }
   }
-  if (currentSquare === "H6") {
-    const color = selectedPiece.classList.contains("whiteRook")
-      ? "white"
-      : "black";
+  // Black Rook on H4
+  if (selectedPiece.classList.contains("blackRook")) {
+    if (currentSquare === "H4") {
+      // Vertical UP (H5 → H8)
+      if (
+        !H5.firstElementChild ||
+        !H5.firstElementChild.classList.contains("black")
+      ) {
+        H5.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(H5);
+      }
+      if (
+        (!H6.firstElementChild ||
+          !H6.firstElementChild.classList.contains("black")) &&
+        (!H5.firstElementChild ||
+          (!H5.firstElementChild.classList.contains("white") &&
+            !H5.firstElementChild.classList.contains("black")))
+      ) {
+        H6.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(H6);
+      }
+      if (
+        (!H7.firstElementChild ||
+          !H7.firstElementChild.classList.contains("black")) &&
+        (!H6.firstElementChild ||
+          (!H6.firstElementChild.classList.contains("white") &&
+            !H6.firstElementChild.classList.contains("black"))) &&
+        (!H5.firstElementChild ||
+          (!H5.firstElementChild.classList.contains("white") &&
+            !H5.firstElementChild.classList.contains("black")))
+      ) {
+        H7.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(H7);
+      }
+      if (
+        (!H8.firstElementChild ||
+          !H8.firstElementChild.classList.contains("black")) &&
+        (!H7.firstElementChild ||
+          (!H7.firstElementChild.classList.contains("white") &&
+            !H7.firstElementChild.classList.contains("black"))) &&
+        (!H6.firstElementChild ||
+          (!H6.firstElementChild.classList.contains("white") &&
+            !H6.firstElementChild.classList.contains("black"))) &&
+        (!H5.firstElementChild ||
+          (!H5.firstElementChild.classList.contains("white") &&
+            !H5.firstElementChild.classList.contains("black")))
+      ) {
+        H8.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(H8);
+      }
 
-    // Vertical UP (H7 → H8)
-    if (
-      !H7.firstElementChild ||
-      !H7.firstElementChild.classList.contains(color)
-    ) {
-      H7.classList.toggle("highlightBlue");
-      recentlyHighlightedElements.push(H7);
-    }
-    if (
-      (!H8.firstElementChild ||
-        !H8.firstElementChild.classList.contains(color)) &&
-      (!H7.firstElementChild ||
-        (!H7.firstElementChild.classList.contains("white") &&
-          !H7.firstElementChild.classList.contains("black")))
-    ) {
-      H8.classList.toggle("highlightBlue");
-      recentlyHighlightedElements.push(H8);
-    }
+      // Vertical DOWN (H3 → H1)
+      if (
+        !H3.firstElementChild ||
+        !H3.firstElementChild.classList.contains("black")
+      ) {
+        H3.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(H3);
+      }
+      if (
+        (!H2.firstElementChild ||
+          !H2.firstElementChild.classList.contains("black")) &&
+        (!H3.firstElementChild ||
+          (!H3.firstElementChild.classList.contains("white") &&
+            !H3.firstElementChild.classList.contains("black")))
+      ) {
+        H2.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(H2);
+      }
+      if (
+        (!H1.firstElementChild ||
+          !H1.firstElementChild.classList.contains("black")) &&
+        (!H2.firstElementChild ||
+          (!H2.firstElementChild.classList.contains("white") &&
+            !H2.firstElementChild.classList.contains("black"))) &&
+        (!H3.firstElementChild ||
+          (!H3.firstElementChild.classList.contains("white") &&
+            !H3.firstElementChild.classList.contains("black")))
+      ) {
+        H1.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(H1);
+      }
 
-    // Vertical DOWN (H5 → H1)
-    if (
-      !H5.firstElementChild ||
-      !H5.firstElementChild.classList.contains(color)
-    ) {
-      H5.classList.toggle("highlightBlue");
-      recentlyHighlightedElements.push(H5);
-    }
-    if (
-      (!H4.firstElementChild ||
-        !H4.firstElementChild.classList.contains(color)) &&
-      (!H5.firstElementChild ||
-        (!H5.firstElementChild.classList.contains("white") &&
-          !H5.firstElementChild.classList.contains("black")))
-    ) {
-      H4.classList.toggle("highlightBlue");
-      recentlyHighlightedElements.push(H4);
-    }
-    if (
-      (!H3.firstElementChild ||
-        !H3.firstElementChild.classList.contains(color)) &&
-      (!H4.firstElementChild ||
-        (!H4.firstElementChild.classList.contains("white") &&
-          !H4.firstElementChild.classList.contains("black"))) &&
-      (!H5.firstElementChild ||
-        (!H5.firstElementChild.classList.contains("white") &&
-          !H5.firstElementChild.classList.contains("black")))
-    ) {
-      H3.classList.toggle("highlightBlue");
-      recentlyHighlightedElements.push(H3);
-    }
-    if (
-      (!H2.firstElementChild ||
-        !H2.firstElementChild.classList.contains(color)) &&
-      (!H3.firstElementChild ||
-        (!H3.firstElementChild.classList.contains("white") &&
-          !H3.firstElementChild.classList.contains("black"))) &&
-      (!H4.firstElementChild ||
-        (!H4.firstElementChild.classList.contains("white") &&
-          !H4.firstElementChild.classList.contains("black"))) &&
-      (!H5.firstElementChild ||
-        (!H5.firstElementChild.classList.contains("white") &&
-          !H5.firstElementChild.classList.contains("black")))
-    ) {
-      H2.classList.toggle("highlightBlue");
-      recentlyHighlightedElements.push(H2);
-    }
-    if (
-      (!H1.firstElementChild ||
-        !H1.firstElementChild.classList.contains(color)) &&
-      (!H2.firstElementChild ||
-        (!H2.firstElementChild.classList.contains("white") &&
-          !H2.firstElementChild.classList.contains("black"))) &&
-      (!H3.firstElementChild ||
-        (!H3.firstElementChild.classList.contains("white") &&
-          !H3.firstElementChild.classList.contains("black"))) &&
-      (!H4.firstElementChild ||
-        (!H4.firstElementChild.classList.contains("white") &&
-          !H4.firstElementChild.classList.contains("black"))) &&
-      (!H5.firstElementChild ||
-        (!H5.firstElementChild.classList.contains("white") &&
-          !H5.firstElementChild.classList.contains("black")))
-    ) {
-      H1.classList.toggle("highlightBlue");
-      recentlyHighlightedElements.push(H1);
-    }
-
-    // Horizontal LEFT (G6 → A6)
-    if (
-      !G6.firstElementChild ||
-      !G6.firstElementChild.classList.contains(color)
-    ) {
-      G6.classList.toggle("highlightBlue");
-      recentlyHighlightedElements.push(G6);
-    }
-    if (
-      (!F6.firstElementChild ||
-        !F6.firstElementChild.classList.contains(color)) &&
-      (!G6.firstElementChild ||
-        (!G6.firstElementChild.classList.contains("white") &&
-          !G6.firstElementChild.classList.contains("black")))
-    ) {
-      F6.classList.toggle("highlightBlue");
-      recentlyHighlightedElements.push(F6);
-    }
-    if (
-      (!E6.firstElementChild ||
-        !E6.firstElementChild.classList.contains(color)) &&
-      (!F6.firstElementChild ||
-        (!F6.firstElementChild.classList.contains("white") &&
-          !F6.firstElementChild.classList.contains("black"))) &&
-      (!G6.firstElementChild ||
-        (!G6.firstElementChild.classList.contains("white") &&
-          !G6.firstElementChild.classList.contains("black")))
-    ) {
-      E6.classList.toggle("highlightBlue");
-      recentlyHighlightedElements.push(E6);
-    }
-    if (
-      (!D6.firstElementChild ||
-        !D6.firstElementChild.classList.contains(color)) &&
-      (!E6.firstElementChild ||
-        (!E6.firstElementChild.classList.contains("white") &&
-          !E6.firstElementChild.classList.contains("black"))) &&
-      (!F6.firstElementChild ||
-        (!F6.firstElementChild.classList.contains("white") &&
-          !F6.firstElementChild.classList.contains("black"))) &&
-      (!G6.firstElementChild ||
-        (!G6.firstElementChild.classList.contains("white") &&
-          !G6.firstElementChild.classList.contains("black")))
-    ) {
-      D6.classList.toggle("highlightBlue");
-      recentlyHighlightedElements.push(D6);
-    }
-    if (
-      (!C6.firstElementChild ||
-        !C6.firstElementChild.classList.contains(color)) &&
-      (!D6.firstElementChild ||
-        (!D6.firstElementChild.classList.contains("white") &&
-          !D6.firstElementChild.classList.contains("black"))) &&
-      (!E6.firstElementChild ||
-        (!E6.firstElementChild.classList.contains("white") &&
-          !E6.firstElementChild.classList.contains("black"))) &&
-      (!F6.firstElementChild ||
-        (!F6.firstElementChild.classList.contains("white") &&
-          !F6.firstElementChild.classList.contains("black"))) &&
-      (!G6.firstElementChild ||
-        (!G6.firstElementChild.classList.contains("white") &&
-          !G6.firstElementChild.classList.contains("black")))
-    ) {
-      C6.classList.toggle("highlightBlue");
-      recentlyHighlightedElements.push(C6);
-    }
-    if (
-      (!B6.firstElementChild ||
-        !B6.firstElementChild.classList.contains(color)) &&
-      (!C6.firstElementChild ||
-        (!C6.firstElementChild.classList.contains("white") &&
-          !C6.firstElementChild.classList.contains("black"))) &&
-      (!D6.firstElementChild ||
-        (!D6.firstElementChild.classList.contains("white") &&
-          !D6.firstElementChild.classList.contains("black"))) &&
-      (!E6.firstElementChild ||
-        (!E6.firstElementChild.classList.contains("white") &&
-          !E6.firstElementChild.classList.contains("black"))) &&
-      (!F6.firstElementChild ||
-        (!F6.firstElementChild.classList.contains("white") &&
-          !F6.firstElementChild.classList.contains("black"))) &&
-      (!G6.firstElementChild ||
-        (!G6.firstElementChild.classList.contains("white") &&
-          !G6.firstElementChild.classList.contains("black")))
-    ) {
-      B6.classList.toggle("highlightBlue");
-      recentlyHighlightedElements.push(B6);
-    }
-    if (
-      (!A6.firstElementChild ||
-        !A6.firstElementChild.classList.contains(color)) &&
-      (!B6.firstElementChild ||
-        (!B6.firstElementChild.classList.contains("white") &&
-          !B6.firstElementChild.classList.contains("black"))) &&
-      (!C6.firstElementChild ||
-        (!C6.firstElementChild.classList.contains("white") &&
-          !C6.firstElementChild.classList.contains("black"))) &&
-      (!D6.firstElementChild ||
-        (!D6.firstElementChild.classList.contains("white") &&
-          !D6.firstElementChild.classList.contains("black"))) &&
-      (!E6.firstElementChild ||
-        (!E6.firstElementChild.classList.contains("white") &&
-          !E6.firstElementChild.classList.contains("black"))) &&
-      (!F6.firstElementChild ||
-        (!F6.firstElementChild.classList.contains("white") &&
-          !F6.firstElementChild.classList.contains("black"))) &&
-      (!G6.firstElementChild ||
-        (!G6.firstElementChild.classList.contains("white") &&
-          !G6.firstElementChild.classList.contains("black")))
-    ) {
-      A6.classList.toggle("highlightBlue");
-      recentlyHighlightedElements.push(A6);
+      // Horizontal LEFT (G4 → A4)
+      if (
+        !G4.firstElementChild ||
+        !G4.firstElementChild.classList.contains("black")
+      ) {
+        G4.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(G4);
+      }
+      if (
+        (!F4.firstElementChild ||
+          !F4.firstElementChild.classList.contains("black")) &&
+        (!G4.firstElementChild ||
+          (!G4.firstElementChild.classList.contains("white") &&
+            !G4.firstElementChild.classList.contains("black")))
+      ) {
+        F4.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(F4);
+      }
+      if (
+        (!E4.firstElementChild ||
+          !E4.firstElementChild.classList.contains("black")) &&
+        (!F4.firstElementChild ||
+          (!F4.firstElementChild.classList.contains("white") &&
+            !F4.firstElementChild.classList.contains("black"))) &&
+        (!G4.firstElementChild ||
+          (!G4.firstElementChild.classList.contains("white") &&
+            !G4.firstElementChild.classList.contains("black")))
+      ) {
+        E4.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(E4);
+      }
+      if (
+        (!D4.firstElementChild ||
+          !D4.firstElementChild.classList.contains("black")) &&
+        (!E4.firstElementChild ||
+          (!E4.firstElementChild.classList.contains("white") &&
+            !E4.firstElementChild.classList.contains("black"))) &&
+        (!F4.firstElementChild ||
+          (!F4.firstElementChild.classList.contains("white") &&
+            !F4.firstElementChild.classList.contains("black"))) &&
+        (!G4.firstElementChild ||
+          (!G4.firstElementChild.classList.contains("white") &&
+            !G4.firstElementChild.classList.contains("black")))
+      ) {
+        D4.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(D4);
+      }
+      if (
+        (!C4.firstElementChild ||
+          !C4.firstElementChild.classList.contains("black")) &&
+        (!D4.firstElementChild ||
+          (!D4.firstElementChild.classList.contains("white") &&
+            !D4.firstElementChild.classList.contains("black"))) &&
+        (!E4.firstElementChild ||
+          (!E4.firstElementChild.classList.contains("white") &&
+            !E4.firstElementChild.classList.contains("black"))) &&
+        (!F4.firstElementChild ||
+          (!F4.firstElementChild.classList.contains("white") &&
+            !F4.firstElementChild.classList.contains("black"))) &&
+        (!G4.firstElementChild ||
+          (!G4.firstElementChild.classList.contains("white") &&
+            !G4.firstElementChild.classList.contains("black")))
+      ) {
+        C4.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(C4);
+      }
+      if (
+        (!B4.firstElementChild ||
+          !B4.firstElementChild.classList.contains("black")) &&
+        (!C4.firstElementChild ||
+          (!C4.firstElementChild.classList.contains("white") &&
+            !C4.firstElementChild.classList.contains("black"))) &&
+        (!D4.firstElementChild ||
+          (!D4.firstElementChild.classList.contains("white") &&
+            !D4.firstElementChild.classList.contains("black"))) &&
+        (!E4.firstElementChild ||
+          (!E4.firstElementChild.classList.contains("white") &&
+            !E4.firstElementChild.classList.contains("black"))) &&
+        (!F4.firstElementChild ||
+          (!F4.firstElementChild.classList.contains("white") &&
+            !F4.firstElementChild.classList.contains("black"))) &&
+        (!G4.firstElementChild ||
+          (!G4.firstElementChild.classList.contains("white") &&
+            !G4.firstElementChild.classList.contains("black")))
+      ) {
+        B4.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(B4);
+      }
+      if (
+        (!A4.firstElementChild ||
+          !A4.firstElementChild.classList.contains("black")) &&
+        (!B4.firstElementChild ||
+          (!B4.firstElementChild.classList.contains("white") &&
+            !B4.firstElementChild.classList.contains("black"))) &&
+        (!C4.firstElementChild ||
+          (!C4.firstElementChild.classList.contains("white") &&
+            !C4.firstElementChild.classList.contains("black"))) &&
+        (!D4.firstElementChild ||
+          (!D4.firstElementChild.classList.contains("white") &&
+            !D4.firstElementChild.classList.contains("black"))) &&
+        (!E4.firstElementChild ||
+          (!E4.firstElementChild.classList.contains("white") &&
+            !E4.firstElementChild.classList.contains("black"))) &&
+        (!F4.firstElementChild ||
+          (!F4.firstElementChild.classList.contains("white") &&
+            !F4.firstElementChild.classList.contains("black"))) &&
+        (!G4.firstElementChild ||
+          (!G4.firstElementChild.classList.contains("white") &&
+            !G4.firstElementChild.classList.contains("black")))
+      ) {
+        A4.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(A4);
+      }
     }
   }
-  if (currentSquare === "H7") {
-    const color = selectedPiece.classList.contains("whiteRook")
-      ? "white"
-      : "black";
 
-    // Vertical UP (H8)
-    if (
-      !H8.firstElementChild ||
-      !H8.firstElementChild.classList.contains(color)
-    ) {
-      H8.classList.toggle("highlightBlue");
-      recentlyHighlightedElements.push(H8);
-    }
+  // White Rook on H4
+  if (selectedPiece.classList.contains("whiteRook")) {
+    if (currentSquare === "H4") {
+      // Vertical UP (H5 → H8)
+      if (
+        !H5.firstElementChild ||
+        !H5.firstElementChild.classList.contains("white")
+      ) {
+        H5.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(H5);
+      }
+      if (
+        (!H6.firstElementChild ||
+          !H6.firstElementChild.classList.contains("white")) &&
+        (!H5.firstElementChild ||
+          (!H5.firstElementChild.classList.contains("white") &&
+            !H5.firstElementChild.classList.contains("black")))
+      ) {
+        H6.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(H6);
+      }
+      if (
+        (!H7.firstElementChild ||
+          !H7.firstElementChild.classList.contains("white")) &&
+        (!H6.firstElementChild ||
+          (!H6.firstElementChild.classList.contains("white") &&
+            !H6.firstElementChild.classList.contains("black"))) &&
+        (!H5.firstElementChild ||
+          (!H5.firstElementChild.classList.contains("white") &&
+            !H5.firstElementChild.classList.contains("black")))
+      ) {
+        H7.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(H7);
+      }
+      if (
+        (!H8.firstElementChild ||
+          !H8.firstElementChild.classList.contains("white")) &&
+        (!H7.firstElementChild ||
+          (!H7.firstElementChild.classList.contains("white") &&
+            !H7.firstElementChild.classList.contains("black"))) &&
+        (!H6.firstElementChild ||
+          (!H6.firstElementChild.classList.contains("white") &&
+            !H6.firstElementChild.classList.contains("black"))) &&
+        (!H5.firstElementChild ||
+          (!H5.firstElementChild.classList.contains("white") &&
+            !H5.firstElementChild.classList.contains("black")))
+      ) {
+        H8.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(H8);
+      }
 
-    // Vertical DOWN (H6 → H1)
-    if (
-      !H6.firstElementChild ||
-      !H6.firstElementChild.classList.contains(color)
-    ) {
-      H6.classList.toggle("highlightBlue");
-      recentlyHighlightedElements.push(H6);
-    }
-    if (
-      (!H5.firstElementChild ||
-        !H5.firstElementChild.classList.contains(color)) &&
-      (!H6.firstElementChild ||
-        (!H6.firstElementChild.classList.contains("white") &&
-          !H6.firstElementChild.classList.contains("black")))
-    ) {
-      H5.classList.toggle("highlightBlue");
-      recentlyHighlightedElements.push(H5);
-    }
-    if (
-      (!H4.firstElementChild ||
-        !H4.firstElementChild.classList.contains(color)) &&
-      (!H5.firstElementChild ||
-        (!H5.firstElementChild.classList.contains("white") &&
-          !H5.firstElementChild.classList.contains("black"))) &&
-      (!H6.firstElementChild ||
-        (!H6.firstElementChild.classList.contains("white") &&
-          !H6.firstElementChild.classList.contains("black")))
-    ) {
-      H4.classList.toggle("highlightBlue");
-      recentlyHighlightedElements.push(H4);
-    }
-    if (
-      (!H3.firstElementChild ||
-        !H3.firstElementChild.classList.contains(color)) &&
-      (!H4.firstElementChild ||
-        (!H4.firstElementChild.classList.contains("white") &&
-          !H4.firstElementChild.classList.contains("black"))) &&
-      (!H5.firstElementChild ||
-        (!H5.firstElementChild.classList.contains("white") &&
-          !H5.firstElementChild.classList.contains("black"))) &&
-      (!H6.firstElementChild ||
-        (!H6.firstElementChild.classList.contains("white") &&
-          !H6.firstElementChild.classList.contains("black")))
-    ) {
-      H3.classList.toggle("highlightBlue");
-      recentlyHighlightedElements.push(H3);
-    }
-    if (
-      (!H2.firstElementChild ||
-        !H2.firstElementChild.classList.contains(color)) &&
-      (!H3.firstElementChild ||
-        (!H3.firstElementChild.classList.contains("white") &&
-          !H3.firstElementChild.classList.contains("black"))) &&
-      (!H4.firstElementChild ||
-        (!H4.firstElementChild.classList.contains("white") &&
-          !H4.firstElementChild.classList.contains("black"))) &&
-      (!H5.firstElementChild ||
-        (!H5.firstElementChild.classList.contains("white") &&
-          !H5.firstElementChild.classList.contains("black"))) &&
-      (!H6.firstElementChild ||
-        (!H6.firstElementChild.classList.contains("white") &&
-          !H6.firstElementChild.classList.contains("black")))
-    ) {
-      H2.classList.toggle("highlightBlue");
-      recentlyHighlightedElements.push(H2);
-    }
-    if (
-      (!H1.firstElementChild ||
-        !H1.firstElementChild.classList.contains(color)) &&
-      (!H2.firstElementChild ||
-        (!H2.firstElementChild.classList.contains("white") &&
-          !H2.firstElementChild.classList.contains("black"))) &&
-      (!H3.firstElementChild ||
-        (!H3.firstElementChild.classList.contains("white") &&
-          !H3.firstElementChild.classList.contains("black"))) &&
-      (!H4.firstElementChild ||
-        (!H4.firstElementChild.classList.contains("white") &&
-          !H4.firstElementChild.classList.contains("black"))) &&
-      (!H5.firstElementChild ||
-        (!H5.firstElementChild.classList.contains("white") &&
-          !H5.firstElementChild.classList.contains("black"))) &&
-      (!H6.firstElementChild ||
-        (!H6.firstElementChild.classList.contains("white") &&
-          !H6.firstElementChild.classList.contains("black")))
-    ) {
-      H1.classList.toggle("highlightBlue");
-      recentlyHighlightedElements.push(H1);
-    }
+      // Vertical DOWN (H3 → H1)
+      if (
+        !H3.firstElementChild ||
+        !H3.firstElementChild.classList.contains("white")
+      ) {
+        H3.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(H3);
+      }
+      if (
+        (!H2.firstElementChild ||
+          !H2.firstElementChild.classList.contains("white")) &&
+        (!H3.firstElementChild ||
+          (!H3.firstElementChild.classList.contains("white") &&
+            !H3.firstElementChild.classList.contains("black")))
+      ) {
+        H2.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(H2);
+      }
+      if (
+        (!H1.firstElementChild ||
+          !H1.firstElementChild.classList.contains("white")) &&
+        (!H2.firstElementChild ||
+          (!H2.firstElementChild.classList.contains("white") &&
+            !H2.firstElementChild.classList.contains("black"))) &&
+        (!H3.firstElementChild ||
+          (!H3.firstElementChild.classList.contains("white") &&
+            !H3.firstElementChild.classList.contains("black")))
+      ) {
+        H1.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(H1);
+      }
 
-    // Horizontal LEFT (G7 → A7)
-    if (
-      !G7.firstElementChild ||
-      !G7.firstElementChild.classList.contains(color)
-    ) {
-      G7.classList.toggle("highlightBlue");
-      recentlyHighlightedElements.push(G7);
-    }
-    if (
-      (!F7.firstElementChild ||
-        !F7.firstElementChild.classList.contains(color)) &&
-      (!G7.firstElementChild ||
-        (!G7.firstElementChild.classList.contains("white") &&
-          !G7.firstElementChild.classList.contains("black")))
-    ) {
-      F7.classList.toggle("highlightBlue");
-      recentlyHighlightedElements.push(F7);
-    }
-    if (
-      (!E7.firstElementChild ||
-        !E7.firstElementChild.classList.contains(color)) &&
-      (!F7.firstElementChild ||
-        (!F7.firstElementChild.classList.contains("white") &&
-          !F7.firstElementChild.classList.contains("black"))) &&
-      (!G7.firstElementChild ||
-        (!G7.firstElementChild.classList.contains("white") &&
-          !G7.firstElementChild.classList.contains("black")))
-    ) {
-      E7.classList.toggle("highlightBlue");
-      recentlyHighlightedElements.push(E7);
-    }
-    if (
-      (!D7.firstElementChild ||
-        !D7.firstElementChild.classList.contains(color)) &&
-      (!E7.firstElementChild ||
-        (!E7.firstElementChild.classList.contains("white") &&
-          !E7.firstElementChild.classList.contains("black"))) &&
-      (!F7.firstElementChild ||
-        (!F7.firstElementChild.classList.contains("white") &&
-          !F7.firstElementChild.classList.contains("black"))) &&
-      (!G7.firstElementChild ||
-        (!G7.firstElementChild.classList.contains("white") &&
-          !G7.firstElementChild.classList.contains("black")))
-    ) {
-      D7.classList.toggle("highlightBlue");
-      recentlyHighlightedElements.push(D7);
-    }
-    if (
-      (!C7.firstElementChild ||
-        !C7.firstElementChild.classList.contains(color)) &&
-      (!D7.firstElementChild ||
-        (!D7.firstElementChild.classList.contains("white") &&
-          !D7.firstElementChild.classList.contains("black"))) &&
-      (!E7.firstElementChild ||
-        (!E7.firstElementChild.classList.contains("white") &&
-          !E7.firstElementChild.classList.contains("black"))) &&
-      (!F7.firstElementChild ||
-        (!F7.firstElementChild.classList.contains("white") &&
-          !F7.firstElementChild.classList.contains("black"))) &&
-      (!G7.firstElementChild ||
-        (!G7.firstElementChild.classList.contains("white") &&
-          !G7.firstElementChild.classList.contains("black")))
-    ) {
-      C7.classList.toggle("highlightBlue");
-      recentlyHighlightedElements.push(C7);
-    }
-    if (
-      (!B7.firstElementChild ||
-        !B7.firstElementChild.classList.contains(color)) &&
-      (!C7.firstElementChild ||
-        (!C7.firstElementChild.classList.contains("white") &&
-          !C7.firstElementChild.classList.contains("black"))) &&
-      (!D7.firstElementChild ||
-        (!D7.firstElementChild.classList.contains("white") &&
-          !D7.firstElementChild.classList.contains("black"))) &&
-      (!E7.firstElementChild ||
-        (!E7.firstElementChild.classList.contains("white") &&
-          !E7.firstElementChild.classList.contains("black"))) &&
-      (!F7.firstElementChild ||
-        (!F7.firstElementChild.classList.contains("white") &&
-          !F7.firstElementChild.classList.contains("black"))) &&
-      (!G7.firstElementChild ||
-        (!G7.firstElementChild.classList.contains("white") &&
-          !G7.firstElementChild.classList.contains("black")))
-    ) {
-      B7.classList.toggle("highlightBlue");
-      recentlyHighlightedElements.push(B7);
-    }
-    if (
-      (!A7.firstElementChild ||
-        !A7.firstElementChild.classList.contains(color)) &&
-      (!B7.firstElementChild ||
-        (!B7.firstElementChild.classList.contains("white") &&
-          !B7.firstElementChild.classList.contains("black"))) &&
-      (!C7.firstElementChild ||
-        (!C7.firstElementChild.classList.contains("white") &&
-          !C7.firstElementChild.classList.contains("black"))) &&
-      (!D7.firstElementChild ||
-        (!D7.firstElementChild.classList.contains("white") &&
-          !D7.firstElementChild.classList.contains("black"))) &&
-      (!E7.firstElementChild ||
-        (!E7.firstElementChild.classList.contains("white") &&
-          !E7.firstElementChild.classList.contains("black"))) &&
-      (!F7.firstElementChild ||
-        (!F7.firstElementChild.classList.contains("white") &&
-          !F7.firstElementChild.classList.contains("black"))) &&
-      (!G7.firstElementChild ||
-        (!G7.firstElementChild.classList.contains("white") &&
-          !G7.firstElementChild.classList.contains("black")))
-    ) {
-      A7.classList.toggle("highlightBlue");
-      recentlyHighlightedElements.push(A7);
+      // Horizontal LEFT (G4 → A4)
+      if (
+        !G4.firstElementChild ||
+        !G4.firstElementChild.classList.contains("white")
+      ) {
+        G4.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(G4);
+      }
+      if (
+        (!F4.firstElementChild ||
+          !F4.firstElementChild.classList.contains("white")) &&
+        (!G4.firstElementChild ||
+          (!G4.firstElementChild.classList.contains("white") &&
+            !G4.firstElementChild.classList.contains("black")))
+      ) {
+        F4.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(F4);
+      }
+      if (
+        (!E4.firstElementChild ||
+          !E4.firstElementChild.classList.contains("white")) &&
+        (!F4.firstElementChild ||
+          (!F4.firstElementChild.classList.contains("white") &&
+            !F4.firstElementChild.classList.contains("black"))) &&
+        (!G4.firstElementChild ||
+          (!G4.firstElementChild.classList.contains("white") &&
+            !G4.firstElementChild.classList.contains("black")))
+      ) {
+        E4.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(E4);
+      }
+      if (
+        (!D4.firstElementChild ||
+          !D4.firstElementChild.classList.contains("white")) &&
+        (!E4.firstElementChild ||
+          (!E4.firstElementChild.classList.contains("white") &&
+            !E4.firstElementChild.classList.contains("black"))) &&
+        (!F4.firstElementChild ||
+          (!F4.firstElementChild.classList.contains("white") &&
+            !F4.firstElementChild.classList.contains("black"))) &&
+        (!G4.firstElementChild ||
+          (!G4.firstElementChild.classList.contains("white") &&
+            !G4.firstElementChild.classList.contains("black")))
+      ) {
+        D4.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(D4);
+      }
+      if (
+        (!C4.firstElementChild ||
+          !C4.firstElementChild.classList.contains("white")) &&
+        (!D4.firstElementChild ||
+          (!D4.firstElementChild.classList.contains("white") &&
+            !D4.firstElementChild.classList.contains("black"))) &&
+        (!E4.firstElementChild ||
+          (!E4.firstElementChild.classList.contains("white") &&
+            !E4.firstElementChild.classList.contains("black"))) &&
+        (!F4.firstElementChild ||
+          (!F4.firstElementChild.classList.contains("white") &&
+            !F4.firstElementChild.classList.contains("black"))) &&
+        (!G4.firstElementChild ||
+          (!G4.firstElementChild.classList.contains("white") &&
+            !G4.firstElementChild.classList.contains("black")))
+      ) {
+        C4.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(C4);
+      }
+      if (
+        (!B4.firstElementChild ||
+          !B4.firstElementChild.classList.contains("white")) &&
+        (!C4.firstElementChild ||
+          (!C4.firstElementChild.classList.contains("white") &&
+            !C4.firstElementChild.classList.contains("black"))) &&
+        (!D4.firstElementChild ||
+          (!D4.firstElementChild.classList.contains("white") &&
+            !D4.firstElementChild.classList.contains("black"))) &&
+        (!E4.firstElementChild ||
+          (!E4.firstElementChild.classList.contains("white") &&
+            !E4.firstElementChild.classList.contains("black"))) &&
+        (!F4.firstElementChild ||
+          (!F4.firstElementChild.classList.contains("white") &&
+            !F4.firstElementChild.classList.contains("black"))) &&
+        (!G4.firstElementChild ||
+          (!G4.firstElementChild.classList.contains("white") &&
+            !G4.firstElementChild.classList.contains("black")))
+      ) {
+        B4.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(B4);
+      }
+      if (
+        (!A4.firstElementChild ||
+          !A4.firstElementChild.classList.contains("white")) &&
+        (!B4.firstElementChild ||
+          (!B4.firstElementChild.classList.contains("white") &&
+            !B4.firstElementChild.classList.contains("black"))) &&
+        (!C4.firstElementChild ||
+          (!C4.firstElementChild.classList.contains("white") &&
+            !C4.firstElementChild.classList.contains("black"))) &&
+        (!D4.firstElementChild ||
+          (!D4.firstElementChild.classList.contains("white") &&
+            !D4.firstElementChild.classList.contains("black"))) &&
+        (!E4.firstElementChild ||
+          (!E4.firstElementChild.classList.contains("white") &&
+            !E4.firstElementChild.classList.contains("black"))) &&
+        (!F4.firstElementChild ||
+          (!F4.firstElementChild.classList.contains("white") &&
+            !F4.firstElementChild.classList.contains("black"))) &&
+        (!G4.firstElementChild ||
+          (!G4.firstElementChild.classList.contains("white") &&
+            !G4.firstElementChild.classList.contains("black")))
+      ) {
+        A4.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(A4);
+      }
     }
   }
-  if (currentSquare === "H8") {
-    const color = selectedPiece.classList.contains("whiteRook")
-      ? "white"
-      : "black";
+  // Black Rook on H5
+  if (selectedPiece.classList.contains("blackRook")) {
+    if (currentSquare === "H5") {
+      // Vertical UP (H6 → H8)
+      if (
+        !H6.firstElementChild ||
+        !H6.firstElementChild.classList.contains("black") // If H6 is empty or contains a non-black piece
+      ) {
+        H6.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(H6);
+      }
+      if (
+        (!H7.firstElementChild ||
+          !H7.firstElementChild.classList.contains("black")) &&
+        (!H6.firstElementChild ||
+          (!H6.firstElementChild.classList.contains("white") &&
+            !H6.firstElementChild.classList.contains("black")))
+      ) {
+        H7.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(H7);
+      }
+      if (
+        (!H8.firstElementChild ||
+          !H8.firstElementChild.classList.contains("black")) &&
+        (!H7.firstElementChild ||
+          (!H7.firstElementChild.classList.contains("white") &&
+            !H7.firstElementChild.classList.contains("black"))) &&
+        (!H6.firstElementChild ||
+          (!H6.firstElementChild.classList.contains("white") &&
+            !H6.firstElementChild.classList.contains("black")))
+      ) {
+        H8.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(H8);
+      }
 
-    // Vertical DOWN (H7 → H1)
-    if (
-      !H7.firstElementChild ||
-      !H7.firstElementChild.classList.contains(color)
-    ) {
-      H7.classList.toggle("highlightBlue");
-      recentlyHighlightedElements.push(H7);
-    }
-    if (
-      (!H6.firstElementChild ||
-        !H6.firstElementChild.classList.contains(color)) &&
-      (!H7.firstElementChild ||
-        (!H7.firstElementChild.classList.contains("white") &&
-          !H7.firstElementChild.classList.contains("black")))
-    ) {
-      H6.classList.toggle("highlightBlue");
-      recentlyHighlightedElements.push(H6);
-    }
-    if (
-      (!H5.firstElementChild ||
-        !H5.firstElementChild.classList.contains(color)) &&
-      (!H6.firstElementChild ||
-        (!H6.firstElementChild.classList.contains("white") &&
-          !H6.firstElementChild.classList.contains("black"))) &&
-      (!H7.firstElementChild ||
-        (!H7.firstElementChild.classList.contains("white") &&
-          !H7.firstElementChild.classList.contains("black")))
-    ) {
-      H5.classList.toggle("highlightBlue");
-      recentlyHighlightedElements.push(H5);
-    }
-    if (
-      (!H4.firstElementChild ||
-        !H4.firstElementChild.classList.contains(color)) &&
-      (!H5.firstElementChild ||
-        (!H5.firstElementChild.classList.contains("white") &&
-          !H5.firstElementChild.classList.contains("black"))) &&
-      (!H6.firstElementChild ||
-        (!H6.firstElementChild.classList.contains("white") &&
-          !H6.firstElementChild.classList.contains("black"))) &&
-      (!H7.firstElementChild ||
-        (!H7.firstElementChild.classList.contains("white") &&
-          !H7.firstElementChild.classList.contains("black")))
-    ) {
-      H4.classList.toggle("highlightBlue");
-      recentlyHighlightedElements.push(H4);
-    }
-    if (
-      (!H3.firstElementChild ||
-        !H3.firstElementChild.classList.contains(color)) &&
-      (!H4.firstElementChild ||
-        (!H4.firstElementChild.classList.contains("white") &&
-          !H4.firstElementChild.classList.contains("black"))) &&
-      (!H5.firstElementChild ||
-        (!H5.firstElementChild.classList.contains("white") &&
-          !H5.firstElementChild.classList.contains("black"))) &&
-      (!H6.firstElementChild ||
-        (!H6.firstElementChild.classList.contains("white") &&
-          !H6.firstElementChild.classList.contains("black"))) &&
-      (!H7.firstElementChild ||
-        (!H7.firstElementChild.classList.contains("white") &&
-          !H7.firstElementChild.classList.contains("black")))
-    ) {
-      H3.classList.toggle("highlightBlue");
-      recentlyHighlightedElements.push(H3);
-    }
-    if (
-      (!H2.firstElementChild ||
-        !H2.firstElementChild.classList.contains(color)) &&
-      (!H3.firstElementChild ||
-        (!H3.firstElementChild.classList.contains("white") &&
-          !H3.firstElementChild.classList.contains("black"))) &&
-      (!H4.firstElementChild ||
-        (!H4.firstElementChild.classList.contains("white") &&
-          !H4.firstElementChild.classList.contains("black"))) &&
-      (!H5.firstElementChild ||
-        (!H5.firstElementChild.classList.contains("white") &&
-          !H5.firstElementChild.classList.contains("black"))) &&
-      (!H6.firstElementChild ||
-        (!H6.firstElementChild.classList.contains("white") &&
-          !H6.firstElementChild.classList.contains("black"))) &&
-      (!H7.firstElementChild ||
-        (!H7.firstElementChild.classList.contains("white") &&
-          !H7.firstElementChild.classList.contains("black")))
-    ) {
-      H2.classList.toggle("highlightBlue");
-      recentlyHighlightedElements.push(H2);
-    }
-    if (
-      (!H1.firstElementChild ||
-        !H1.firstElementChild.classList.contains(color)) &&
-      (!H2.firstElementChild ||
-        (!H2.firstElementChild.classList.contains("white") &&
-          !H2.firstElementChild.classList.contains("black"))) &&
-      (!H3.firstElementChild ||
-        (!H3.firstElementChild.classList.contains("white") &&
-          !H3.firstElementChild.classList.contains("black"))) &&
-      (!H4.firstElementChild ||
-        (!H4.firstElementChild.classList.contains("white") &&
-          !H4.firstElementChild.classList.contains("black"))) &&
-      (!H5.firstElementChild ||
-        (!H5.firstElementChild.classList.contains("white") &&
-          !H5.firstElementChild.classList.contains("black"))) &&
-      (!H6.firstElementChild ||
-        (!H6.firstElementChild.classList.contains("white") &&
-          !H6.firstElementChild.classList.contains("black"))) &&
-      (!H7.firstElementChild ||
-        (!H7.firstElementChild.classList.contains("white") &&
-          !H7.firstElementChild.classList.contains("black")))
-    ) {
-      H1.classList.toggle("highlightBlue");
-      recentlyHighlightedElements.push(H1);
-    }
+      // Vertical DOWN (H4 → H1)
+      if (
+        !H4.firstElementChild ||
+        !H4.firstElementChild.classList.contains("black")
+      ) {
+        H4.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(H4);
+      }
+      if (
+        (!H3.firstElementChild ||
+          !H3.firstElementChild.classList.contains("black")) &&
+        (!H4.firstElementChild ||
+          (!H4.firstElementChild.classList.contains("white") &&
+            !H4.firstElementChild.classList.contains("black")))
+      ) {
+        H3.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(H3);
+      }
+      if (
+        (!H2.firstElementChild ||
+          !H2.firstElementChild.classList.contains("black")) &&
+        (!H3.firstElementChild ||
+          (!H3.firstElementChild.classList.contains("white") &&
+            !H3.firstElementChild.classList.contains("black"))) &&
+        (!H4.firstElementChild ||
+          (!H4.firstElementChild.classList.contains("white") &&
+            !H4.firstElementChild.classList.contains("black")))
+      ) {
+        H2.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(H2);
+      }
+      if (
+        (!H1.firstElementChild ||
+          !H1.firstElementChild.classList.contains("black")) &&
+        (!H2.firstElementChild ||
+          (!H2.firstElementChild.classList.contains("white") &&
+            !H2.firstElementChild.classList.contains("black"))) &&
+        (!H3.firstElementChild ||
+          (!H3.firstElementChild.classList.contains("white") &&
+            !H3.firstElementChild.classList.contains("black"))) &&
+        (!H4.firstElementChild ||
+          (!H4.firstElementChild.classList.contains("white") &&
+            !H4.firstElementChild.classList.contains("black")))
+      ) {
+        H1.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(H1);
+      }
 
-    // Horizontal LEFT (G8 → A8)
-    if (
-      !G8.firstElementChild ||
-      !G8.firstElementChild.classList.contains(color)
-    ) {
-      G8.classList.toggle("highlightBlue");
-      recentlyHighlightedElements.push(G8);
-    }
-    if (
-      (!F8.firstElementChild ||
-        !F8.firstElementChild.classList.contains(color)) &&
-      (!G8.firstElementChild ||
-        (!G8.firstElementChild.classList.contains("white") &&
-          !G8.firstElementChild.classList.contains("black")))
-    ) {
-      F8.classList.toggle("highlightBlue");
-      recentlyHighlightedElements.push(F8);
-    }
-    if (
-      (!E8.firstElementChild ||
-        !E8.firstElementChild.classList.contains(color)) &&
-      (!F8.firstElementChild ||
-        (!F8.firstElementChild.classList.contains("white") &&
-          !F8.firstElementChild.classList.contains("black"))) &&
-      (!G8.firstElementChild ||
-        (!G8.firstElementChild.classList.contains("white") &&
-          !G8.firstElementChild.classList.contains("black")))
-    ) {
-      E8.classList.toggle("highlightBlue");
-      recentlyHighlightedElements.push(E8);
-    }
-    if (
-      (!D8.firstElementChild ||
-        !D8.firstElementChild.classList.contains(color)) &&
-      (!E8.firstElementChild ||
-        (!E8.firstElementChild.classList.contains("white") &&
-          !E8.firstElementChild.classList.contains("black"))) &&
-      (!F8.firstElementChild ||
-        (!F8.firstElementChild.classList.contains("white") &&
-          !F8.firstElementChild.classList.contains("black"))) &&
-      (!G8.firstElementChild ||
-        (!G8.firstElementChild.classList.contains("white") &&
-          !G8.firstElementChild.classList.contains("black")))
-    ) {
-      D8.classList.toggle("highlightBlue");
-      recentlyHighlightedElements.push(D8);
-    }
-    if (
-      (!C8.firstElementChild ||
-        !C8.firstElementChild.classList.contains(color)) &&
-      (!D8.firstElementChild ||
-        (!D8.firstElementChild.classList.contains("white") &&
-          !D8.firstElementChild.classList.contains("black"))) &&
-      (!E8.firstElementChild ||
-        (!E8.firstElementChild.classList.contains("white") &&
-          !E8.firstElementChild.classList.contains("black"))) &&
-      (!F8.firstElementChild ||
-        (!F8.firstElementChild.classList.contains("white") &&
-          !F8.firstElementChild.classList.contains("black"))) &&
-      (!G8.firstElementChild ||
-        (!G8.firstElementChild.classList.contains("white") &&
-          !G8.firstElementChild.classList.contains("black")))
-    ) {
-      C8.classList.toggle("highlightBlue");
-      recentlyHighlightedElements.push(C8);
-    }
-    if (
-      (!B8.firstElementChild ||
-        !B8.firstElementChild.classList.contains(color)) &&
-      (!C8.firstElementChild ||
-        (!C8.firstElementChild.classList.contains("white") &&
-          !C8.firstElementChild.classList.contains("black"))) &&
-      (!D8.firstElementChild ||
-        (!D8.firstElementChild.classList.contains("white") &&
-          !D8.firstElementChild.classList.contains("black"))) &&
-      (!E8.firstElementChild ||
-        (!E8.firstElementChild.classList.contains("white") &&
-          !E8.firstElementChild.classList.contains("black"))) &&
-      (!F8.firstElementChild ||
-        (!F8.firstElementChild.classList.contains("white") &&
-          !F8.firstElementChild.classList.contains("black"))) &&
-      (!G8.firstElementChild ||
-        (!G8.firstElementChild.classList.contains("white") &&
-          !G8.firstElementChild.classList.contains("black")))
-    ) {
-      B8.classList.toggle("highlightBlue");
-      recentlyHighlightedElements.push(B8);
-    }
-    if (
-      (!A8.firstElementChild ||
-        !A8.firstElementChild.classList.contains(color)) &&
-      (!B8.firstElementChild ||
-        (!B8.firstElementChild.classList.contains("white") &&
-          !B8.firstElementChild.classList.contains("black"))) &&
-      (!C8.firstElementChild ||
-        (!C8.firstElementChild.classList.contains("white") &&
-          !C8.firstElementChild.classList.contains("black"))) &&
-      (!D8.firstElementChild ||
-        (!D8.firstElementChild.classList.contains("white") &&
-          !D8.firstElementChild.classList.contains("black"))) &&
-      (!E8.firstElementChild ||
-        (!E8.firstElementChild.classList.contains("white") &&
-          !E8.firstElementChild.classList.contains("black"))) &&
-      (!F8.firstElementChild ||
-        (!F8.firstElementChild.classList.contains("white") &&
-          !F8.firstElementChild.classList.contains("black"))) &&
-      (!G8.firstElementChild ||
-        (!G8.firstElementChild.classList.contains("white") &&
-          !G8.firstElementChild.classList.contains("black")))
-    ) {
-      A8.classList.toggle("highlightBlue");
-      recentlyHighlightedElements.push(A8);
+      // Horizontal LEFT (G5 → A5)
+      if (
+        !G5.firstElementChild ||
+        !G5.firstElementChild.classList.contains("black")
+      ) {
+        G5.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(G5);
+      }
+      if (
+        (!F5.firstElementChild ||
+          !F5.firstElementChild.classList.contains("black")) &&
+        (!G5.firstElementChild ||
+          (!G5.firstElementChild.classList.contains("white") &&
+            !G5.firstElementChild.classList.contains("black")))
+      ) {
+        F5.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(F5);
+      }
+      if (
+        (!E5.firstElementChild ||
+          !E5.firstElementChild.classList.contains("black")) &&
+        (!F5.firstElementChild ||
+          (!F5.firstElementChild.classList.contains("white") &&
+            !F5.firstElementChild.classList.contains("black"))) &&
+        (!G5.firstElementChild ||
+          (!G5.firstElementChild.classList.contains("white") &&
+            !G5.firstElementChild.classList.contains("black")))
+      ) {
+        E5.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(E5);
+      }
+      if (
+        (!D5.firstElementChild ||
+          !D5.firstElementChild.classList.contains("black")) &&
+        (!E5.firstElementChild ||
+          (!E5.firstElementChild.classList.contains("white") &&
+            !E5.firstElementChild.classList.contains("black"))) &&
+        (!F5.firstElementChild ||
+          (!F5.firstElementChild.classList.contains("white") &&
+            !F5.firstElementChild.classList.contains("black"))) &&
+        (!G5.firstElementChild ||
+          (!G5.firstElementChild.classList.contains("white") &&
+            !G5.firstElementChild.classList.contains("black")))
+      ) {
+        D5.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(D5);
+      }
+      if (
+        (!C5.firstElementChild ||
+          !C5.firstElementChild.classList.contains("black")) &&
+        (!D5.firstElementChild ||
+          (!D5.firstElementChild.classList.contains("white") &&
+            !D5.firstElementChild.classList.contains("black"))) &&
+        (!E5.firstElementChild ||
+          (!E5.firstElementChild.classList.contains("white") &&
+            !E5.firstElementChild.classList.contains("black"))) &&
+        (!F5.firstElementChild ||
+          (!F5.firstElementChild.classList.contains("white") &&
+            !F5.firstElementChild.classList.contains("black"))) &&
+        (!G5.firstElementChild ||
+          (!G5.firstElementChild.classList.contains("white") &&
+            !G5.firstElementChild.classList.contains("black")))
+      ) {
+        C5.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(C5);
+      }
+      if (
+        (!B5.firstElementChild ||
+          !B5.firstElementChild.classList.contains("black")) &&
+        (!C5.firstElementChild ||
+          (!C5.firstElementChild.classList.contains("white") &&
+            !C5.firstElementChild.classList.contains("black"))) &&
+        (!D5.firstElementChild ||
+          (!D5.firstElementChild.classList.contains("white") &&
+            !D5.firstElementChild.classList.contains("black"))) &&
+        (!E5.firstElementChild ||
+          (!E5.firstElementChild.classList.contains("white") &&
+            !E5.firstElementChild.classList.contains("black"))) &&
+        (!F5.firstElementChild ||
+          (!F5.firstElementChild.classList.contains("white") &&
+            !F5.firstElementChild.classList.contains("black"))) &&
+        (!G5.firstElementChild ||
+          (!G5.firstElementChild.classList.contains("white") &&
+            !G5.firstElementChild.classList.contains("black")))
+      ) {
+        B5.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(B5);
+      }
+      if (
+        (!A5.firstElementChild ||
+          !A5.firstElementChild.classList.contains("black")) &&
+        (!B5.firstElementChild ||
+          (!B5.firstElementChild.classList.contains("white") &&
+            !B5.firstElementChild.classList.contains("black"))) &&
+        (!C5.firstElementChild ||
+          (!C5.firstElementChild.classList.contains("white") &&
+            !C5.firstElementChild.classList.contains("black"))) &&
+        (!D5.firstElementChild ||
+          (!D5.firstElementChild.classList.contains("white") &&
+            !D5.firstElementChild.classList.contains("black"))) &&
+        (!E5.firstElementChild ||
+          (!E5.firstElementChild.classList.contains("white") &&
+            !E5.firstElementChild.classList.contains("black"))) &&
+        (!F5.firstElementChild ||
+          (!F5.firstElementChild.classList.contains("white") &&
+            !F5.firstElementChild.classList.contains("black"))) &&
+        (!G5.firstElementChild ||
+          (!G5.firstElementChild.classList.contains("white") &&
+            !G5.firstElementChild.classList.contains("black")))
+      ) {
+        A5.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(A5);
+      }
     }
   }
+
+  // White Rook on H5
+  if (selectedPiece.classList.contains("whiteRook")) {
+    if (currentSquare === "H5") {
+      // Vertical UP (H6 → H8)
+      if (
+        !H6.firstElementChild ||
+        !H6.firstElementChild.classList.contains("white") // If H6 is empty or contains a non-white piece
+      ) {
+        H6.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(H6);
+      }
+      if (
+        (!H7.firstElementChild ||
+          !H7.firstElementChild.classList.contains("white")) &&
+        (!H6.firstElementChild ||
+          (!H6.firstElementChild.classList.contains("white") &&
+            !H6.firstElementChild.classList.contains("black")))
+      ) {
+        H7.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(H7);
+      }
+      if (
+        (!H8.firstElementChild ||
+          !H8.firstElementChild.classList.contains("white")) &&
+        (!H7.firstElementChild ||
+          (!H7.firstElementChild.classList.contains("white") &&
+            !H7.firstElementChild.classList.contains("black"))) &&
+        (!H6.firstElementChild ||
+          (!H6.firstElementChild.classList.contains("white") &&
+            !H6.firstElementChild.classList.contains("black")))
+      ) {
+        H8.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(H8);
+      }
+
+      // Vertical DOWN (H4 → H1)
+      if (
+        !H4.firstElementChild ||
+        !H4.firstElementChild.classList.contains("white")
+      ) {
+        H4.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(H4);
+      }
+      if (
+        (!H3.firstElementChild ||
+          !H3.firstElementChild.classList.contains("white")) &&
+        (!H4.firstElementChild ||
+          (!H4.firstElementChild.classList.contains("white") &&
+            !H4.firstElementChild.classList.contains("black")))
+      ) {
+        H3.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(H3);
+      }
+      if (
+        (!H2.firstElementChild ||
+          !H2.firstElementChild.classList.contains("white")) &&
+        (!H3.firstElementChild ||
+          (!H3.firstElementChild.classList.contains("white") &&
+            !H3.firstElementChild.classList.contains("black"))) &&
+        (!H4.firstElementChild ||
+          (!H4.firstElementChild.classList.contains("white") &&
+            !H4.firstElementChild.classList.contains("black")))
+      ) {
+        H2.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(H2);
+      }
+      if (
+        (!H1.firstElementChild ||
+          !H1.firstElementChild.classList.contains("white")) &&
+        (!H2.firstElementChild ||
+          (!H2.firstElementChild.classList.contains("white") &&
+            !H2.firstElementChild.classList.contains("black"))) &&
+        (!H3.firstElementChild ||
+          (!H3.firstElementChild.classList.contains("white") &&
+            !H3.firstElementChild.classList.contains("black"))) &&
+        (!H4.firstElementChild ||
+          (!H4.firstElementChild.classList.contains("white") &&
+            !H4.firstElementChild.classList.contains("black")))
+      ) {
+        H1.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(H1);
+      }
+
+      // Horizontal LEFT (G5 → A5)
+      if (
+        !G5.firstElementChild ||
+        !G5.firstElementChild.classList.contains("white")
+      ) {
+        G5.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(G5);
+      }
+      if (
+        (!F5.firstElementChild ||
+          !F5.firstElementChild.classList.contains("white")) &&
+        (!G5.firstElementChild ||
+          (!G5.firstElementChild.classList.contains("white") &&
+            !G5.firstElementChild.classList.contains("black")))
+      ) {
+        F5.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(F5);
+      }
+      if (
+        (!E5.firstElementChild ||
+          !E5.firstElementChild.classList.contains("white")) &&
+        (!F5.firstElementChild ||
+          (!F5.firstElementChild.classList.contains("white") &&
+            !F5.firstElementChild.classList.contains("black"))) &&
+        (!G5.firstElementChild ||
+          (!G5.firstElementChild.classList.contains("white") &&
+            !G5.firstElementChild.classList.contains("black")))
+      ) {
+        E5.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(E5);
+      }
+      if (
+        (!D5.firstElementChild ||
+          !D5.firstElementChild.classList.contains("white")) &&
+        (!E5.firstElementChild ||
+          (!E5.firstElementChild.classList.contains("white") &&
+            !E5.firstElementChild.classList.contains("black"))) &&
+        (!F5.firstElementChild ||
+          (!F5.firstElementChild.classList.contains("white") &&
+            !F5.firstElementChild.classList.contains("black"))) &&
+        (!G5.firstElementChild ||
+          (!G5.firstElementChild.classList.contains("white") &&
+            !G5.firstElementChild.classList.contains("black")))
+      ) {
+        D5.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(D5);
+      }
+      if (
+        (!C5.firstElementChild ||
+          !C5.firstElementChild.classList.contains("white")) &&
+        (!D5.firstElementChild ||
+          (!D5.firstElementChild.classList.contains("white") &&
+            !D5.firstElementChild.classList.contains("black"))) &&
+        (!E5.firstElementChild ||
+          (!E5.firstElementChild.classList.contains("white") &&
+            !E5.firstElementChild.classList.contains("black"))) &&
+        (!F5.firstElementChild ||
+          (!F5.firstElementChild.classList.contains("white") &&
+            !F5.firstElementChild.classList.contains("black"))) &&
+        (!G5.firstElementChild ||
+          (!G5.firstElementChild.classList.contains("white") &&
+            !G5.firstElementChild.classList.contains("black")))
+      ) {
+        C5.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(C5);
+      }
+      if (
+        (!B5.firstElementChild ||
+          !B5.firstElementChild.classList.contains("white")) &&
+        (!C5.firstElementChild ||
+          (!C5.firstElementChild.classList.contains("white") &&
+            !C5.firstElementChild.classList.contains("black"))) &&
+        (!D5.firstElementChild ||
+          (!D5.firstElementChild.classList.contains("white") &&
+            !D5.firstElementChild.classList.contains("black"))) &&
+        (!E5.firstElementChild ||
+          (!E5.firstElementChild.classList.contains("white") &&
+            !E5.firstElementChild.classList.contains("black"))) &&
+        (!F5.firstElementChild ||
+          (!F5.firstElementChild.classList.contains("white") &&
+            !F5.firstElementChild.classList.contains("black"))) &&
+        (!G5.firstElementChild ||
+          (!G5.firstElementChild.classList.contains("white") &&
+            !G5.firstElementChild.classList.contains("black")))
+      ) {
+        B5.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(B5);
+      }
+      if (
+        (!A5.firstElementChild ||
+          !A5.firstElementChild.classList.contains("white")) &&
+        (!B5.firstElementChild ||
+          (!B5.firstElementChild.classList.contains("white") &&
+            !B5.firstElementChild.classList.contains("black"))) &&
+        (!C5.firstElementChild ||
+          (!C5.firstElementChild.classList.contains("white") &&
+            !C5.firstElementChild.classList.contains("black"))) &&
+        (!D5.firstElementChild ||
+          (!D5.firstElementChild.classList.contains("white") &&
+            !D5.firstElementChild.classList.contains("black"))) &&
+        (!E5.firstElementChild ||
+          (!E5.firstElementChild.classList.contains("white") &&
+            !E5.firstElementChild.classList.contains("black"))) &&
+        (!F5.firstElementChild ||
+          (!F5.firstElementChild.classList.contains("white") &&
+            !F5.firstElementChild.classList.contains("black"))) &&
+        (!G5.firstElementChild ||
+          (!G5.firstElementChild.classList.contains("white") &&
+            !G5.firstElementChild.classList.contains("black")))
+      ) {
+        A5.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(A5);
+      }
+    }
+  }
+  // White Rook on H6
+  if (selectedPiece.classList.contains("whiteRook")) {
+    if (currentSquare === "H6") {
+      // Vertical UP (H7 → H8)
+      if (
+        !H7.firstElementChild ||
+        !H7.firstElementChild.classList.contains("white") // If H7 is empty or contains a non-white piece
+      ) {
+        H7.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(H7);
+      }
+      if (
+        (!H8.firstElementChild ||
+          !H8.firstElementChild.classList.contains("white")) &&
+        (!H7.firstElementChild ||
+          (!H7.firstElementChild.classList.contains("white") &&
+            !H7.firstElementChild.classList.contains("black")))
+      ) {
+        H8.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(H8);
+      }
+
+      // Vertical DOWN (H5 → H1)
+      if (
+        !H5.firstElementChild ||
+        !H5.firstElementChild.classList.contains("white")
+      ) {
+        H5.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(H5);
+      }
+      if (
+        (!H4.firstElementChild ||
+          !H4.firstElementChild.classList.contains("white")) &&
+        (!H5.firstElementChild ||
+          (!H5.firstElementChild.classList.contains("white") &&
+            !H5.firstElementChild.classList.contains("black")))
+      ) {
+        H4.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(H4);
+      }
+      if (
+        (!H3.firstElementChild ||
+          !H3.firstElementChild.classList.contains("white")) &&
+        (!H4.firstElementChild ||
+          (!H4.firstElementChild.classList.contains("white") &&
+            !H4.firstElementChild.classList.contains("black"))) &&
+        (!H5.firstElementChild ||
+          (!H5.firstElementChild.classList.contains("white") &&
+            !H5.firstElementChild.classList.contains("black")))
+      ) {
+        H3.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(H3);
+      }
+      if (
+        (!H2.firstElementChild ||
+          !H2.firstElementChild.classList.contains("white")) &&
+        (!H3.firstElementChild ||
+          (!H3.firstElementChild.classList.contains("white") &&
+            !H3.firstElementChild.classList.contains("black"))) &&
+        (!H4.firstElementChild ||
+          (!H4.firstElementChild.classList.contains("white") &&
+            !H4.firstElementChild.classList.contains("black"))) &&
+        (!H5.firstElementChild ||
+          (!H5.firstElementChild.classList.contains("white") &&
+            !H5.firstElementChild.classList.contains("black")))
+      ) {
+        H2.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(H2);
+      }
+      if (
+        (!H1.firstElementChild ||
+          !H1.firstElementChild.classList.contains("white")) &&
+        (!H2.firstElementChild ||
+          (!H2.firstElementChild.classList.contains("white") &&
+            !H2.firstElementChild.classList.contains("black"))) &&
+        (!H3.firstElementChild ||
+          (!H3.firstElementChild.classList.contains("white") &&
+            !H3.firstElementChild.classList.contains("black"))) &&
+        (!H4.firstElementChild ||
+          (!H4.firstElementChild.classList.contains("white") &&
+            !H4.firstElementChild.classList.contains("black"))) &&
+        (!H5.firstElementChild ||
+          (!H5.firstElementChild.classList.contains("white") &&
+            !H5.firstElementChild.classList.contains("black")))
+      ) {
+        H1.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(H1);
+      }
+
+      // Horizontal LEFT (G6 → A6)
+      if (
+        !G6.firstElementChild ||
+        !G6.firstElementChild.classList.contains("white")
+      ) {
+        G6.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(G6);
+      }
+      if (
+        (!F6.firstElementChild ||
+          !F6.firstElementChild.classList.contains("white")) &&
+        (!G6.firstElementChild ||
+          (!G6.firstElementChild.classList.contains("white") &&
+            !G6.firstElementChild.classList.contains("black")))
+      ) {
+        F6.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(F6);
+      }
+      if (
+        (!E6.firstElementChild ||
+          !E6.firstElementChild.classList.contains("white")) &&
+        (!F6.firstElementChild ||
+          (!F6.firstElementChild.classList.contains("white") &&
+            !F6.firstElementChild.classList.contains("black"))) &&
+        (!G6.firstElementChild ||
+          (!G6.firstElementChild.classList.contains("white") &&
+            !G6.firstElementChild.classList.contains("black")))
+      ) {
+        E6.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(E6);
+      }
+      if (
+        (!D6.firstElementChild ||
+          !D6.firstElementChild.classList.contains("white")) &&
+        (!E6.firstElementChild ||
+          (!E6.firstElementChild.classList.contains("white") &&
+            !E6.firstElementChild.classList.contains("black"))) &&
+        (!F6.firstElementChild ||
+          (!F6.firstElementChild.classList.contains("white") &&
+            !F6.firstElementChild.classList.contains("black"))) &&
+        (!G6.firstElementChild ||
+          (!G6.firstElementChild.classList.contains("white") &&
+            !G6.firstElementChild.classList.contains("black")))
+      ) {
+        D6.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(D6);
+      }
+      if (
+        (!C6.firstElementChild ||
+          !C6.firstElementChild.classList.contains("white")) &&
+        (!D6.firstElementChild ||
+          (!D6.firstElementChild.classList.contains("white") &&
+            !D6.firstElementChild.classList.contains("black"))) &&
+        (!E6.firstElementChild ||
+          (!E6.firstElementChild.classList.contains("white") &&
+            !E6.firstElementChild.classList.contains("black"))) &&
+        (!F6.firstElementChild ||
+          (!F6.firstElementChild.classList.contains("white") &&
+            !F6.firstElementChild.classList.contains("black"))) &&
+        (!G6.firstElementChild ||
+          (!G6.firstElementChild.classList.contains("white") &&
+            !G6.firstElementChild.classList.contains("black")))
+      ) {
+        C6.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(C6);
+      }
+      if (
+        (!B6.firstElementChild ||
+          !B6.firstElementChild.classList.contains("white")) &&
+        (!C6.firstElementChild ||
+          (!C6.firstElementChild.classList.contains("white") &&
+            !C6.firstElementChild.classList.contains("black"))) &&
+        (!D6.firstElementChild ||
+          (!D6.firstElementChild.classList.contains("white") &&
+            !D6.firstElementChild.classList.contains("black"))) &&
+        (!E6.firstElementChild ||
+          (!E6.firstElementChild.classList.contains("white") &&
+            !E6.firstElementChild.classList.contains("black"))) &&
+        (!F6.firstElementChild ||
+          (!F6.firstElementChild.classList.contains("white") &&
+            !F6.firstElementChild.classList.contains("black"))) &&
+        (!G6.firstElementChild ||
+          (!G6.firstElementChild.classList.contains("white") &&
+            !G6.firstElementChild.classList.contains("black")))
+      ) {
+        B6.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(B6);
+      }
+      if (
+        (!A6.firstElementChild ||
+          !A6.firstElementChild.classList.contains("white")) &&
+        (!B6.firstElementChild ||
+          (!B6.firstElementChild.classList.contains("white") &&
+            !B6.firstElementChild.classList.contains("black"))) &&
+        (!C6.firstElementChild ||
+          (!C6.firstElementChild.classList.contains("white") &&
+            !C6.firstElementChild.classList.contains("black"))) &&
+        (!D6.firstElementChild ||
+          (!D6.firstElementChild.classList.contains("white") &&
+            !D6.firstElementChild.classList.contains("black"))) &&
+        (!E6.firstElementChild ||
+          (!E6.firstElementChild.classList.contains("white") &&
+            !E6.firstElementChild.classList.contains("black"))) &&
+        (!F6.firstElementChild ||
+          (!F6.firstElementChild.classList.contains("white") &&
+            !F6.firstElementChild.classList.contains("black"))) &&
+        (!G6.firstElementChild ||
+          (!G6.firstElementChild.classList.contains("white") &&
+            !G6.firstElementChild.classList.contains("black")))
+      ) {
+        A6.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(A6);
+      }
+    }
+  }
+  // Black Rook on H6
+  if (selectedPiece.classList.contains("blackRook")) {
+    if (currentSquare === "H6") {
+      // Vertical UP (H7 → H8)
+      if (
+        !H7.firstElementChild ||
+        !H7.firstElementChild.classList.contains("black") // If H7 is empty or contains a non-black piece
+      ) {
+        H7.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(H7);
+      }
+      if (
+        (!H8.firstElementChild ||
+          !H8.firstElementChild.classList.contains("black")) &&
+        (!H7.firstElementChild ||
+          (!H7.firstElementChild.classList.contains("black") &&
+            !H7.firstElementChild.classList.contains("white")))
+      ) {
+        H8.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(H8);
+      }
+
+      // Vertical DOWN (H5 → H1)
+      if (
+        !H5.firstElementChild ||
+        !H5.firstElementChild.classList.contains("black")
+      ) {
+        H5.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(H5);
+      }
+      if (
+        (!H4.firstElementChild ||
+          !H4.firstElementChild.classList.contains("black")) &&
+        (!H5.firstElementChild ||
+          (!H5.firstElementChild.classList.contains("black") &&
+            !H5.firstElementChild.classList.contains("white")))
+      ) {
+        H4.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(H4);
+      }
+      if (
+        (!H3.firstElementChild ||
+          !H3.firstElementChild.classList.contains("black")) &&
+        (!H4.firstElementChild ||
+          (!H4.firstElementChild.classList.contains("black") &&
+            !H4.firstElementChild.classList.contains("white"))) &&
+        (!H5.firstElementChild ||
+          (!H5.firstElementChild.classList.contains("black") &&
+            !H5.firstElementChild.classList.contains("white")))
+      ) {
+        H3.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(H3);
+      }
+      if (
+        (!H2.firstElementChild ||
+          !H2.firstElementChild.classList.contains("black")) &&
+        (!H3.firstElementChild ||
+          (!H3.firstElementChild.classList.contains("black") &&
+            !H3.firstElementChild.classList.contains("white"))) &&
+        (!H4.firstElementChild ||
+          (!H4.firstElementChild.classList.contains("black") &&
+            !H4.firstElementChild.classList.contains("white"))) &&
+        (!H5.firstElementChild ||
+          (!H5.firstElementChild.classList.contains("black") &&
+            !H5.firstElementChild.classList.contains("white")))
+      ) {
+        H2.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(H2);
+      }
+      if (
+        (!H1.firstElementChild ||
+          !H1.firstElementChild.classList.contains("black")) &&
+        (!H2.firstElementChild ||
+          (!H2.firstElementChild.classList.contains("black") &&
+            !H2.firstElementChild.classList.contains("white"))) &&
+        (!H3.firstElementChild ||
+          (!H3.firstElementChild.classList.contains("black") &&
+            !H3.firstElementChild.classList.contains("white"))) &&
+        (!H4.firstElementChild ||
+          (!H4.firstElementChild.classList.contains("black") &&
+            !H4.firstElementChild.classList.contains("white"))) &&
+        (!H5.firstElementChild ||
+          (!H5.firstElementChild.classList.contains("black") &&
+            !H5.firstElementChild.classList.contains("white")))
+      ) {
+        H1.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(H1);
+      }
+
+      // Horizontal LEFT (G6 → A6)
+      if (
+        !G6.firstElementChild ||
+        !G6.firstElementChild.classList.contains("black")
+      ) {
+        G6.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(G6);
+      }
+      if (
+        (!F6.firstElementChild ||
+          !F6.firstElementChild.classList.contains("black")) &&
+        (!G6.firstElementChild ||
+          (!G6.firstElementChild.classList.contains("black") &&
+            !G6.firstElementChild.classList.contains("white")))
+      ) {
+        F6.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(F6);
+      }
+      if (
+        (!E6.firstElementChild ||
+          !E6.firstElementChild.classList.contains("black")) &&
+        (!F6.firstElementChild ||
+          (!F6.firstElementChild.classList.contains("black") &&
+            !F6.firstElementChild.classList.contains("white"))) &&
+        (!G6.firstElementChild ||
+          (!G6.firstElementChild.classList.contains("black") &&
+            !G6.firstElementChild.classList.contains("white")))
+      ) {
+        E6.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(E6);
+      }
+      if (
+        (!D6.firstElementChild ||
+          !D6.firstElementChild.classList.contains("black")) &&
+        (!E6.firstElementChild ||
+          (!E6.firstElementChild.classList.contains("black") &&
+            !E6.firstElementChild.classList.contains("white"))) &&
+        (!F6.firstElementChild ||
+          (!F6.firstElementChild.classList.contains("black") &&
+            !F6.firstElementChild.classList.contains("white"))) &&
+        (!G6.firstElementChild ||
+          (!G6.firstElementChild.classList.contains("black") &&
+            !G6.firstElementChild.classList.contains("white")))
+      ) {
+        D6.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(D6);
+      }
+      if (
+        (!C6.firstElementChild ||
+          !C6.firstElementChild.classList.contains("black")) &&
+        (!D6.firstElementChild ||
+          (!D6.firstElementChild.classList.contains("black") &&
+            !D6.firstElementChild.classList.contains("white"))) &&
+        (!E6.firstElementChild ||
+          (!E6.firstElementChild.classList.contains("black") &&
+            !E6.firstElementChild.classList.contains("white"))) &&
+        (!F6.firstElementChild ||
+          (!F6.firstElementChild.classList.contains("black") &&
+            !F6.firstElementChild.classList.contains("white"))) &&
+        (!G6.firstElementChild ||
+          (!G6.firstElementChild.classList.contains("black") &&
+            !G6.firstElementChild.classList.contains("white")))
+      ) {
+        C6.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(C6);
+      }
+      if (
+        (!B6.firstElementChild ||
+          !B6.firstElementChild.classList.contains("black")) &&
+        (!C6.firstElementChild ||
+          (!C6.firstElementChild.classList.contains("black") &&
+            !C6.firstElementChild.classList.contains("white"))) &&
+        (!D6.firstElementChild ||
+          (!D6.firstElementChild.classList.contains("black") &&
+            !D6.firstElementChild.classList.contains("white"))) &&
+        (!E6.firstElementChild ||
+          (!E6.firstElementChild.classList.contains("black") &&
+            !E6.firstElementChild.classList.contains("white"))) &&
+        (!F6.firstElementChild ||
+          (!F6.firstElementChild.classList.contains("black") &&
+            !F6.firstElementChild.classList.contains("white"))) &&
+        (!G6.firstElementChild ||
+          (!G6.firstElementChild.classList.contains("black") &&
+            !G6.firstElementChild.classList.contains("white")))
+      ) {
+        B6.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(B6);
+      }
+      if (
+        (!A6.firstElementChild ||
+          !A6.firstElementChild.classList.contains("black")) &&
+        (!B6.firstElementChild ||
+          (!B6.firstElementChild.classList.contains("black") &&
+            !B6.firstElementChild.classList.contains("white"))) &&
+        (!C6.firstElementChild ||
+          (!C6.firstElementChild.classList.contains("black") &&
+            !C6.firstElementChild.classList.contains("white"))) &&
+        (!D6.firstElementChild ||
+          (!D6.firstElementChild.classList.contains("black") &&
+            !D6.firstElementChild.classList.contains("white"))) &&
+        (!E6.firstElementChild ||
+          (!E6.firstElementChild.classList.contains("black") &&
+            !E6.firstElementChild.classList.contains("white"))) &&
+        (!F6.firstElementChild ||
+          (!F6.firstElementChild.classList.contains("black") &&
+            !F6.firstElementChild.classList.contains("white"))) &&
+        (!G6.firstElementChild ||
+          (!G6.firstElementChild.classList.contains("black") &&
+            !G6.firstElementChild.classList.contains("white")))
+      ) {
+        A6.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(A6);
+      }
+    }
+  }
+
+  // Black Rook on H7
+  if (selectedPiece.classList.contains("blackRook")) {
+    if (currentSquare === "H7") {
+      // Vertical UP (H8)
+      if (
+        !H8.firstElementChild ||
+        !H8.firstElementChild.classList.contains("black")
+      ) {
+        H8.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(H8);
+      }
+
+      // Vertical DOWN (H6 → H1)
+      if (
+        !H6.firstElementChild ||
+        !H6.firstElementChild.classList.contains("black")
+      ) {
+        H6.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(H6);
+      }
+      if (
+        (!H5.firstElementChild ||
+          !H5.firstElementChild.classList.contains("black")) &&
+        (!H6.firstElementChild ||
+          (!H6.firstElementChild.classList.contains("black") &&
+            !H6.firstElementChild.classList.contains("white")))
+      ) {
+        H5.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(H5);
+      }
+      if (
+        (!H4.firstElementChild ||
+          !H4.firstElementChild.classList.contains("black")) &&
+        (!H5.firstElementChild ||
+          (!H5.firstElementChild.classList.contains("black") &&
+            !H5.firstElementChild.classList.contains("white"))) &&
+        (!H6.firstElementChild ||
+          (!H6.firstElementChild.classList.contains("black") &&
+            !H6.firstElementChild.classList.contains("white")))
+      ) {
+        H4.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(H4);
+      }
+      if (
+        (!H3.firstElementChild ||
+          !H3.firstElementChild.classList.contains("black")) &&
+        (!H4.firstElementChild ||
+          (!H4.firstElementChild.classList.contains("black") &&
+            !H4.firstElementChild.classList.contains("white"))) &&
+        (!H5.firstElementChild ||
+          (!H5.firstElementChild.classList.contains("black") &&
+            !H5.firstElementChild.classList.contains("white"))) &&
+        (!H6.firstElementChild ||
+          (!H6.firstElementChild.classList.contains("black") &&
+            !H6.firstElementChild.classList.contains("white")))
+      ) {
+        H3.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(H3);
+      }
+      if (
+        (!H2.firstElementChild ||
+          !H2.firstElementChild.classList.contains("black")) &&
+        (!H3.firstElementChild ||
+          (!H3.firstElementChild.classList.contains("black") &&
+            !H3.firstElementChild.classList.contains("white"))) &&
+        (!H4.firstElementChild ||
+          (!H4.firstElementChild.classList.contains("black") &&
+            !H4.firstElementChild.classList.contains("white"))) &&
+        (!H5.firstElementChild ||
+          (!H5.firstElementChild.classList.contains("black") &&
+            !H5.firstElementChild.classList.contains("white"))) &&
+        (!H6.firstElementChild ||
+          (!H6.firstElementChild.classList.contains("black") &&
+            !H6.firstElementChild.classList.contains("white")))
+      ) {
+        H2.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(H2);
+      }
+      if (
+        (!H1.firstElementChild ||
+          !H1.firstElementChild.classList.contains("black")) &&
+        (!H2.firstElementChild ||
+          (!H2.firstElementChild.classList.contains("black") &&
+            !H2.firstElementChild.classList.contains("white"))) &&
+        (!H3.firstElementChild ||
+          (!H3.firstElementChild.classList.contains("black") &&
+            !H3.firstElementChild.classList.contains("white"))) &&
+        (!H4.firstElementChild ||
+          (!H4.firstElementChild.classList.contains("black") &&
+            !H4.firstElementChild.classList.contains("white"))) &&
+        (!H5.firstElementChild ||
+          (!H5.firstElementChild.classList.contains("black") &&
+            !H5.firstElementChild.classList.contains("white"))) &&
+        (!H6.firstElementChild ||
+          (!H6.firstElementChild.classList.contains("black") &&
+            !H6.firstElementChild.classList.contains("white")))
+      ) {
+        H1.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(H1);
+      }
+
+      // Horizontal LEFT (G7 → A7)
+      if (
+        !G7.firstElementChild ||
+        !G7.firstElementChild.classList.contains("black")
+      ) {
+        G7.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(G7);
+      }
+      if (
+        (!F7.firstElementChild ||
+          !F7.firstElementChild.classList.contains("black")) &&
+        (!G7.firstElementChild ||
+          (!G7.firstElementChild.classList.contains("black") &&
+            !G7.firstElementChild.classList.contains("white")))
+      ) {
+        F7.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(F7);
+      }
+      if (
+        (!E7.firstElementChild ||
+          !E7.firstElementChild.classList.contains("black")) &&
+        (!F7.firstElementChild ||
+          (!F7.firstElementChild.classList.contains("black") &&
+            !F7.firstElementChild.classList.contains("white"))) &&
+        (!G7.firstElementChild ||
+          (!G7.firstElementChild.classList.contains("black") &&
+            !G7.firstElementChild.classList.contains("white")))
+      ) {
+        E7.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(E7);
+      }
+      if (
+        (!D7.firstElementChild ||
+          !D7.firstElementChild.classList.contains("black")) &&
+        (!E7.firstElementChild ||
+          (!E7.firstElementChild.classList.contains("black") &&
+            !E7.firstElementChild.classList.contains("white"))) &&
+        (!F7.firstElementChild ||
+          (!F7.firstElementChild.classList.contains("black") &&
+            !F7.firstElementChild.classList.contains("white"))) &&
+        (!G7.firstElementChild ||
+          (!G7.firstElementChild.classList.contains("black") &&
+            !G7.firstElementChild.classList.contains("white")))
+      ) {
+        D7.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(D7);
+      }
+      if (
+        (!C7.firstElementChild ||
+          !C7.firstElementChild.classList.contains("black")) &&
+        (!D7.firstElementChild ||
+          (!D7.firstElementChild.classList.contains("black") &&
+            !D7.firstElementChild.classList.contains("white"))) &&
+        (!E7.firstElementChild ||
+          (!E7.firstElementChild.classList.contains("black") &&
+            !E7.firstElementChild.classList.contains("white"))) &&
+        (!F7.firstElementChild ||
+          (!F7.firstElementChild.classList.contains("black") &&
+            !F7.firstElementChild.classList.contains("white"))) &&
+        (!G7.firstElementChild ||
+          (!G7.firstElementChild.classList.contains("black") &&
+            !G7.firstElementChild.classList.contains("white")))
+      ) {
+        C7.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(C7);
+      }
+      if (
+        (!B7.firstElementChild ||
+          !B7.firstElementChild.classList.contains("black")) &&
+        (!C7.firstElementChild ||
+          (!C7.firstElementChild.classList.contains("black") &&
+            !C7.firstElementChild.classList.contains("white"))) &&
+        (!D7.firstElementChild ||
+          (!D7.firstElementChild.classList.contains("black") &&
+            !D7.firstElementChild.classList.contains("white"))) &&
+        (!E7.firstElementChild ||
+          (!E7.firstElementChild.classList.contains("black") &&
+            !E7.firstElementChild.classList.contains("white"))) &&
+        (!F7.firstElementChild ||
+          (!F7.firstElementChild.classList.contains("black") &&
+            !F7.firstElementChild.classList.contains("white"))) &&
+        (!G7.firstElementChild ||
+          (!G7.firstElementChild.classList.contains("black") &&
+            !G7.firstElementChild.classList.contains("white")))
+      ) {
+        B7.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(B7);
+      }
+      if (
+        (!A7.firstElementChild ||
+          !A7.firstElementChild.classList.contains("black")) &&
+        (!B7.firstElementChild ||
+          (!B7.firstElementChild.classList.contains("black") &&
+            !B7.firstElementChild.classList.contains("white"))) &&
+        (!C7.firstElementChild ||
+          (!C7.firstElementChild.classList.contains("black") &&
+            !C7.firstElementChild.classList.contains("white"))) &&
+        (!D7.firstElementChild ||
+          (!D7.firstElementChild.classList.contains("black") &&
+            !D7.firstElementChild.classList.contains("white"))) &&
+        (!E7.firstElementChild ||
+          (!E7.firstElementChild.classList.contains("black") &&
+            !E7.firstElementChild.classList.contains("white"))) &&
+        (!F7.firstElementChild ||
+          (!F7.firstElementChild.classList.contains("black") &&
+            !F7.firstElementChild.classList.contains("white"))) &&
+        (!G7.firstElementChild ||
+          (!G7.firstElementChild.classList.contains("black") &&
+            !G7.firstElementChild.classList.contains("white")))
+      ) {
+        A7.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(A7);
+      }
+    }
+  }
+  // White Rook on H7
+  if (selectedPiece.classList.contains("whiteRook")) {
+    if (currentSquare === "H7") {
+      // Vertical UP (H8)
+      if (
+        !H8.firstElementChild ||
+        !H8.firstElementChild.classList.contains("white")
+      ) {
+        H8.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(H8);
+      }
+
+      // Vertical DOWN (H6 → H1)
+      if (
+        !H6.firstElementChild ||
+        !H6.firstElementChild.classList.contains("white")
+      ) {
+        H6.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(H6);
+      }
+      if (
+        (!H5.firstElementChild ||
+          !H5.firstElementChild.classList.contains("white")) &&
+        (!H6.firstElementChild ||
+          (!H6.firstElementChild.classList.contains("black") &&
+            !H6.firstElementChild.classList.contains("white")))
+      ) {
+        H5.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(H5);
+      }
+      if (
+        (!H4.firstElementChild ||
+          !H4.firstElementChild.classList.contains("white")) &&
+        (!H5.firstElementChild ||
+          (!H5.firstElementChild.classList.contains("black") &&
+            !H5.firstElementChild.classList.contains("white"))) &&
+        (!H6.firstElementChild ||
+          (!H6.firstElementChild.classList.contains("black") &&
+            !H6.firstElementChild.classList.contains("white")))
+      ) {
+        H4.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(H4);
+      }
+      if (
+        (!H3.firstElementChild ||
+          !H3.firstElementChild.classList.contains("white")) &&
+        (!H4.firstElementChild ||
+          (!H4.firstElementChild.classList.contains("black") &&
+            !H4.firstElementChild.classList.contains("white"))) &&
+        (!H5.firstElementChild ||
+          (!H5.firstElementChild.classList.contains("black") &&
+            !H5.firstElementChild.classList.contains("white"))) &&
+        (!H6.firstElementChild ||
+          (!H6.firstElementChild.classList.contains("black") &&
+            !H6.firstElementChild.classList.contains("white")))
+      ) {
+        H3.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(H3);
+      }
+      if (
+        (!H2.firstElementChild ||
+          !H2.firstElementChild.classList.contains("white")) &&
+        (!H3.firstElementChild ||
+          (!H3.firstElementChild.classList.contains("black") &&
+            !H3.firstElementChild.classList.contains("white"))) &&
+        (!H4.firstElementChild ||
+          (!H4.firstElementChild.classList.contains("black") &&
+            !H4.firstElementChild.classList.contains("white"))) &&
+        (!H5.firstElementChild ||
+          (!H5.firstElementChild.classList.contains("black") &&
+            !H5.firstElementChild.classList.contains("white"))) &&
+        (!H6.firstElementChild ||
+          (!H6.firstElementChild.classList.contains("black") &&
+            !H6.firstElementChild.classList.contains("white")))
+      ) {
+        H2.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(H2);
+      }
+      if (
+        (!H1.firstElementChild ||
+          !H1.firstElementChild.classList.contains("white")) &&
+        (!H2.firstElementChild ||
+          (!H2.firstElementChild.classList.contains("black") &&
+            !H2.firstElementChild.classList.contains("white"))) &&
+        (!H3.firstElementChild ||
+          (!H3.firstElementChild.classList.contains("black") &&
+            !H3.firstElementChild.classList.contains("white"))) &&
+        (!H4.firstElementChild ||
+          (!H4.firstElementChild.classList.contains("black") &&
+            !H4.firstElementChild.classList.contains("white"))) &&
+        (!H5.firstElementChild ||
+          (!H5.firstElementChild.classList.contains("black") &&
+            !H5.firstElementChild.classList.contains("white"))) &&
+        (!H6.firstElementChild ||
+          (!H6.firstElementChild.classList.contains("black") &&
+            !H6.firstElementChild.classList.contains("white")))
+      ) {
+        H1.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(H1);
+      }
+
+      // Horizontal LEFT (G7 → A7)
+      if (
+        !G7.firstElementChild ||
+        !G7.firstElementChild.classList.contains("white")
+      ) {
+        G7.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(G7);
+      }
+      if (
+        (!F7.firstElementChild ||
+          !F7.firstElementChild.classList.contains("white")) &&
+        (!G7.firstElementChild ||
+          (!G7.firstElementChild.classList.contains("black") &&
+            !G7.firstElementChild.classList.contains("white")))
+      ) {
+        F7.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(F7);
+      }
+      if (
+        (!E7.firstElementChild ||
+          !E7.firstElementChild.classList.contains("white")) &&
+        (!F7.firstElementChild ||
+          (!F7.firstElementChild.classList.contains("black") &&
+            !F7.firstElementChild.classList.contains("white"))) &&
+        (!G7.firstElementChild ||
+          (!G7.firstElementChild.classList.contains("black") &&
+            !G7.firstElementChild.classList.contains("white")))
+      ) {
+        E7.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(E7);
+      }
+      if (
+        (!D7.firstElementChild ||
+          !D7.firstElementChild.classList.contains("white")) &&
+        (!E7.firstElementChild ||
+          (!E7.firstElementChild.classList.contains("black") &&
+            !E7.firstElementChild.classList.contains("white"))) &&
+        (!F7.firstElementChild ||
+          (!F7.firstElementChild.classList.contains("black") &&
+            !F7.firstElementChild.classList.contains("white"))) &&
+        (!G7.firstElementChild ||
+          (!G7.firstElementChild.classList.contains("black") &&
+            !G7.firstElementChild.classList.contains("white")))
+      ) {
+        D7.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(D7);
+      }
+      if (
+        (!C7.firstElementChild ||
+          !C7.firstElementChild.classList.contains("white")) &&
+        (!D7.firstElementChild ||
+          (!D7.firstElementChild.classList.contains("black") &&
+            !D7.firstElementChild.classList.contains("white"))) &&
+        (!E7.firstElementChild ||
+          (!E7.firstElementChild.classList.contains("black") &&
+            !E7.firstElementChild.classList.contains("white"))) &&
+        (!F7.firstElementChild ||
+          (!F7.firstElementChild.classList.contains("black") &&
+            !F7.firstElementChild.classList.contains("white"))) &&
+        (!G7.firstElementChild ||
+          (!G7.firstElementChild.classList.contains("black") &&
+            !G7.firstElementChild.classList.contains("white")))
+      ) {
+        C7.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(C7);
+      }
+      if (
+        (!B7.firstElementChild ||
+          !B7.firstElementChild.classList.contains("white")) &&
+        (!C7.firstElementChild ||
+          (!C7.firstElementChild.classList.contains("black") &&
+            !C7.firstElementChild.classList.contains("white"))) &&
+        (!D7.firstElementChild ||
+          (!D7.firstElementChild.classList.contains("black") &&
+            !D7.firstElementChild.classList.contains("white"))) &&
+        (!E7.firstElementChild ||
+          (!E7.firstElementChild.classList.contains("black") &&
+            !E7.firstElementChild.classList.contains("white"))) &&
+        (!F7.firstElementChild ||
+          (!F7.firstElementChild.classList.contains("black") &&
+            !F7.firstElementChild.classList.contains("white"))) &&
+        (!G7.firstElementChild ||
+          (!G7.firstElementChild.classList.contains("black") &&
+            !G7.firstElementChild.classList.contains("white")))
+      ) {
+        B7.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(B7);
+      }
+      if (
+        (!A7.firstElementChild ||
+          !A7.firstElementChild.classList.contains("white")) &&
+        (!B7.firstElementChild ||
+          (!B7.firstElementChild.classList.contains("black") &&
+            !B7.firstElementChild.classList.contains("white"))) &&
+        (!C7.firstElementChild ||
+          (!C7.firstElementChild.classList.contains("black") &&
+            !C7.firstElementChild.classList.contains("white"))) &&
+        (!D7.firstElementChild ||
+          (!D7.firstElementChild.classList.contains("black") &&
+            !D7.firstElementChild.classList.contains("white"))) &&
+        (!E7.firstElementChild ||
+          (!E7.firstElementChild.classList.contains("black") &&
+            !E7.firstElementChild.classList.contains("white"))) &&
+        (!F7.firstElementChild ||
+          (!F7.firstElementChild.classList.contains("black") &&
+            !F7.firstElementChild.classList.contains("white"))) &&
+        (!G7.firstElementChild ||
+          (!G7.firstElementChild.classList.contains("black") &&
+            !G7.firstElementChild.classList.contains("white")))
+      ) {
+        A7.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(A7);
+      }
+    }
+  }
+  // White Rook on H8
+  if (selectedPiece.classList.contains("whiteRook")) {
+    if (currentSquare === "H8") {
+      // Vertical DOWN (H7 → H1)
+      if (
+        !H7.firstElementChild ||
+        !H7.firstElementChild.classList.contains("white")
+      ) {
+        H7.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(H7);
+      }
+      if (
+        (!H6.firstElementChild ||
+          !H6.firstElementChild.classList.contains("white")) &&
+        (!H7.firstElementChild ||
+          (!H7.firstElementChild.classList.contains("black") &&
+            !H7.firstElementChild.classList.contains("white")))
+      ) {
+        H6.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(H6);
+      }
+      if (
+        (!H5.firstElementChild ||
+          !H5.firstElementChild.classList.contains("white")) &&
+        (!H6.firstElementChild ||
+          (!H6.firstElementChild.classList.contains("black") &&
+            !H6.firstElementChild.classList.contains("white"))) &&
+        (!H7.firstElementChild ||
+          (!H7.firstElementChild.classList.contains("black") &&
+            !H7.firstElementChild.classList.contains("white")))
+      ) {
+        H5.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(H5);
+      }
+      if (
+        (!H4.firstElementChild ||
+          !H4.firstElementChild.classList.contains("white")) &&
+        (!H5.firstElementChild ||
+          (!H5.firstElementChild.classList.contains("black") &&
+            !H5.firstElementChild.classList.contains("white"))) &&
+        (!H6.firstElementChild ||
+          (!H6.firstElementChild.classList.contains("black") &&
+            !H6.firstElementChild.classList.contains("white"))) &&
+        (!H7.firstElementChild ||
+          (!H7.firstElementChild.classList.contains("black") &&
+            !H7.firstElementChild.classList.contains("white")))
+      ) {
+        H4.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(H4);
+      }
+      if (
+        (!H3.firstElementChild ||
+          !H3.firstElementChild.classList.contains("white")) &&
+        (!H4.firstElementChild ||
+          (!H4.firstElementChild.classList.contains("black") &&
+            !H4.firstElementChild.classList.contains("white"))) &&
+        (!H5.firstElementChild ||
+          (!H5.firstElementChild.classList.contains("black") &&
+            !H5.firstElementChild.classList.contains("white"))) &&
+        (!H6.firstElementChild ||
+          (!H6.firstElementChild.classList.contains("black") &&
+            !H6.firstElementChild.classList.contains("white"))) &&
+        (!H7.firstElementChild ||
+          (!H7.firstElementChild.classList.contains("black") &&
+            !H7.firstElementChild.classList.contains("white")))
+      ) {
+        H3.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(H3);
+      }
+      if (
+        (!H2.firstElementChild ||
+          !H2.firstElementChild.classList.contains("white")) &&
+        (!H3.firstElementChild ||
+          (!H3.firstElementChild.classList.contains("black") &&
+            !H3.firstElementChild.classList.contains("white"))) &&
+        (!H4.firstElementChild ||
+          (!H4.firstElementChild.classList.contains("black") &&
+            !H4.firstElementChild.classList.contains("white"))) &&
+        (!H5.firstElementChild ||
+          (!H5.firstElementChild.classList.contains("black") &&
+            !H5.firstElementChild.classList.contains("white"))) &&
+        (!H6.firstElementChild ||
+          (!H6.firstElementChild.classList.contains("black") &&
+            !H6.firstElementChild.classList.contains("white"))) &&
+        (!H7.firstElementChild ||
+          (!H7.firstElementChild.classList.contains("black") &&
+            !H7.firstElementChild.classList.contains("white")))
+      ) {
+        H2.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(H2);
+      }
+      if (
+        (!H1.firstElementChild ||
+          !H1.firstElementChild.classList.contains("white")) &&
+        (!H2.firstElementChild ||
+          (!H2.firstElementChild.classList.contains("black") &&
+            !H2.firstElementChild.classList.contains("white"))) &&
+        (!H3.firstElementChild ||
+          (!H3.firstElementChild.classList.contains("black") &&
+            !H3.firstElementChild.classList.contains("white"))) &&
+        (!H4.firstElementChild ||
+          (!H4.firstElementChild.classList.contains("black") &&
+            !H4.firstElementChild.classList.contains("white"))) &&
+        (!H5.firstElementChild ||
+          (!H5.firstElementChild.classList.contains("black") &&
+            !H5.firstElementChild.classList.contains("white"))) &&
+        (!H6.firstElementChild ||
+          (!H6.firstElementChild.classList.contains("black") &&
+            !H6.firstElementChild.classList.contains("white"))) &&
+        (!H7.firstElementChild ||
+          (!H7.firstElementChild.classList.contains("black") &&
+            !H7.firstElementChild.classList.contains("white")))
+      ) {
+        H1.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(H1);
+      }
+
+      // Horizontal LEFT (G8 → A8)
+      if (
+        !G8.firstElementChild ||
+        !G8.firstElementChild.classList.contains("white")
+      ) {
+        G8.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(G8);
+      }
+      if (
+        (!F8.firstElementChild ||
+          !F8.firstElementChild.classList.contains("white")) &&
+        (!G8.firstElementChild ||
+          (!G8.firstElementChild.classList.contains("black") &&
+            !G8.firstElementChild.classList.contains("white")))
+      ) {
+        F8.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(F8);
+      }
+      if (
+        (!E8.firstElementChild ||
+          !E8.firstElementChild.classList.contains("white")) &&
+        (!F8.firstElementChild ||
+          (!F8.firstElementChild.classList.contains("black") &&
+            !F8.firstElementChild.classList.contains("white"))) &&
+        (!G8.firstElementChild ||
+          (!G8.firstElementChild.classList.contains("black") &&
+            !G8.firstElementChild.classList.contains("white")))
+      ) {
+        E8.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(E8);
+      }
+      if (
+        (!D8.firstElementChild ||
+          !D8.firstElementChild.classList.contains("white")) &&
+        (!E8.firstElementChild ||
+          (!E8.firstElementChild.classList.contains("black") &&
+            !E8.firstElementChild.classList.contains("white"))) &&
+        (!F8.firstElementChild ||
+          (!F8.firstElementChild.classList.contains("black") &&
+            !F8.firstElementChild.classList.contains("white"))) &&
+        (!G8.firstElementChild ||
+          (!G8.firstElementChild.classList.contains("black") &&
+            !G8.firstElementChild.classList.contains("white")))
+      ) {
+        D8.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(D8);
+      }
+      if (
+        (!C8.firstElementChild ||
+          !C8.firstElementChild.classList.contains("white")) &&
+        (!D8.firstElementChild ||
+          (!D8.firstElementChild.classList.contains("black") &&
+            !D8.firstElementChild.classList.contains("white"))) &&
+        (!E8.firstElementChild ||
+          (!E8.firstElementChild.classList.contains("black") &&
+            !E8.firstElementChild.classList.contains("white"))) &&
+        (!F8.firstElementChild ||
+          (!F8.firstElementChild.classList.contains("black") &&
+            !F8.firstElementChild.classList.contains("white"))) &&
+        (!G8.firstElementChild ||
+          (!G8.firstElementChild.classList.contains("black") &&
+            !G8.firstElementChild.classList.contains("white")))
+      ) {
+        C8.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(C8);
+      }
+      if (
+        (!B8.firstElementChild ||
+          !B8.firstElementChild.classList.contains("white")) &&
+        (!C8.firstElementChild ||
+          (!C8.firstElementChild.classList.contains("black") &&
+            !C8.firstElementChild.classList.contains("white"))) &&
+        (!D8.firstElementChild ||
+          (!D8.firstElementChild.classList.contains("black") &&
+            !D8.firstElementChild.classList.contains("white"))) &&
+        (!E8.firstElementChild ||
+          (!E8.firstElementChild.classList.contains("black") &&
+            !E8.firstElementChild.classList.contains("white"))) &&
+        (!F8.firstElementChild ||
+          (!F8.firstElementChild.classList.contains("black") &&
+            !F8.firstElementChild.classList.contains("white"))) &&
+        (!G8.firstElementChild ||
+          (!G8.firstElementChild.classList.contains("black") &&
+            !G8.firstElementChild.classList.contains("white")))
+      ) {
+        B8.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(B8);
+      }
+      if (
+        (!A8.firstElementChild ||
+          !A8.firstElementChild.classList.contains("white")) &&
+        (!B8.firstElementChild ||
+          (!B8.firstElementChild.classList.contains("black") &&
+            !B8.firstElementChild.classList.contains("white"))) &&
+        (!C8.firstElementChild ||
+          (!C8.firstElementChild.classList.contains("black") &&
+            !C8.firstElementChild.classList.contains("white"))) &&
+        (!D8.firstElementChild ||
+          (!D8.firstElementChild.classList.contains("black") &&
+            !D8.firstElementChild.classList.contains("white"))) &&
+        (!E8.firstElementChild ||
+          (!E8.firstElementChild.classList.contains("black") &&
+            !E8.firstElementChild.classList.contains("white"))) &&
+        (!F8.firstElementChild ||
+          (!F8.firstElementChild.classList.contains("black") &&
+            !F8.firstElementChild.classList.contains("white"))) &&
+        (!G8.firstElementChild ||
+          (!G8.firstElementChild.classList.contains("black") &&
+            !G8.firstElementChild.classList.contains("white")))
+      ) {
+        A8.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(A8);
+      }
+    }
+  }
+  // Black Rook on H8
+  if (selectedPiece.classList.contains("blackRook")) {
+    if (currentSquare === "H8") {
+      // Vertical DOWN (H7 → H1)
+      if (
+        !H7.firstElementChild ||
+        !H7.firstElementChild.classList.contains("black")
+      ) {
+        H7.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(H7);
+      }
+      if (
+        (!H6.firstElementChild ||
+          !H6.firstElementChild.classList.contains("black")) &&
+        (!H7.firstElementChild ||
+          (!H7.firstElementChild.classList.contains("black") &&
+            !H7.firstElementChild.classList.contains("white")))
+      ) {
+        H6.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(H6);
+      }
+      if (
+        (!H5.firstElementChild ||
+          !H5.firstElementChild.classList.contains("black")) &&
+        (!H6.firstElementChild ||
+          (!H6.firstElementChild.classList.contains("black") &&
+            !H6.firstElementChild.classList.contains("white"))) &&
+        (!H7.firstElementChild ||
+          (!H7.firstElementChild.classList.contains("black") &&
+            !H7.firstElementChild.classList.contains("white")))
+      ) {
+        H5.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(H5);
+      }
+      if (
+        (!H4.firstElementChild ||
+          !H4.firstElementChild.classList.contains("black")) &&
+        (!H5.firstElementChild ||
+          (!H5.firstElementChild.classList.contains("black") &&
+            !H5.firstElementChild.classList.contains("white"))) &&
+        (!H6.firstElementChild ||
+          (!H6.firstElementChild.classList.contains("black") &&
+            !H6.firstElementChild.classList.contains("white"))) &&
+        (!H7.firstElementChild ||
+          (!H7.firstElementChild.classList.contains("black") &&
+            !H7.firstElementChild.classList.contains("white")))
+      ) {
+        H4.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(H4);
+      }
+      if (
+        (!H3.firstElementChild ||
+          !H3.firstElementChild.classList.contains("black")) &&
+        (!H4.firstElementChild ||
+          (!H4.firstElementChild.classList.contains("black") &&
+            !H4.firstElementChild.classList.contains("white"))) &&
+        (!H5.firstElementChild ||
+          (!H5.firstElementChild.classList.contains("black") &&
+            !H5.firstElementChild.classList.contains("white"))) &&
+        (!H6.firstElementChild ||
+          (!H6.firstElementChild.classList.contains("black") &&
+            !H6.firstElementChild.classList.contains("white"))) &&
+        (!H7.firstElementChild ||
+          (!H7.firstElementChild.classList.contains("black") &&
+            !H7.firstElementChild.classList.contains("white")))
+      ) {
+        H3.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(H3);
+      }
+      if (
+        (!H2.firstElementChild ||
+          !H2.firstElementChild.classList.contains("black")) &&
+        (!H3.firstElementChild ||
+          (!H3.firstElementChild.classList.contains("black") &&
+            !H3.firstElementChild.classList.contains("white"))) &&
+        (!H4.firstElementChild ||
+          (!H4.firstElementChild.classList.contains("black") &&
+            !H4.firstElementChild.classList.contains("white"))) &&
+        (!H5.firstElementChild ||
+          (!H5.firstElementChild.classList.contains("black") &&
+            !H5.firstElementChild.classList.contains("white"))) &&
+        (!H6.firstElementChild ||
+          (!H6.firstElementChild.classList.contains("black") &&
+            !H6.firstElementChild.classList.contains("white"))) &&
+        (!H7.firstElementChild ||
+          (!H7.firstElementChild.classList.contains("black") &&
+            !H7.firstElementChild.classList.contains("white")))
+      ) {
+        H2.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(H2);
+      }
+      if (
+        (!H1.firstElementChild ||
+          !H1.firstElementChild.classList.contains("black")) &&
+        (!H2.firstElementChild ||
+          (!H2.firstElementChild.classList.contains("black") &&
+            !H2.firstElementChild.classList.contains("white"))) &&
+        (!H3.firstElementChild ||
+          (!H3.firstElementChild.classList.contains("black") &&
+            !H3.firstElementChild.classList.contains("white"))) &&
+        (!H4.firstElementChild ||
+          (!H4.firstElementChild.classList.contains("black") &&
+            !H4.firstElementChild.classList.contains("white"))) &&
+        (!H5.firstElementChild ||
+          (!H5.firstElementChild.classList.contains("black") &&
+            !H5.firstElementChild.classList.contains("white"))) &&
+        (!H6.firstElementChild ||
+          (!H6.firstElementChild.classList.contains("black") &&
+            !H6.firstElementChild.classList.contains("white"))) &&
+        (!H7.firstElementChild ||
+          (!H7.firstElementChild.classList.contains("black") &&
+            !H7.firstElementChild.classList.contains("white")))
+      ) {
+        H1.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(H1);
+      }
+
+      // Horizontal LEFT (G8 → A8)
+      if (
+        !G8.firstElementChild ||
+        !G8.firstElementChild.classList.contains("black")
+      ) {
+        G8.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(G8);
+      }
+      if (
+        (!F8.firstElementChild ||
+          !F8.firstElementChild.classList.contains("black")) &&
+        (!G8.firstElementChild ||
+          (!G8.firstElementChild.classList.contains("black") &&
+            !G8.firstElementChild.classList.contains("white")))
+      ) {
+        F8.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(F8);
+      }
+      if (
+        (!E8.firstElementChild ||
+          !E8.firstElementChild.classList.contains("black")) &&
+        (!F8.firstElementChild ||
+          (!F8.firstElementChild.classList.contains("black") &&
+            !F8.firstElementChild.classList.contains("white"))) &&
+        (!G8.firstElementChild ||
+          (!G8.firstElementChild.classList.contains("black") &&
+            !G8.firstElementChild.classList.contains("white")))
+      ) {
+        E8.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(E8);
+      }
+      if (
+        (!D8.firstElementChild ||
+          !D8.firstElementChild.classList.contains("black")) &&
+        (!E8.firstElementChild ||
+          (!E8.firstElementChild.classList.contains("black") &&
+            !E8.firstElementChild.classList.contains("white"))) &&
+        (!F8.firstElementChild ||
+          (!F8.firstElementChild.classList.contains("black") &&
+            !F8.firstElementChild.classList.contains("white"))) &&
+        (!G8.firstElementChild ||
+          (!G8.firstElementChild.classList.contains("black") &&
+            !G8.firstElementChild.classList.contains("white")))
+      ) {
+        D8.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(D8);
+      }
+      if (
+        (!C8.firstElementChild ||
+          !C8.firstElementChild.classList.contains("black")) &&
+        (!D8.firstElementChild ||
+          (!D8.firstElementChild.classList.contains("black") &&
+            !D8.firstElementChild.classList.contains("white"))) &&
+        (!E8.firstElementChild ||
+          (!E8.firstElementChild.classList.contains("black") &&
+            !E8.firstElementChild.classList.contains("white"))) &&
+        (!F8.firstElementChild ||
+          (!F8.firstElementChild.classList.contains("black") &&
+            !F8.firstElementChild.classList.contains("white"))) &&
+        (!G8.firstElementChild ||
+          (!G8.firstElementChild.classList.contains("black") &&
+            !G8.firstElementChild.classList.contains("white")))
+      ) {
+        C8.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(C8);
+      }
+      if (
+        (!B8.firstElementChild ||
+          !B8.firstElementChild.classList.contains("black")) &&
+        (!C8.firstElementChild ||
+          (!C8.firstElementChild.classList.contains("black") &&
+            !C8.firstElementChild.classList.contains("white"))) &&
+        (!D8.firstElementChild ||
+          (!D8.firstElementChild.classList.contains("black") &&
+            !D8.firstElementChild.classList.contains("white"))) &&
+        (!E8.firstElementChild ||
+          (!E8.firstElementChild.classList.contains("black") &&
+            !E8.firstElementChild.classList.contains("white"))) &&
+        (!F8.firstElementChild ||
+          (!F8.firstElementChild.classList.contains("black") &&
+            !F8.firstElementChild.classList.contains("white"))) &&
+        (!G8.firstElementChild ||
+          (!G8.firstElementChild.classList.contains("black") &&
+            !G8.firstElementChild.classList.contains("white")))
+      ) {
+        B8.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(B8);
+      }
+      if (
+        (!A8.firstElementChild ||
+          !A8.firstElementChild.classList.contains("black")) &&
+        (!B8.firstElementChild ||
+          (!B8.firstElementChild.classList.contains("black") &&
+            !B8.firstElementChild.classList.contains("white"))) &&
+        (!C8.firstElementChild ||
+          (!C8.firstElementChild.classList.contains("black") &&
+            !C8.firstElementChild.classList.contains("white"))) &&
+        (!D8.firstElementChild ||
+          (!D8.firstElementChild.classList.contains("black") &&
+            !D8.firstElementChild.classList.contains("white"))) &&
+        (!E8.firstElementChild ||
+          (!E8.firstElementChild.classList.contains("black") &&
+            !E8.firstElementChild.classList.contains("white"))) &&
+        (!F8.firstElementChild ||
+          (!F8.firstElementChild.classList.contains("black") &&
+            !F8.firstElementChild.classList.contains("white"))) &&
+        (!G8.firstElementChild ||
+          (!G8.firstElementChild.classList.contains("black") &&
+            !G8.firstElementChild.classList.contains("white")))
+      ) {
+        A8.classList.toggle("highlightBlue");
+        recentlyHighlightedElements.push(A8);
+      }
+    }
+  }
+
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
 };

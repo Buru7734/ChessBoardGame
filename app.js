@@ -8,7 +8,7 @@ const buttonEl = document.querySelector(".button");
 const knightEl = document.querySelectorAll(".knight");
 const wPawnEl = document.querySelectorAll(".whitePawn");
 const blackKing = document.getElementById("blackKing");
-//const stabEL = new Audio("Stab for chess.mp3");
+const stabEL = new Audio("Stab for chess.mp3");
 const arrayBoard = [
   "",
   "",
@@ -138,6 +138,7 @@ const clickedHandler = (e) => {
     pawnMovement();
     kingMovement();
     rookMovement();
+    bishopMovement();
     e.target.style.border = "#9ccfce 1px solid"; // This will add a blue border to the clicked element.
   }
 
@@ -145,8 +146,8 @@ const clickedHandler = (e) => {
     //Function for capture pieces.
     if (
       currentPlayer === "white" &&
-      e.target.classList.contains("black") &&
-      e.target.parentElement.classList.contains("highlightBlue") //This only allows to capture pieces in blue squares
+      e.target.classList.contains("black")
+      // && e.target.parentElement.classList.contains("highlightBlue") //This only allows to capture pieces in blue squares
     ) {
       console.log("I'm eating black");
       const capturedPiece = e.target;
@@ -220,8 +221,8 @@ boardEl.addEventListener("click", (e) => {
   // Add event listener to the board
   if (
     selectedPiece &&
-    e.target.classList.contains("square") &&
-    e.target.classList.contains("highlightBlue") //This will let move only to blue squares
+    e.target.classList.contains("square")
+    //&& e.target.classList.contains("highlightBlue") //This will let move only to blue squares
   ) {
     // Ensure a piece is selected and the clicked target is a square
     e.target.appendChild(selectedPiece); // Move the selected piece to the clicked square
