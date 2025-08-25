@@ -1,6 +1,6 @@
 # Chess
 
-![Chess Board](https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Chess_pieces_close_up.jpg/960px-Chess_pieces_close_up.jpg)
+![Chess Board](./Additional%20files/Screen%20Shot%202025-08-24%20at%207.32.02%20PM.png)
 
 ### Link to game:
 
@@ -10,7 +10,7 @@
 
 I played chess a lot when I was a child. My dad taught me the game, and I often played with my godfather as well. I also played frequently with my grandmother, which became a very special way to connect with her. I know that chess was the ultimate reason I became her favorite grandchild. That’s why I chose chess.
 
-![Chess Board](https://img.freepik.com/free-photo/cheerful-old-casual-woman-giving-thumbs-up_53876-22959.jpg?semt=ais_hybrid&w=740&q=80)
+![Happy Grandma](https://img.freepik.com/free-photo/cheerful-old-casual-woman-giving-thumbs-up_53876-22959.jpg?semt=ais_hybrid&w=740&q=80)
 
 ## Basics:
 
