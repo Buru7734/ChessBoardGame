@@ -1,4 +1,3 @@
-console.log("rook here");
 const rookMovement = () => {
   if (selectedPiece.classList.contains("whiteRook")) {
     if (currentSquare === "A1") {

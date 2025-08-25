@@ -1,7 +1,6 @@
 const bishopMovement = () => {
   if (selectedPiece.classList.contains("bSquareWhiteBishop")) {
     if (currentSquare === "A1") {
-      console.log("hello bishop");
       if (
         (!H8.firstElementChild ||
           !H8.firstElementChild.classList.contains("white")) &&
@@ -139,7 +138,6 @@ const bishopMovement = () => {
   }
   if (selectedPiece.classList.contains("bSquareBlackBishop")) {
     if (currentSquare === "A1") {
-      console.log("hello bishop");
       if (
         (!H8.firstElementChild ||
           !H8.firstElementChild.classList.contains("black")) &&
@@ -278,7 +276,6 @@ const bishopMovement = () => {
 
   if (selectedPiece.classList.contains("bSquareWhiteBishop")) {
     if (currentSquare === "A3") {
-      console.log("hello bishop");
       if (
         (!F8.firstElementChild ||
           !F8.firstElementChild.classList.contains("white")) &&
@@ -377,7 +374,6 @@ const bishopMovement = () => {
 
   if (selectedPiece.classList.contains("bSquareBlackBishop")) {
     if (currentSquare === "A3") {
-      console.log("hello bishop");
       if (
         (!F8.firstElementChild ||
           !F8.firstElementChild.classList.contains("black")) &&
@@ -475,7 +471,6 @@ const bishopMovement = () => {
   }
   if (selectedPiece.classList.contains("bSquareWhiteBishop")) {
     if (currentSquare === "A5") {
-      console.log("hello bishop");
       if (
         (!D8.firstElementChild ||
           !D8.firstElementChild.classList.contains("white")) &&
@@ -566,7 +561,6 @@ const bishopMovement = () => {
 
   if (selectedPiece.classList.contains("bSquareBlackBishop")) {
     if (currentSquare === "A5") {
-      console.log("hello bishop");
       if (
         (!D8.firstElementChild ||
           !D8.firstElementChild.classList.contains("black")) &&
@@ -779,8 +773,6 @@ const bishopMovement = () => {
 
   if (selectedPiece.classList.contains("bSquareBlackBishop")) {
     if (currentSquare === "A7") {
-      console.log("hello bishop");
-
       // Bottom-right diagonal
       if (
         !B8.firstElementChild ||
@@ -1157,7 +1149,6 @@ const bishopMovement = () => {
 
   if (selectedPiece.classList.contains("bSquareWhiteBishop")) {
     if (currentSquare === "B4") {
-      console.log("hello bishop");
       if (
         (!F8.firstElementChild ||
           !F8.firstElementChild.classList.contains("white")) &&
@@ -1264,7 +1255,6 @@ const bishopMovement = () => {
 
   if (selectedPiece.classList.contains("bSquareBlackBishop")) {
     if (currentSquare === "B6") {
-      console.log("hello bishop");
       if (
         (!G1.firstElementChild ||
           !G1.firstElementChild.classList.contains("black")) &&
@@ -1379,7 +1369,6 @@ const bishopMovement = () => {
 
   if (selectedPiece.classList.contains("bSquareWhiteBishop")) {
     if (currentSquare === "B6") {
-      console.log("hello bishop");
       if (
         (!G1.firstElementChild ||
           !G1.firstElementChild.classList.contains("white")) &&

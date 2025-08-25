@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
     <script src="./pieceMovements/bishop.js" defer></script>
+    <script src="./pieceMovements/queen.js" defer></script>
     <script src="./pieceMovements/kings.js" defer></script>
     <script src="./pieceMovements/rook.js" defer></script>
     <script src="./pieceMovements/pawns.js" defer></script>
@@ -14,6 +15,7 @@
   </head>
   <body>
     <header>
+      <link rel="shortcut icon" href="" />
       <h1>Chess Board</h1>
       <p class="welcome">
         Welcome to the chess board. Click on a square to make a move.
@@ -87,7 +89,9 @@
         </div>
       </div>
       <div class="rowsEven rowFour">
-        <div class="square" id="D8"><div class="black piece queen">♛</div></div>
+        <div class="square" id="D8">
+          <div class="black piece bQueen">♛</div>
+        </div>
         <div class="square" id="D7">
           <div class="black piece blackPawn">♟</div>
         </div>
@@ -98,7 +102,9 @@
         <div class="square" id="D2">
           <div class="white piece whitePawn">♙</div>
         </div>
-        <div class="square" id="D1"><div class="white piece queen">♕</div></div>
+        <div class="square" id="D1">
+          <div class="white piece wQueen">♕</div>
+        </div>
       </div>
       <div class="rowsOdd rowFive">
         <div class="square" id="E8">

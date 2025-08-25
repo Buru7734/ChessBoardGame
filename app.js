@@ -1,6 +1,3 @@
-// .rowsEven .square:nth-child(even)
-// .rowsOdd .square:nth-child(odd)
-
 const boardEl = document.querySelector(".board");
 const PiecesEl = document.querySelectorAll(".piece");
 const displayEl = document.querySelector(".display");
@@ -139,6 +136,7 @@ const clickedHandler = (e) => {
     kingMovement();
     rookMovement();
     bishopMovement();
+    queenMovement();
     e.target.style.border = "#9ccfce 1px solid"; // This will add a blue border to the clicked element.
   }
 
@@ -146,10 +144,9 @@ const clickedHandler = (e) => {
     //Function for capture pieces.
     if (
       currentPlayer === "white" &&
-      e.target.classList.contains("black")
-      // && e.target.parentElement.classList.contains("highlightBlue") //This only allows to capture pieces in blue squares
+      e.target.classList.contains("black") &&
+      e.target.parentElement.classList.contains("highlightBlue") //This only allows to capture pieces in blue squares
     ) {
-      console.log("I'm eating black");
       const capturedPiece = e.target;
       const targetSquare = capturedPiece.parentNode; // Get the parent square
 
@@ -176,7 +173,6 @@ const clickedHandler = (e) => {
       e.target.classList.contains("white") &&
       e.target.parentElement.classList.contains("highlightBlue")
     ) {
-      console.log("I'm eating white");
       const capturedPiece = e.target;
       const targetSquare = capturedPiece.parentNode; // Get the parent square
       stabEL.currentTime = 0.3;
@@ -221,8 +217,8 @@ boardEl.addEventListener("click", (e) => {
   // Add event listener to the board
   if (
     selectedPiece &&
-    e.target.classList.contains("square")
-    //&& e.target.classList.contains("highlightBlue") //This will let move only to blue squares
+    e.target.classList.contains("square") &&
+    e.target.classList.contains("highlightBlue") //This will let move only to blue squares
   ) {
     // Ensure a piece is selected and the clicked target is a square
     e.target.appendChild(selectedPiece); // Move the selected piece to the clicked square
